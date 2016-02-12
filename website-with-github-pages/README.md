@@ -17,6 +17,20 @@ This is a beginner's guide to walk you through building your first website with 
   - It should be named *username*.github.io, using your username on GitHub.
   - The name must be of this form, or GitHub won't identify it as a website!
 
-![Making the repo.](resources/making-the-repo.png)
+ ![Making the repo.](resources/making-the-repo.png)
 
- - 
+2. Create the `index.html` file. 
+  - This is the file that's shown whenever someone lands on your website.
+  - Every HTML file follows the same template:
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+      <head>
+      </head>
+      <body>
+      </body>
+  </html>
+  ```
+ - Add something to the HTML file: a body!
+3. 
