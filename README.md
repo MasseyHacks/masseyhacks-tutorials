@@ -4,10 +4,14 @@ Under Construction.
 
 # DO NOT PUSH TO HIS REPOSITORY DIRECTLY. Edit on a fork and create a pull request.
 
-[Working with Git and GitHub](git-and-github)
+Jeffrey's Workshops
 
-[Making a Website with GitHub Pages](website-with-github-pages)
+ - [Working with Git and GitHub](git-and-github), 80% done
 
-[Game Dev with Unity](game-dev-with-unity)
+ - [Making a Website with GitHub Pages](website-with-github-pages), 5% done
 
-[App Dev with Android](app-dev-with-android)
+Michael's Workshops
+
+ - [Game Dev with Unity](game-dev-with-unity)
+
+ - [App Dev with Android](app-dev-with-android)
