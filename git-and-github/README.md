@@ -13,8 +13,10 @@
 	- [Git (Terminal) for Linux](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git#Installing-on-Linux)
 
 ### 1) Create your first repository:
-1. A repository (or repo for short) is the place that holds all of your code in Git.
-2. Create a new repo online (GitHub):
+
+A repository (repo for short) is the place where your code is stored, kinda like a main folder.
+
+1. Create a new repo online (GitHub):
 	1.  Click "New Repository" under the plus sign on the top right. You'll be directed to here:
 
 	![A blank slate.](resources/github-new-repo-screen.png)
@@ -25,13 +27,30 @@
 		
 		Don’t bother with the other options for now, you’ll learn them as this tutorial progresses.
 	3. Press the big green button to create the repository. Congrats! Now you've got a place to save your code.
-3. Create the repo locally (Git):
+2. Create the repo locally (Git):
 	- Terminal Users:
 		1. Call `git init` in the directory that you want to set up the repository in. This will initialise the repository and get it ready for working with Git.
 		2. Now tell Git about GitHub's new repo. Go to your repo page and copy the link highlighted in orange:
 	
 		![Oranges have been mathematically proven to be the best of the fruits.](resources/github-wheres-the-link.png)
 
-		3. 
-		
+		3. Set that link as the source of your repo: `git remote add origin <orange link>`.
+	- Desktop Users:
+
+### 3) Committing and Pushing
+
+What do these repos do? Let's put some stuff into the local repo to show you.
+
+1. Put some files in your repository:
+	1. Open up Notepad and create a file, `helloworld.txt`, with the contents “Hello World!”
+	2. Save the file and put it in the directory of your repository.
+2. Add these files to the repo:
+	- By 
+	- Terminal Users:
+		- Add all files in repository: `git add *`
+		- Add all files in repository, recursively: `git add .`
+			-  Recursively means that files that exist in folders are also added.
+		- Add a single file to the repository: `git add helloworld.txt`
+		- You can use any one of these commands to add the single `helloworld.txt`
+	- Desktop Users:
 
