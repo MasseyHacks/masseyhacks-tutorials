@@ -79,7 +79,7 @@ This new file is going to represent a change to your code project. Now, lets get
 
 ### Adding a File:
 
-Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file exists. If you haven't made a new file, however, and just edited an old one, you can skip directly to **Committing a Change**.
+Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file exists. **You only need to add a file after creating it; if you're just making a change, `add` is unnecessary.** If you haven't made a new file and just edited an old one, you can skip directly to **Committing a Change**.
 
 **Terminal users**: Uue the command `git add` to add the file. There are lots of options to choose from:
 	- `git add <filename>`: Adds the given file and nothing else.
@@ -90,7 +90,7 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 
 ### Committing a Change
 
-Now you're going to have to tell Git that you've made changes to the local repo. Whenever we tell git about the changes we've made to the project, we call it a commit. You can add multiple changes in multiple files in just one commit. Git will figure it all out.
+Now you're going to have to tell Git that you've made changes to the local repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
 
 For **terminators**, committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
@@ -98,7 +98,7 @@ For **terminators**, committing is one simple command that you can run wherever 
 
 ### PUSH!
 
-Now we're going to make the changes that you've made to your local git repo official, by pushing them to the official online GitHub repo.
+Now we're going to make the changes that you've made to your local git repo official, by pushing them to the official online GitHub repo. Under the hood, git tells GitHub about all of the commits that you've made on your local repo, and GitHub makes the same commits on the official repository. Even though you're pushing only one commit for now, keep in mind that **you can commit multiple times before a push**, and all of those commits will make it to the GitHub repo.
 
 **Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
 
@@ -107,3 +107,26 @@ Now we're going to make the changes that you've made to your local git repo offi
 ### Wowow, it's in the cloud!
 
 Now, if you navigate back to the GitHub repo webpage, you'll be able to see the new file that you created, or any changes that you made to existing files. Congratulations!  :tada:  You've just made your first `add`, `commit`, and `push`!
+
+## Step 3: Rolling back the Repository to a Previous Commit
+
+In hindsight, we've made some mistakes. `important-change.txt` was a permanent blemish on my career, and I'm sure whatever change that you've made to your repos were similarly deserving of regret. Let's reset the repo, to an earlier, more pristine time.
+
+### Open the Commit History
+
+Head to the GitHub page for your repo and click on the left most entry to the top bar, the button that says `X commits`. You'll end up with the commit list, a page that has entries like these:
+
+<p align="center"><img src="resources/github-commit-list.png"/></p>
+
+It should be just two commits: the initial commit that was made when you created the repo, and the commit that you made when you made a change back in Step 2.
+
+Each entry contains information on the user that made the commit, the message that was given for the commit, the time it was made, and some wierd mish-mash of letters and numbers on the right. That mish-mash is what's known as a commit id, a string that uniquely identifies this certain commit. It's actually a small prefix of an SHA hash and, if you click on the clipboard to the left, you can get the full hash that identifies this commit. For me, `0747e2` was actually `07047e2b04c85b9fe3609f7b91558732e3c663ed`.
+
+### Reverting to a Better Time
+
+The commit where I added `important-change.txt` had an id of `07047e2`. Let's undo that mistake. Copy the shortened id of the commit that you want to move back to. In this case, it's the very first commit: `6a800ef`.
+
+**Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, 
+
+**Desktop users**
+
