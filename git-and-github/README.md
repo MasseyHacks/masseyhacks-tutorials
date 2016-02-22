@@ -36,7 +36,7 @@ Let's get the online repository up and running first. Head over to your web brow
 4. Select **Initialize this repository with a README**.
 5. You're ready! Click the big green `Create repository` button.
 
-<div style="text-align:center"><img src ="resources/github-new-repo-screen.png" /></div>
+<p align="center"><img src="resources/github-new-repo-screen.png" /></p>
 
 #### Creating a Repository on git
 
