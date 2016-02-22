@@ -50,12 +50,14 @@ Now you're going to have to make a local repo on your computer, and this one wil
 	4. Now let's get the two repositories in sync. The online repo has a `README.md` file. Clone it on the local repo by calling `git pull origin master`. Don't bother with `origin` or `master` for now.
 - Desktop Users:
 	1. Unlike terminal users, you don't need to make a local repo. GitHub Desktop does it automatically for you. *Sign in*
-	
+
 #### Why do we have two repositories?
 
 Remember: Git and GitHub are two different programs. There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo.
 
 This might seem tedious if you're working alone, but think about what happens in a team. It would be pretty chaotic if everyone made their own direct changes on the official online repository. If everyone had their own little local version of the official repository, they could use git to keep changes constant between everyone's local repositories and the official online repo.
+
+If you're using the command line, this is where `origin` and `master` make sense. `origin` is the official online GitHub repo. `master` is the local git repo. When you called `git pull origin master`, you told git to pull all of the stuff that was at `origin` over to `master`.
 
 #### Something to notice: README's are actually read.
 
@@ -77,15 +79,31 @@ This new file is going to represent a change to your code project. Now, lets get
 
 #### Adding a File:
 
-Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file exists. If you haven't made a new file, however, you can skip directly to **Committing a Change**.
+Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file exists. If you haven't made a new file, however, and just edited an old one, you can skip directly to **Committing a Change**.
 
-- Terminal Users:
-	1. Use the command `git add` to add the file. There are lots of options to choose from:
-		- `git add <filename>`: Adds the given file and nothing else.
-		- `git add *`: Adds all the files in the current directory.
-		- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
-- Desktop Users:
+**Terminal users**: Uue the command `git add` to add the file. There are lots of options to choose from:
+	- `git add <filename>`: Adds the given file and nothing else.
+	- `git add *`: Adds all the files in the current directory.
+	- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
 
-#### Committing a Change:
+**Desktop users**:  
 
-Now you're going to have to tell Git that you've made changes to the local repo.
+#### Committing a Change
+
+Now you're going to have to tell Git that you've made changes to the local repo. Whenever we tell git about the changes we've made to the project, we call it a commit. You can add multiple changes in multiple files in just one commit. Git will figure it all out.
+
+For **terminators**, committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
+
+**Desktopians**: 
+
+#### PUSH!
+
+Now we're going to make the changes that you've made to your local git repo official, by pushing them to the official online GitHub repo.
+
+**Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
+
+**Deskies**, 
+
+#### Wowow, it's in the cloud!
+
+Now, if you navigate back to the GitHub repo webpage, you'll be able to see the new file that you created, or any changes that you made to existing files. Congratulations!  :tada:  You've just made your first `add`, `commit`, and `push`!
