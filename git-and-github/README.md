@@ -1,56 +1,21 @@
-# Working with Git and Github
+# Working with git and GitHub
 
-### 0) Before We Start:
-1. What the heck am I doing?
-	- Git is a program used for maintaining and syncing code in between multiple computers for software development. Formally, it’s a Version Control System (VCS), and, if you’re going to be hacking together a program with a group, you’re going to want to learn how to use Git. It's the industry standard for managing a group project.
-	- GitHub is, like the name suggests, a hub for Git. It’s a website that allows free cloud hosting for your code using Git, as long as you’re willing to share that code with everyone else. It’s a great tool for students who are just looking to practice programming and don’t have the money to dish out to store their code online.
-	- **TL;DR**: Use Git with GitHub to code with your friends easily, or if you just want to back it up somewhere on the Internet.
-2. Register on GitHub. Click the green "Sign Up" button on the top right!
-3. Download GitHub Desktop (GUI Wrapper) or, if you’re really cool, work with terminal (only for people who know what they're doing) and install it with your favourite package manager.
-	- [GitHub Desktop Download](https://desktop.github.com/)
-	- [Git (Terminal) for Windows](https://git-for-windows.github.io/)
-	- [Git (Terminal) for OSX](https://code.google.com/archive/p/git-osx-installer/downloads)
-	- [Git (Terminal) for Linux](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git#Installing-on-Linux)
+### What is git? Why does it have a Hub?
 
-### 1) Create your first repository:
+Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team?
 
-A repository (repo for short) is the place where your code is stored, kinda like a main folder.
+Git was invented for this purpose. It's a program that controls your code, especially for working in a team. GitHub is a website (the one that you're on right now) which gives free hosting space for code projects that use git -- provided that you're okay with other people seeing your code.
 
-1. Create a new repo online (GitHub):
-	1.  Click "New Repository" under the plus sign on the top right. You'll be directed to here:
+If you plan to do any coding with your friends or coworkers, in the industry or just for fun, you'll probably end up using git. So it's pretty important that you learn to use it.
 
-	![A blank slate.](resources/github-new-repo-screen.png)
+### Getting Ready
 
-	2.  Enter a name and a description for the repository. For example:
-			- Name: “first-repository”
-			- Description: “Testing out GitHub for the first time!”
-		
-		Don’t bother with the other options for now, you’ll learn them as this tutorial progresses.
-	3. Press the big green button to create the repository. Congrats! Now you've got a place to save your code.
-2. Create the repo locally (Git):
-	- Terminal Users:
-		1. Call `git init` in the directory that you want to set up the repository in. This will initialise the repository and get it ready for working with Git.
-		2. Now tell Git about GitHub's new repo. Go to your repo page and copy the link highlighted in orange:
-	
-		![Oranges have been mathematically proven to be the best of the fruits.](resources/github-wheres-the-link.png)
-
-		3. Set that link as the source of your repo: `git remote add origin <orange link>`.
-	- Desktop Users:
-
-### 3) Committing and Pushing
-
-What do these repos do? Let's put some stuff into the local repo to show you.
-
-1. Put some files in your repository:
-	1. Open up Notepad and create a file, `helloworld.txt`, with the contents “Hello World!”
-	2. Save the file and put it in the directory of your repository.
-2. Add these files to the repo:
-	- By 
-	- Terminal Users:
-		- Add all files in repository: `git add *`
-		- Add all files in repository, recursively: `git add .`
-			-  Recursively means that files that exist in folders are also added.
-		- Add a single file to the repository: `git add helloworld.txt`
-		- You can use any one of these commands to add the single `helloworld.txt`
-	- Desktop Users:
-
+1. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
+2. Get yourself a copy of git on your computer. You've got two choices:
+	- Regular Git: Requires knowledge of the command line. If you're comfortable with a terminal, we'd definitely recommend this one. If you've got a package manager, you're welcome to get git from there.
+		- [Download Git for Windows](https://git-for-windows.github.io/)
+		- [Download Git for OSX](https://code.google.com/archive/p/git-osx-installer/downloads)
+		- [Download Git for Linux](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+	- GitHub Desktop: A friendly GUI version for those who don't know how to use a command line.
+		- [Download GitHub Desktop for Windows/OSX](https://desktop.github.com/)
+		- Linux not supported, sorry. If you're a Linux user, chances are you're downloading regular command line git right now.
