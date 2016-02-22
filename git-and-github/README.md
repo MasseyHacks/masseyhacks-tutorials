@@ -28,14 +28,32 @@ We're going back to a classic for this one: Hello World! But first, a note: you'
 
 #### Creating a Repository on GitHub
 
+Let's get the online repository up and running first. Head over to your web browser and get on GitHub.
+
 1. In the upper right corner, next to your username, click the **+** and then click **New repository**.
 2. Name your repository `hello-world`.
 3. Write a short description, if you'd like.
 4. Select **Initialize this repository with a README**.
 5. You're ready! Click the big green `Create repository` button.
 
-![A blank slate.](resources/github-new-repo-screen.png)
+<div style="text-align:center"><img src ="resources/github-new-repo-screen.png" /></div>
 
 #### Creating a Repository on git
 
-Now
+Now you're going to have to make a local repo on your computer, and this one will be handled by git.
+
+- Terminal Users:
+	1. Navigate or create a directory that you'd like to keep your `hello-world` project in. While within the directory, call `git init`. This command will automagically set up the directory for use with git.
+	2. Now tell git that the GitHub repo exists. Navigate t
+- Desktop Users:
+	1. 
+	
+#### Why do we have two repositories?
+
+Remember: Git and GitHub are two different programs. There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo.
+
+This might seem tedious if you're working alone, but think about what happens in a team. It would be pretty chaotic if everyone made their own direct changes on the official online repository. If everyone had their own little local version of the official repository, they could use git to keep changes constant between everyone's local repositories and the official online repo.
+
+## Step 2: Add, Commit, Push.
+
+Say you make a change to your 
