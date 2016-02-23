@@ -8,15 +8,10 @@ For now, the workshops are currently under construction. You can get a sneak pee
 
 | Workshop       | Description                                                           | Prerequisites | Authors  |
 |----------------|-----------------------------------------------------------------------|---------------|----------|
-| [Git and GitHub]((git-and-github)) | A beginner's guide to creating and collaborating with Git and GitHub. |               | @descrip |
-|                |                                                                       |               |          |
-|                |                                                                       |               |          |
-|                |                                                                       |               |          |
-
-### [Working with Git and GitHub](git-and-github)
-
-### [Making a Website with GitHub Pages](website-with-github-pages)
-
-### [Game Dev with Unity](game-dev-with-unity)
-
-### [App Dev with Android](app-dev-with-android)
+| [Game Dev with Unity](game-dev-with-unity) | | | [@Michaelfonzolo][Michaelfonzolo] |
+| [Git and GitHub]((git-and-github)) | A beginner's guide to creating and collaborating with Git and GitHub. | [Download Git, register a GitHub account](https://github.com/descrip/masseyhacks-tutorials/blob/master/git-and-github/README.md#step-0-prerequisites) | [@descrip][descrip] |
+|[Intro to Android App Dev](app-dev-with-android)|                                                                       |               | [@Michaelfonzolo][Michaelfonzolo] |
+| [Making a Website with GitHub Pages](website-with-github-pages) | A quick look into HTML and CSS with GitHub pages hosting. |               | [@descrip][descrip] |
+[descrip]: https://github.com/descrip
+[Michaelfonzolo]: https://github.com/Michaelfonzolo
+[DChang87]: https://github.com/DChang87

@@ -12,7 +12,7 @@ If you plan to do any coding with your friends or coworkers, in the industry or 
 
 This workshop is not meant to be a thorough course to git and GitHub. Instead, this will teach you all you need to know about the two to be able to work in a group effectively in the course of just an hour. If you're looking for an indepth tutorial to git and GitHub, Google it!
 
-### Getting ready
+## Step 0: Prerequisites
 
 1. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
 2. Get yourself a copy of git on your computer. You've got two choices:
