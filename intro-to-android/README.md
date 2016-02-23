@@ -204,6 +204,14 @@ In the top menu of the central Designer window there's a dropdown menu with the 
 
 To the right of that menu you should see a button that looks like ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image4.png). This determines the orientation of the display. You can click the middle of the button to automatically toggle between portrait and landscape, or you can click the arrow to bring up a dropdown menu with even more options.
 
+### Documentation
+
+Inevitably, no tutorial will ever include everything you need to know about *everything* in Android. Fortunately, the developers also supplied an extensive set of documentation that *does* have information on absolutely everything. Android Studio is also kind enough to give you a quick way of accessing the documentation for something in your code. If you place your cursor inside an object's name and press Ctrl + Q (Ctrl + J on Mac OS X), the quick-documentation window will pop-up next to the name, giving you a snapshot of everything you need to know about the object.
+
+For example, in `content_android_sample.xml`, if you place your cursor inside the word `TextView` and hit Ctrl + Q/J, it will bring up the documentation for the `TextView` class. From this we can see that `TextView` is a subclass of `View` and implements the `ViewTreeObserver.OnPreDrawListener` interface. We can even click on those names to bring up *their* documentation and find out what they're for.
+
+*Note*: This feature also works for Java code.
+
 ## Enabling ADB on Android 5.0 Based Devices
 
 (This section is taken directly from Android Studio Essentials)
@@ -382,7 +390,7 @@ List of devices attached
 
 If the device is listed as *offline*, go to the Android device and check for the dialog seeking permission to *Allow USB debugging*.
 
-### Testing the adb Connection
+### Testing the ADB Connection
 
 Assuming that the adb configuration has been successful on your chosen devleopment platform, the next step is to try running the test application you created. Launch Android Studio, open the AndroidSample project and, once the project has loaded, click on the run button located in the Android Studio toolbar (the sideways green triangle).
 
