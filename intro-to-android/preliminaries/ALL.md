@@ -66,7 +66,7 @@ export PATH=/home/demo/java/jdk1.8.0_73/bin:$PATH
 
 Having saved the change, future terminal sessions will include the JDK in the $PATH environment variable.
 
-### Installing the Android Studio
+### Installing Android Studio
 
 Android Studio may be downloaded from [this link](http://developer.android.com/sdk/index.html). The download should be for the correct platform, but if not go [here](http://developer.android.com/sdk/index.html#Other) and select the appropriate package for your platform and operating system.
 
