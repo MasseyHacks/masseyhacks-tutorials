@@ -116,7 +116,22 @@ The dialog asks you to create a "resource" for the string. A resource is basical
 
 **Note**: If you're getting a "Rendering Problem" saying "Couldn't resolve resource (resourcename)" try building your project by going to `Build` -> `Make Project`. If you're still having problems, save your project, then go to `File` -> `Invalid Caches/Restart` and choose `Just Restart`.
 
-(layout and resource xml files)
+### What are those Xml files?
+
+Throughout the tutorial, we've made reference to Xml files, like `content_android_sample.xml`. Upon opening this file in the editor, we are given a visual preview of our app. But what exactly *is* this Xml file? Well, beneath all the fancy graphics, it's actually just an ordinary text file like anything else you've ever created. Android Studio just reads this text file, and then *creates* the graphical display based on what it says.
+
+If you notice in the bottom left corner of the designer window there are two tabs labelled "Design" and "Text" respectively (![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image9.png)). If you click on the "Text" tab (while the `content_android_sample.xml` file is open), a text file will open up that should look something like the following:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image10.png)
+
+Explain how using the Designer window is just editing the underlying content_android_sample.xml file, and how we can actually edit that file ourselves.
+
+Add three values:
+    RelativeLayout -> android:background = "#96E5FF"
+    TextView -> android:textColor = "FF8800"
+             -> android:fontFamily = "sans-serif-medium" (also a chance to explain the fonts in android)
+             
+use this as an example of how Android Studio's autocomplete stuff works.
 
 ...
 
