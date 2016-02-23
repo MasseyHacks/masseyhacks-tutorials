@@ -1,5 +1,5 @@
 <p align="center">
-  <br><img src="logo-small.jpe"/></br>
+  <br><img src="mh-logo-small.png"/></br>
   <h1 align="center">MasseyHacks Tutorials</h1>
 </p>
 
