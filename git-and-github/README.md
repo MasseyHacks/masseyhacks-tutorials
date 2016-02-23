@@ -1,6 +1,6 @@
-# Working with git and GitHub
+# Working with Git and GitHub
 
-## What is git? Why does it have a Hub?
+## What is git? Why does it have a hub?
 
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team?
 
@@ -12,7 +12,7 @@ If you plan to do any coding with your friends or coworkers, in the industry or 
 
 This workshop is not meant to be a thorough course to git and GitHub. Instead, this will teach you all you need to know about the two to be able to work in a group effectively in the course of just an hour. If you're looking for an indepth tutorial to git and GitHub, Google it!
 
-## Step 0: Prerequisites
+## Section 0: Prerequisites
 
 1. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
 2. Get yourself a copy of git on your computer. You've got two choices:
@@ -24,7 +24,7 @@ This workshop is not meant to be a thorough course to git and GitHub. Instead, t
 		- [Download GitHub Desktop for Windows/OSX](https://desktop.github.com/)
 		- Linux not supported, sorry. If you're a Linux user, chances are you're downloading regular command line git right now.
 
-## Step 1: Making a Repository
+## Section 1: Making a Repository
 
 A **repository**, or repo for short, is the space where your code project goes. It doesn't have to be just code -- it could be word documents, images, whatever you'd like in your code project! All of your friends will be working on this one repository.
 
@@ -73,7 +73,7 @@ When you were creating your `hello-world` repo, you opted for a `README` to be c
 
 GitHub also supports Markdown editing with `README`'s. Normally, the filename is `README.md`. If you don't know what Markdown is, don't worry. Just treat the `README` as a regular text file.
 
-## Step 2: Add, Commit, Push.
+## Section 2: Add, Commit, Push.
 
 Say you make a change to your local repo. Open up your favourite text editor (bonus points if it's Vim) and create a new text file in the repo. It can be anything you want, and you can put whatever you'd like in it.
 
@@ -112,7 +112,7 @@ Now we're going to make the changes that you've made to your local git repo offi
 
 Now, if you navigate back to the GitHub repo webpage, you'll be able to see the new file that you created, or any changes that you made to existing files. Congratulations!  :tada:  You've just made your first `add`, `commit`, and `push`!
 
-## Step 3: Rolling back the Repository to a Previous Commit
+## Section 3: Rolling back the Repository to a Previous Commit
 
 In hindsight, we've made some mistakes. `important-change.txt` was a permanent blemish on my career, and I'm sure whatever change that you've made to your repos were similarly deserving of regret. Let's reset the repo, to an earlier, more pristine time.
 
@@ -122,7 +122,7 @@ Head to the GitHub page for your repo and click on the left most entry to the to
 
 <p align="center"><img src="resources/github-commit-list.png"/></p>
 
-It should be just two commits: the initial commit that was made when you created the repo, and the commit that you made when you made a change back in Step 2.
+It should be just two commits: the initial commit that was made when you created the repo, and the commit that you made when you made a change back in Section 2.
 
 Each entry contains information on the user that made the commit, the message that was given for the commit, the time it was made, and some wierd mish-mash of letters and numbers on the right. That mish-mash is what's known as a commit id, a string that uniquely identifies this certain commit. It's actually a small prefix of an SHA hash and, if you click on the clipboard to the left, you can get the full hash that identifies this commit. For me, `0747e2` was actually `07047e2b04c85b9fe3609f7b91558732e3c663ed`.
 
@@ -141,3 +141,11 @@ It's too bad real life isn't this easy to revert.
 ### This is actually a pretty bad way to do it
 
 If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git. If you have some time, I'd definitely recommend learning more into it. Just Google.
+
+## Section 4: Collaboration!
+
+The whole point of git and GitHub is being able to collaborate on a project with some teammates. Now you know how to work the two alone, it's time to learn how to make friends. There are two ways to do this:
+
+1. **Organizations:** As the name suggests, organizations are entities that you can create on GitHub for groups focused on multiple projects. If you're a giant company and you'd like to organise your employees
+
+###
