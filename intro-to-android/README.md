@@ -190,7 +190,7 @@ In this dialog, simply choose the device you have connected (in this case, the o
 
 **Note**: There are a number of circumstances in which your device **will not** be listed in the device chooser. This mainly stems either from the Developer options on your device not being enabled, or your device is listed as a `Portable Device` when it should really be configured as an `Android ADB Composite Device`. `ADB` stands for "Android Debug Bridge"; it's the program that is responsible for the communciation between Android Studio and the emulator (for AVD's) and physical devices.
 
-The instructions for configuring your device differ from OS to OS, so 
+Instructions for configuring your device can be found [here](#Enabling ADB on Android 5.0 Based Devices).
 
 ## Other Important Things
 
