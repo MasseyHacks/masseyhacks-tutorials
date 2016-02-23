@@ -8,7 +8,11 @@ Git was invented for this purpose. It's a program that controls your code, espec
 
 If you plan to do any coding with your friends or coworkers, in the industry or just for fun, you'll probably end up using git. So it's pretty important that you learn to use it.
 
-## Getting Ready
+### A word of Caution
+
+This workshop is not meant to be a thorough course to git and GitHub. Instead, this will teach you all you need to know about the two to be able to work in a group effectively in the course of just an hour. If you're looking for an indepth tutorial to git and GitHub, Google it!
+
+### Getting ready
 
 1. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
 2. Get yourself a copy of git on your computer. You've got two choices:
@@ -38,7 +42,7 @@ Let's get the online repository up and running first. Head over to your web brow
 
 <p align="center"><img src="resources/github-new-repo-screen.png"/></p>
 
-### Creating a Repository on git
+### Creating a Repository on Git
 
 Now you're going to have to make a local repo on your computer, and this one will be handled by git.
 
@@ -92,7 +96,7 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 
 Now you're going to have to tell Git that you've made changes to the local repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
 
-For **terminators**, committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
+**Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
 **Desktopians**: 
 
@@ -126,7 +130,14 @@ Each entry contains information on the user that made the commit, the message th
 
 The commit where I added `important-change.txt` had an id of `07047e2`. Let's undo that mistake. Copy the shortened id of the commit that you want to move back to. In this case, it's the very first commit: `6a800ef`.
 
-**Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, 
+**Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, call `git push -f origin master`. THe `-f` tag tells `git push` to forcibly push it. Git is smart: it realises that the current state of the repo is the same as one of a previous commit, and won't push to be efficient.
 
 **Desktop users**
 
+Now go back to the official GitHub repo page and refresh. Look at the commit history now. The last commit you made is all gone. In practice, all of the commits between the last commit to the repo and the commit that you reverted back to will be **irreversibly erased**. You cannot revert this action.
+
+It's too bad real life isn't this easy to revert.
+
+### This is actually a pretty bad way to do it
+
+If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git. If you have some time, I'd definitely recommend learning more into it. Just Google.
