@@ -192,6 +192,10 @@ In this dialog, simply choose the device you have connected (in this case, the o
 
 Instructions for configuring your device can be found [here](#Enabling ADB on Android 5.0 Based Devices).
 
+## More Awesome Things for our App
+
+
+
 ## Other Important Things
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
