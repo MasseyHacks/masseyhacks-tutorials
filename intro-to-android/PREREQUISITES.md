@@ -1,3 +1,23 @@
+## Table of Contents
+
+1. [Preliminaries for Intro to Android Lecture](#preliminaries-for-intro-to-android-lecture)
+
+2. [System Requirements](#system-requirements)
+
+3. [Installing JDK](#installing-jdk)
+
+    i. [Installing JDK on Windows and Mac OS X](#installing-jdk-on-windows-and-mac-os-x)
+    
+    ii. [Installing JDK on Linux](#installing-jdk-on-linux)
+    
+4. [Installing Android Studio](#installing-android-studio)
+
+    i. [Installing Android Studio on Windows](#installing-android-studio-on-windows)
+    
+    ii. [Installing Android Studio on Mac OS X](#installing-android-studio-on-mac-os-x)
+    
+    iii. [Installing Android Studio on Linux](#installing-android-studio-on-linux)
+
 ## Preliminaries for Intro to Android Lecture
 
 For attendees to be able to participate in the lecture, they must have the Java Development Kit (JDK) and the Android Studio Integrated Development Environment (IDE) which also includes the Android Software Develompent Kit (SDK).
@@ -70,11 +90,11 @@ Having saved the change, future terminal sessions will include the JDK in the $P
 
 Android Studio may be downloaded from [this link](http://developer.android.com/sdk/index.html). The download should be for the correct platform, but if not go [here](http://developer.android.com/sdk/index.html#Other) and select the appropriate package for your platform and operating system.
 
-#### Installation on Windows
+#### Installing Android Studio on Windows
 
 Run the executable you just downloaded. Click `Yes` if the User Account Control dialog appears.
 
-#### Installation on Mac OS X
+#### Installing Android Studio on Mac OS X
 
 (Taken directly from "Android Studio Development Essentials")
 
@@ -84,7 +104,7 @@ In the new window opened up, to install the package, simply drag the Android Stu
 
 To launch Android Studio, locate the executable in the Applications folder using a Finder window and double click on it.
 
-### Installation on Linux
+### Installing Android Studio on Linux
 
 (Taken directly from "Android Studio Development Essentials")
 
