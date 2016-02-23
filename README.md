@@ -6,6 +6,13 @@ You're completely free to pick and choose which workshops you'd like to attend a
 
 For now, the workshops are currently under construction. You can get a sneak peek if you'd like.
 
+| Workshop       | Description                                                           | Prerequisites | Authors  |
+|----------------|-----------------------------------------------------------------------|---------------|----------|
+| [Git and GitHub]((git-and-github)) | A beginner's guide to creating and collaborating with Git and GitHub. |               | @descrip |
+|                |                                                                       |               |          |
+|                |                                                                       |               |          |
+|                |                                                                       |               |          |
+
 ### [Working with Git and GitHub](git-and-github)
 
 ### [Making a Website with GitHub Pages](website-with-github-pages)
