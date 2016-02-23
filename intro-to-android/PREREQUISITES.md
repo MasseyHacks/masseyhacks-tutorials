@@ -1,13 +1,21 @@
 ## Table of Contents
 
 1. [Preliminaries for Intro to Android Lecture](#preliminaries-for-intro-to-android-lecture)
+
 2. [System Requirements](#system-requirements)
+
 3. [Installing JDK](#installing-jdk)
+
     i. [Installing JDK on Windows and Mac OS X](#installing-jdk-on-windows-and-mac-os-x)
+    
     ii. [Installing JDK on Linux](#installing-jdk-on-linux)
+    
 4. [Installing Android Studio](#installing-android-studio)
+
     i. [Installing Android Studio on Windows](#installing-android-studio-on-windows)
+    
     ii. [Installing Android Studio on Mac OS X](#installing-android-studio-on-mac-os-x)
+    
     iii. [Installing Android Studio on Linux](#installing-android-studio-on-linux)
 
 ## Preliminaries for Intro to Android Lecture
