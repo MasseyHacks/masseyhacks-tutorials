@@ -152,6 +152,38 @@ So our final `TextView` element should be:
 
 #### Interlude: Fonts in Android
 
+In Android, it is unfortunately kind of difficult to use any font you want in your apps. There are only a few built in fonts that you can use everywhere. For example, you *won't* be able to use `"Verdana"` as the value of a `fontFamily` attribute because Verdana isn't one of the builtin fonts.
+
+In fact, there just plain *isn't* a way of representing external fonts in pure Xml. You *can* use other fonts, but you have to have the `.ttf` file for the font placed in a folder somewhere in your resources folder, then you have to load that font in Java. It exists, but is too complicated for the purposes of this lecture.
+
+## How do I test my app?
+
+So we've spent some time developing this relatively simple app, but we haven't really gone into how we're supposed to *test* and *use* it? These are two incredibly important practices in development that require addressing.
+
+There are two main ways of testing your app:
+
+A.) Use an Android Virtual Device (AVD).
+
+B.) Load your app onto a physical device.
+
+### Using an AVD
+
+An AVD is an emulator of a physical android device; basically a program on your computer that accurately simulates what will happen when you load your app onto an actual device. What you do is you *create* an AVD that represents the device you want to test on, then you run your app using that AVD. Let's do an example.
+
+First, to create an AVD from Android Studio, go to `Tools -> Android -> AVD Manager`. This will open a new window that looks something like the following:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image14.png)
+
+Now you can either select a pre-existing device like the one we have there, or create a new device. We will create a new AVD. Clicking the button in the bottom left corner will bring up yet another window that looks like this:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image15.png)
+
+Here is where we can choose what device we want to base our AVD off of. Choose whatever device you desire, then press next. Navigating through the pages will reveal different settings you can change. Fill these in however you require, then click "Finish" and you're device will have been created. From there you can use it to test out your app by simply clicking the green triangle button in the AVD manager.
+
+### Using a Physical Device
+
+
+
 ### Other Important Things
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
