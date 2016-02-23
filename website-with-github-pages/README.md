@@ -5,7 +5,7 @@
 Yup.
 
 ## Step 0: Prerequisites
-1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github). The rest of these prerequisites is just a copy of the things you need for that workshop.
+1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github) by attending the workshop during the hackathon! The rest of these prerequisites is just a copy of the things you need for that workshop.
 2. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
 3. Get yourself a copy of git on your computer. You've got two choices:
 	- Regular Git: Requires knowledge of the command line. If you're comfortable with a terminal, we'd definitely recommend this one. If you've got a package manager, you're welcome to get git from there.
