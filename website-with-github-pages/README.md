@@ -6,6 +6,8 @@ For each GitHub account, you'll be able to host a website at `<username>.github.
 
 This workshop will focus on two things. First, it will teach you how to make a simple website out of HTML/CSS. Secondly, it will teach you how to host that website on GitHub. This workshop is not intended to be a through guide to both, and is targeted to people who have little to no experience at both.
 
+You'll finish with a simple portfolio website stating who you are and what you do. [Here's a peek at the finished product.](https://descrip.github.io/finish/index.html)
+
 ## Step 0: Prerequisites
 1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github) by attending the workshop during the hackathon! The rest of these prerequisites is just a copy of the things you need for that workshop.
 2. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
@@ -48,7 +50,7 @@ Go ahead and throw these lines within `index.html`.
 
 HTML stans for HyperText Markup Language. A markup language revolves around things called tags. The tags within thie file are `<html>`, `<head>`, and `<body>`. A tag sometimes begins with a beginning tag, for example `<html>`, and ends with a terminating tag that has a slash in front of the name of the tag, here `</html>`. Sometimes, however, the tag doesn't need to be terminated, for example, the `<!DOCTYPE html>` tag.
 
-Markup languages use tags in order to identify words for some purpose. Here are the purposes of the tags that are introduced in our `index.html`:
+Markup languages use tags in order to identify words for some purpose. All of the text between `<tag>` and `</tag>` are marked for some specific purpose. Here are the purposes of the tags that are introduced in our `index.html`:
  - `<html>`: The root tag. A web browser will search for an `<html>` tag, since all other tags will be inside it.
  - `<head>`: Where metadata, information on the HTML document, is placed, for example, the title of the HTML document. `<head>` is usually the first tag within `<html>`.
  - `<body>`: The main content area within an HTML document. It should start immediately after the `</head>` tag and end right before the `</html>` tag. Things shown to the user are usually within `<body>`.
@@ -56,7 +58,7 @@ Markup languages use tags in order to identify words for some purpose. Here are 
 
 For now, don't worry with the specifics. Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
 
-```
+```html
     <body>
     	Hello World!
     </body>
@@ -78,3 +80,17 @@ This should be the final HTML document:
 Commit and push the repository to GitHub. Now, visit `<username>.github.io`.
 
 <p align="center"><img src="resources/pages-hello-world.png"/></p>
+
+Congratulations! Your website is up and running on GitHub pages, and that `Hello World!` available for everyone in the world to see. If you don't want to wait for `github.io` to process your new website, you can quickly open up `index.html` with your web browser and it will show you exactly the same thing.
+
+## Step 3: Fleshing it Out
+
+Though it might be your first website, right now it's way too ugly to be presentable. Let's start adding some more things!
+
+### Adding an Image
+
+Got an image of yourself? Create a folder named `img` within the website directory and throw the image within there. I called my image `avatar.png`. That's right, put stuff next to `index.html`:
+
+<p align="center"><img src="resources/pages-making-img.gif"/></p>
+
+Now, over in `index.html`, add an `<img>` tag into the `<body>` tag.
