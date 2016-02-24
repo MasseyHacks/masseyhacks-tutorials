@@ -7,6 +7,7 @@
 - Estimate time for remaining sections.
 - Spell-check (DIRELY NEEDED).
 - Add table of contents.
+- Add a list of topics covered w/ priorities.
 - Peruse w/ Dylan to find potentially poor explanations and other problems.
 - Make Powerpoint or some sort of visual presentation to go along.
 - Rehearse.
