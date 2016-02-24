@@ -138,14 +138,31 @@ Now go back to the official GitHub repo page and refresh. Look at the commit his
 
 It's too bad real life isn't this easy to revert.
 
-### This is actually a pretty bad way to do it
+### This is not the only way
 
-If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git. If you have some time, I'd definitely recommend learning more into it. Just Google.
+Actually, in my opinion, it's a pretty bad way to do it. If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git. If you have some time, I'd definitely recommend learning more into it. Just Google.
 
 ## Section 4: Collaboration!
 
-The whole point of git and GitHub is being able to collaborate on a project with some teammates. Now you know how to work the two alone, it's time to learn how to make friends. There are two ways to do this:
+The whole point of git and GitHub is being able to collaborate on a project with some teammates. Now you know how to work the two alone, it's time to learn how to work with friends -- or, more specifically, collaborators.
 
-1. **Organizations:** As the name suggests, organizations are entities that you can create on GitHub for groups focused on multiple projects. If you're a giant company and you'd like to organise your employees
+### Adding a Collaborator
 
-###
+On your GitHub repo page, head over to `Settings`. You might have to type in your password at this point. Afterwards, on the left hand panel, click `Collaborators`. You'll end up at a page like this:
+
+<p align="center"><img src="resources/github-collaborator-screen.png" /></p>
+
+This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it.
+
+You can add people as collaborators and work on the same repo from there, but that's horribly inefficient. What if someone's work overwrites someone else's changes? What if someone pushes a change that breaks the entire project, but there's so many things between their commit and the last commit that, if you were to revert, it would take a lot of work to bring back?
+
+You can all collaborate on one repo, but it's definitely not a good idea. If everyone was just going to work on one repo, a program like git wouldn't be needed. There is another way.
+
+### Forking
+
+Instead of everyone working on the same repo, the most common strategy is to work on forks of that repo. A fork is a clone of the repo that is specifically meant for you. You can make whatever changes you'd like to your fork of the repo, and, when you'd like, the changes that you make to your fork can be pushed to the official repo.
+
+Let's not get into too many specifics about why forking is better. For now, lets learn how to fork a repo first. Head to someone else's `hello-world` repo and press the fork button on the top right:
+
+<p align="center"><img src="resources/fork_button.jpg" /></p>
+
