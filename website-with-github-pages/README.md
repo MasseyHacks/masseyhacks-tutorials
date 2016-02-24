@@ -2,9 +2,11 @@
 
 ## Websites on GitHub?!
 
-For each GitHub account, you'll be able to host a website at `<username>.github.io` for free, as long as you're willing to share the code within that website as a GitHub repo (or, if you're not comfortable with that, buy a private repo for your website). Each organisation and project can also get a place on `github.io`. This service is called GitHub Pages.
+Yup. For each GitHub account, you'll be able to host a website at `<username>.github.io` for free, as long as you're willing to share the code within that website as a GitHub repo (or, if you're not comfortable with that, buy a private repo for your website). Each organisation and project can also get a place on `github.io`. This service is called GitHub Pages.
 
 This workshop will focus on two things. First, it will teach you how to make a simple website out of HTML/CSS. Secondly, it will teach you how to host that website on GitHub. This workshop is not intended to be a through guide to both, and is targeted to people who have little to no experience at both.
+
+You'll finish with a simple portfolio website stating who you are and what you do. [Here's a peek at the finished product.](https://descrip.github.io/finish/index.html)
 
 ## Step 0: Prerequisites
 1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github) by attending the workshop during the hackathon! The rest of these prerequisites is just a copy of the things you need for that workshop.
@@ -41,6 +43,7 @@ Within the directory that you set aside for your repo, create a file called `ind
     </head>
     <body>
     </body>
+    <!-- this is a comment -->
 </html>
 ```
 
@@ -48,21 +51,23 @@ Go ahead and throw these lines within `index.html`.
 
 HTML stans for HyperText Markup Language. A markup language revolves around things called tags. The tags within thie file are `<html>`, `<head>`, and `<body>`. A tag sometimes begins with a beginning tag, for example `<html>`, and ends with a terminating tag that has a slash in front of the name of the tag, here `</html>`. Sometimes, however, the tag doesn't need to be terminated, for example, the `<!DOCTYPE html>` tag.
 
-Markup languages use tags in order to identify words for some purpose. Here are the purposes of the tags that are introduced in our `index.html`:
+Markup languages use tags in order to identify words for some purpose. All of the text between `<tag>` and `</tag>` are marked for some specific purpose. Here are the purposes of the tags that are introduced in our `index.html`:
  - `<html>`: The root tag. A web browser will search for an `<html>` tag, since all other tags will be inside it.
  - `<head>`: Where metadata, information on the HTML document, is placed, for example, the title of the HTML document. `<head>` is usually the first tag within `<html>`.
  - `<body>`: The main content area within an HTML document. It should start immediately after the `</head>` tag and end right before the `</html>` tag. Things shown to the user are usually within `<body>`.
  - `<!DOCTYPE html>`: Just a header to tell everyone that this is an HTML document.
 
-For now, don't worry with the specifics. Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
+One last thing: comments in HTML start with `<!--` and end with `-->`. Any text captured within comment tags will not be interpreted and rendered into the web page.
 
-```
+Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
+
+```html
     <body>
     	Hello World!
     </body>
 ```
 
-This should be the final HTML document:
+**Your final HTML document should look like this:**
 
 ```html
 <!DOCTYPE html>
@@ -78,3 +83,78 @@ This should be the final HTML document:
 Commit and push the repository to GitHub. Now, visit `<username>.github.io`.
 
 <p align="center"><img src="resources/pages-hello-world.png"/></p>
+
+Congratulations! Your website is up and running on GitHub pages, and that `Hello World!` available for everyone in the world to see. If you don't want to wait for `github.io` to process your new website, you can quickly open up `index.html` with your web browser and it will show you exactly the same thing.
+
+## Step 3: Fleshing it Out
+
+Though it might be your first website, right now it's way too ugly to be presentable. Let's start adding some more things!
+
+### Images with the `<img>` tag
+
+Got an image of yourself? Create a folder named `img` within the website directory and throw the image within there. I called my image `avatar.png`. That's right, put stuff next to `index.html`:
+
+<p align="center"><img src="resources/pages-making-img.gif"/></p>
+
+Now, over in `index.html`, add an `<img>` tag into the `<body>` tag.
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	Hello World!
+    </body>
+```
+
+An `<img>` tag, as the name suggests, is a markup tag to identify an image. However, instead of having text within `img`, the source of the image is given as an attribute in the tag. `src` is the name of that attribute. `img/avatar.jpg` is the link to the image, relative to `index.html`. 
+
+Quick note: the `src` attribute can also take a URL, for example, an imgur link. It can also take many image formats as an argument, from .jpg to animated .gif. If you have some time, set [this online .gif](https://i.imgur.com/iu2bXuh.gif) as your `src` for your `img` tag to see it in action. But I digress. 
+
+**Your final HTML document should look like this:**
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	Hello World!
+    </body>
+</html>
+```
+
+Do the usual: commit and push. Take a look at the website now. It might look like this...
+
+<p align="center"><img src="resources/pages-img-1.png"/></p>
+
+...Or, the web browser might have some issues with this HTML document and spit out this:
+
+<p align="center"><img src="resources/pages-img-2.png"/></p>
+
+Something's wrong here, huh? Here's how to fix it:
+
+### Paragraphs with the `<p>` tag
+
+Let's take a look at our current body:
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	Hello World!
+    </body>
+```
+
+The `Hello World!` is the real problem here. Text shouldn't be put directly into `<body>`. Instead, there is a special tag for them: `<p>`, or paragraph. Everything within `<p>` tags will be consigned to a single paragraph, and there will be a spacing between paragraphs.
+
+To illustrate this, let's add a couple of `<p>` tags:
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	<p>Hello World!</p>
+    </body>
+```
+
+TODO: Add more to `<p>`
+
+### 
