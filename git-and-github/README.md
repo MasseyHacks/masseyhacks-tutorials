@@ -168,8 +168,6 @@ Let's not get into too many specifics about why forking is better. For now, lets
 
 You'll be redirected to a new repo on your profile, one that is a clone of the repo that you just forked. Assuming that you already have a `hello-world` repo, this one is probably called `hello-world-1`. 
 
-<p align="center"><img src="resources/github-fork.gif" /></p>
-
 ### Changing your Fork
 
-Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. 
+Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Add some file or something to it, and commit and push the change to your fork. 
