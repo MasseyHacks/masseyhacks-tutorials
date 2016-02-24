@@ -221,13 +221,49 @@ In this window, scroll through the files in the `Project` tab until you locate t
 
 We want the user to be able to input information about their app idea, so how are they going to do this? They'll use *text fields*. Text fields are special widgets that allow the user to input text. Then later, in Java, you can retrieve the text they added and use it to do other things.
 
-We're going to add three different text fields to our main activity. The different available text field widgets can be found by scrolling down in the Palette (below the general "Widgets" section). The first text field we'll add is one for the app's name. Click and drag to place it into the activity underneath the app logo.
+We're going to add three different text fields to our main activity. The different available text field widgets can be found by scrolling down in the Palette (below the general "Widgets" section). The first text field we'll add is one for the app's name. Click and drag to place a `Plain Text` text field into the activity underneath the app logo. In the `Properties` panel, change the `id` of the newly added widget to something meaningful like `appIdeaName`.
 
-### `SeekBar` / `RatingBar`
+Now we want to give some indication of the purpose of the text field; we can't just have a bunch of fields and expect the user to know what they're for. To help specify purpose, we set the `hint` property of the text field. Scroll until you find the hint property in the Properties panel, and then change it to something like `App Name`. Now your app should look something like this (depending on which logo you chose):
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image19.png)
+
+We're also going to make some small adjustments to this widget. First, we're going to set it's `singleLine` property to `true` (by checking the checkbox next to it in the Properties panel). This will ensure that the name of an app never takes up more than one line (though it can stretch beyond the length of the text field). We're also going to go to the `inputType` property and mark `textCapWords`:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image22.png)
+
+This ensures that every input word of text will automatically be capitalized.
+
+The second text field we'll add under that is one for the project's "Due Date". This will be a `Date` text field. Using the same procedure as for the App Name text field, add a Due Date text field underneath it. What differentiates the `Date` text field from an ordinary text field is that when you go to type something into the `Date` text field, only the number keys and the "/" character will be available to place, whereas the entire keyboard can be used for an ordinary `Plain Text` text field.
+
+Finally, we'll add a "Description" section. We want to give lots of room for description, so we'll use a `Multiline Text` text field this time. We're also going to go into it's `inputType` property and check `textCapSentences` to indicate that the first word of sentences are to be automatically capitalized.
+
+If you did everything correctly, you should end up with something like the following:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image20.png)
+
+### `SeekBar`
+
+We want to allow one more piece of information to be input; the "Priority" of the app (i.e. how important you think it is). We'll represent the priority of the app idea using a `SeekBar`, which allows the user to drag a "thumb" across a line to define an amount of something. Drag and drop the `SeekBar` widget into the designer window under our "Description" field. Here, the thumb is the circle. As with every other widget, give it a useful `id` like `priorityBar`.
+
+There's two properties we want to change; `max` and `progress`. `Max` determines the value the bar represents when the thumb is all the way to the right, and `progress` represents the initial/default value of the bar. We'll set it to 5 for now.
+
+*Note:* If you're wondering why these names are kind of weird, it's because `SeekBar` is a subclass of `ProgressBar`.
 
 ### `Button`
 
+Arguably one of the most important widgets you'll encounter is the `Button` widget, which represents any clickable button. In our app, pressing the button will cause our data to get added to the list of app ideas. We'll worry about actually making it work in a bit, for now let's just get the widgets *there*.
+
+Drag and drop the `Button` widget into activity underneath the `SeekBar`. By default it's text says `"New Button"`, but we want it to say something like `"Add App Idea!"`. Double click it to change this field (you can also create a resource for the string).
+
+We want to prevent the user from being able to submit an "empty" app. In other words, by default we want the button to be *disabled*, and when the user fills in information about their app the button will *enable*. To set the default state of the button to be disabled, make sure it's `enabled` property is `false` (i.e. the checkbox is unmarked). Again, we'll worry about actually making these things *work* later on.
+
 ### Extra Details and Design
+
+Experiment with some of the properties of the widgets you just placed! There's lots of things you can do to make it pretty and unique, it's just a matter of messing around and learning what the different properties do. Here's an example of something we were able to create:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image23.png)
+
+## How do I make it functional?
 
 ## Other Important Things
 
