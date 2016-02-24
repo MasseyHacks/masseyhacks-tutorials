@@ -2,15 +2,17 @@
 
 1. [Preliminaries for Intro to Android Lecture](#preliminaries-for-intro-to-android-lecture)
 
-2. [System Requirements](#system-requirements)
+2. [Required Skills](#required-skills)
 
-3. [Installing JDK](#installing-jdk)
+3. [System Requirements](#system-requirements)
+
+4. [Installing JDK](#installing-jdk)
 
     i. [Installing JDK on Windows and Mac OS X](#installing-jdk-on-windows-and-mac-os-x)
     
     ii. [Installing JDK on Linux](#installing-jdk-on-linux)
     
-4. [Installing Android Studio](#installing-android-studio)
+5. [Installing Android Studio](#installing-android-studio)
 
     i. [Installing Android Studio on Windows](#installing-android-studio-on-windows)
     
