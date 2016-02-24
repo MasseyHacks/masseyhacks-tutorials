@@ -180,8 +180,7 @@ Instructions for configuring your device can be found [here](#Enabling ADB on An
 
 # A More Useful App
 
-Now that we've covered the basics of the Android API
-
+Now that we've covered the basics of the Android API and Android Studio, let's put our skills to the test by designing something a little more useful.
 
 ## Other Important Things
 
