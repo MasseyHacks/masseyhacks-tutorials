@@ -211,7 +211,13 @@ Now are images are ready for use in an `ImageView`.
 
 ### `ImageView` Widget
 
-Just like how a `TextView` object represents text, an `ImageView` represents an *image*. To use it
+Just like how a `TextView` object represents text, an `ImageView` represents an *image*. As usual, to use it drag it from the widgets panel into the designer window and place it centered at the top of the layout. No image will show up yet though, it will simply appear as a blue square (while it's selected). To set an image, double click the square and click the ellipses next to the `src` field. This will bring up a dialog that looks as follows:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image18.png)
+
+In this window, scroll through the files in the `Project` tab until you locate the app logo (in our case we named the file `app_logo_alt`). (*Tip*: The image will show up in the `Drawable` folder, so you can close the `Color` folder to make it easier to find what you need.) Click "OK" and now the logo is in your app.
+
+### Text Fields
 
 ## Other Important Things
 
