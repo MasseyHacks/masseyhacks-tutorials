@@ -180,7 +180,38 @@ Instructions for configuring your device can be found [here](#Enabling ADB on An
 
 # A More Useful App
 
-Now that we've covered the basics of the Android API and Android Studio, let's put our skills to the test by designing something a little more useful.
+Now that we've covered the basics of the Android API and Android Studio, let's put our skills to the test by designing something a little more useful. As we further our knowledge of Android, we're gonna inevitably come up with things we want to make with it but don't have the skills necessary to accomplish them. Thus, for our second app, we're going to create an "App Idea Storage", that'll allow us to quickly store any ideas we come up with to our phones and recall them later.
+
+## Getting Started
+
+To get started, we're gonna have to create another project. Using the same procedure as before, create a new project called something like `AppIdeaStorage`. Make sure to remove the "hello world" text view that's there by default, so we have a completely blank canvas to work from.
+
+When we first start our app, we want to begin on a page that'll let us quickly add an app idea by filling in a few forms and clicking a button. This'll give us an opportunity to experiment with a whole lot more widgets and features of the Android API.
+
+### `LinearLayout`
+
+For this app's main activity, we're going to use a `LinearLayout`. In a `LinearLayout`, objects are placed adjacent to each other either horizontally or vertically depending on the layout's `orientation property`. To change the layout to a `LinearLayout`, go to the "Text" tab and change `RelativeLayout` to `LinearLayout`, then add the attribute `android:orientation="vertical"` (this can also be done by going to the properties panel in the design window and editing the `orientation` property there). Your initial content Xml file should look like this:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image17.png)
+
+
+### Getting Images into Android Studio
+
+For your convenience, we've designed two basic logos that can be used for the app:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/app_logo.png)
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/app_logo_alt.png)
+
+The easiest way to add images to an Android Studio project is to locate the project's resources folder (`app/src/main/res` usually), and from there drag and drop your image into one of either `drawable-hdpi`, `drawable-mdpi`, `drawable-xhdpi`, and `drawable-xxhdpi`. These folders represent images with different `dpi`'s ("dosts per inch"), which directly corresponds to the quality of the image. In this case, since our app logo images are so large, we should add them to the `xxhdpi` folder.
+
+You should now see them pop up in the Project explorer panel on the left in Android Studio. You'll notice that, if your view mode is set to `Android`, the images don't actually appear in their correct folder (`drawable-xxhdpi`) but rather just show up in the `drawable` folder with `(xxhdpi)` next to it's name.
+
+Now are images are ready for use in an `ImageView`.
+
+### `ImageView` Widget
+
+Just like how a `TextView` object represents text, an `ImageView` represents an *image*. To use it
 
 ## Other Important Things
 
