@@ -358,6 +358,18 @@ though this is more wordy.
 
 There are a variety of different listeners you can add to different objects that respond to different events, such as when a button is pressed or when a slider is moved.
 
+#### Adding functionality when the button is pressed
+
+We're also going to add a listener to our button widget so that we can do things when it's clicked. The listener we want to add should respond to when the button is clicked, thus we need to use `addAppButton.setOnClickListener`. We're going to set it to a `new View.OnClickListener()` object:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image29.png)
+
+The line in our `onClick` method makes a message display at the bottom of the screen saying "Your app has been added!".
+
+## Adding another Activity
+
+
+
 ## Other Important Things
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
