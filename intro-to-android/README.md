@@ -340,6 +340,14 @@ Now, in the `onCreate` method, we need to add the code to retrieve the widgets a
 
 ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image27.png)
 
+#### Enabling the button when sufficient input is provided
+
+We want the button to become enabled when the user has input the minimum required information. The only piece of required information is the name of the app idea. Thus we need some code that checks when text has been added to the `appIdeaName` widget, and then enables our button. How do we go about doing this? We need to add a `Listener` to our `appIdeaName` widget:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image28.png)
+
+A *listener* is an object that waits for something to happen, and then calls a certain method. In this case, the listener is our `TextWatcher` object and the method that gets called is `onTextChanged`. In this method, we call `addAppButton.setEnabled`. This method allows us to set whether or not the button is enabled (by supplying a boolean argument). For our case, we want the button to become enabled when there is any text at all in the `appIdeaName` text field. To check this, we simply check if `s.length() > 0`.
+
 ## Other Important Things
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
