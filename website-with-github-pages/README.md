@@ -135,3 +135,22 @@ Something's wrong here, huh? Here's how to fix it:
 
 ### Paragraphs with the `<p>` tag
 
+Let's take a look at our current body:
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	Hello World!
+    </body>
+```
+
+The `Hello World!` is the real problem here. Text shouldn't be put directly into `<body>`. Instead, there is a special tag for them: `<p>`, or paragraph. Everything within `<p>` tags will be consigned to a single paragraph, and there will be a spacing between paragraphs.
+
+To illustrate this, let's add a couple of `<p>` tags:
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	<p>Hello World!</p>
+    </body>
+```
