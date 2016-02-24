@@ -64,7 +64,7 @@ For now, don't worry with the specifics. Let's get something viewable. Throw in 
     </body>
 ```
 
-This should be the final HTML document:
+**Your final HTML document should look like this:**
 
 ```html
 <!DOCTYPE html>
@@ -94,3 +94,28 @@ Got an image of yourself? Create a folder named `img` within the website directo
 <p align="center"><img src="resources/pages-making-img.gif"/></p>
 
 Now, over in `index.html`, add an `<img>` tag into the `<body>` tag.
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	Hello World!
+    </body>
+```
+
+An `<img>` tag, as the name suggests, is a markup tag to identify an image. However, instead of having text within `img`, the source of the image is given as a STOP
+
+**Your final HTML document should look like this:**
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	Hello World!
+    </body>
+</html>
+```
+
+Do the usual: commit and push. Take a look at
