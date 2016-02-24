@@ -100,7 +100,7 @@ Now, over in `index.html`, add an `<img>` tag into the `<body>` tag.
 
 ```html
     <body>
-    	<img src="img/avatar.jpg"></img>
+    	<img src="img/avatar.jpg"></img>	<!--img tag added to this line-->
     	Hello World!
     </body>
 ```
@@ -146,15 +146,57 @@ Let's take a look at our current body:
 
 The `Hello World!` is the real problem here. Text shouldn't be put directly into `<body>`. Instead, there is a special tag for them: `<p>`, or paragraph. Everything within `<p>` tags will be consigned to a single paragraph, and there will be a spacing between paragraphs.
 
-To illustrate this, let's add a couple of `<p>` tags:
+To illustrate this, let's add a couple of `<p>` tags. Try out the following `<body>`:
 
 ```html
     <body>
     	<img src="img/avatar.jpg"></img>
-    	<p>Hello World!</p>
+    	<p>Hello World!</p>	<!--surround text with p tags-->
     </body>
 ```
 
+The HTML document will now render like this:
+
+<p align="center"><img src="resources/pages-with-p.png"/></p>
+
+
 TODO: Add more to `<p>`
 
-### 
+### Headers with the `<h1>` tag
+
+
+
+
+
+[//]: # (DO NOT TOUCH the below table. Jeffrey)
+
+<table>
+	<tr>
+		<td>
+			<div class="highlight highlight-text-html-basic">
+				<pre>
+&lt;<span class="pl-ent" >body</span>&gt;
+    &lt;<span class="pl-ent" >img</span> src="img/avatar.jpg"&gt;&lt;/img&gt;
+    &lt;<span class="pl-ent" >p</span>&gt;Hello World!&lt;/<span class="pl-ent" >p</span>&gt;
+&lt;/<span class="pl-ent" >body</span>&gt;
+				</pre>
+			</div>
+		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="highlight highlight-text-html-basic">
+				<pre>
+&lt;<span class="pl-ent" >body</span>&gt;
+    &lt;<span class="pl-ent" >img</span> src="img/avatar.jpg"&gt;&lt;/img&gt;
+    &lt;<span class="pl-ent" >p</span>&gt;Hello&lt;/<span class="pl-ent" >p</span>&gt; &lt;<span class="pl-ent" >p</span>&gt;World!&lt;/<span class="pl-ent" >p</span>&gt;
+&lt;/<span class="pl-ent" >body</span>&gt;
+				</pre>
+			</div>
+		</td>
+		<td>
+		</td>
+	</tr>
+</table>
