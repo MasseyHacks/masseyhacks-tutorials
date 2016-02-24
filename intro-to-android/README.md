@@ -166,20 +166,6 @@ A.) Use an Android Virtual Device (AVD).
 
 B.) Load your app onto a physical device.
 
-### Using an AVD
-
-An AVD is an emulator of a physical android device; basically a program on your computer that accurately simulates what will happen when you load your app onto an actual device. What you do is you *create* an AVD that represents the device you want to test on, then you run your app using that AVD. Let's do an example.
-
-First, to create an AVD from Android Studio, go to `Tools -> Android -> AVD Manager`. This will open a new window that looks something like the following:
-
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image14.png)
-
-Now you can either select a pre-existing device like the one we have there, or create a new device. We will create a new AVD. Clicking the button in the bottom left corner will bring up yet another window that looks like this:
-
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image15.png)
-
-Here is where we can choose what device we want to base our AVD off of. Choose whatever device you desire, then press next. Navigating through the pages will reveal different settings you can change. Fill these in however you require, then click "Finish" and you're device will have been created. From there you can use it to test out your app by simply clicking the green triangle button in the AVD manager.
-
 ### Using a Physical Device
 
 Though sometimes it may be more practical to use an AVD, there is nothing quite like the feel of a physical device. Android Studio allows you to test our app on your device very easily. If you simply hook up your device to your computer via USB connection, then hit run, you will be brought to a window that looks like this:
@@ -192,8 +178,9 @@ In this dialog, simply choose the device you have connected (in this case, the o
 
 Instructions for configuring your device can be found [here](#Enabling ADB on Android 5.0 Based Devices).
 
-## More Awesome Things for our App
+# A More Useful App
 
+Now that we've covered the basics of the Android API
 
 
 ## Other Important Things
