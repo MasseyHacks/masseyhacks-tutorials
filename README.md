@@ -1,5 +1,7 @@
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/logo-small.jpe)
-# MasseyHacks Tutorials
+<p align="center">
+  <br><img src="mh-logo-small.png"/></br>
+  <h1 align="center">MasseyHacks Tutorials</h1>
+</p>
 
 Welcome to our tutorials and workshops library! During MasseyHacks, we'll be hosting four workshops, each an hour long. You'll get some hands on experience working with programs that are pretty commonly used at hackathons, and you'll come out of each one with a finished end product!
 
