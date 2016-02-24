@@ -2,7 +2,7 @@
 
 ## Websites on GitHub?!
 
-For each GitHub account, you'll be able to host a website at `<username>.github.io` for free, as long as you're willing to share the code within that website as a GitHub repo (or, if you're not comfortable with that, buy a private repo for your website). Each organisation and project can also get a place on `github.io`. This service is called GitHub Pages.
+Yup. For each GitHub account, you'll be able to host a website at `<username>.github.io` for free, as long as you're willing to share the code within that website as a GitHub repo (or, if you're not comfortable with that, buy a private repo for your website). Each organisation and project can also get a place on `github.io`. This service is called GitHub Pages.
 
 This workshop will focus on two things. First, it will teach you how to make a simple website out of HTML/CSS. Secondly, it will teach you how to host that website on GitHub. This workshop is not intended to be a through guide to both, and is targeted to people who have little to no experience at both.
 
@@ -43,6 +43,7 @@ Within the directory that you set aside for your repo, create a file called `ind
     </head>
     <body>
     </body>
+    <!-- this is a comment -->
 </html>
 ```
 
@@ -56,7 +57,9 @@ Markup languages use tags in order to identify words for some purpose. All of th
  - `<body>`: The main content area within an HTML document. It should start immediately after the `</head>` tag and end right before the `</html>` tag. Things shown to the user are usually within `<body>`.
  - `<!DOCTYPE html>`: Just a header to tell everyone that this is an HTML document.
 
-For now, don't worry with the specifics. Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
+One last thing: comments in HTML start with `<!--` and end with `-->`. Any text captured within comment tags will not be interpreted and rendered into the web page.
+
+Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
 
 ```html
     <body>
@@ -87,7 +90,7 @@ Congratulations! Your website is up and running on GitHub pages, and that `Hello
 
 Though it might be your first website, right now it's way too ugly to be presentable. Let's start adding some more things!
 
-### Adding an Image
+### Images with the `<img>` tag
 
 Got an image of yourself? Create a folder named `img` within the website directory and throw the image within there. I called my image `avatar.png`. That's right, put stuff next to `index.html`:
 
@@ -102,7 +105,9 @@ Now, over in `index.html`, add an `<img>` tag into the `<body>` tag.
     </body>
 ```
 
-An `<img>` tag, as the name suggests, is a markup tag to identify an image. However, instead of having text within `img`, the source of the image is given as a STOP
+An `<img>` tag, as the name suggests, is a markup tag to identify an image. However, instead of having text within `img`, the source of the image is given as an attribute in the tag. `src` is the name of that attribute. `img/avatar.jpg` is the link to the image, relative to `index.html`. 
+
+Quick note: the `src` attribute can also take a URL, for example, an imgur link. It can also take many image formats as an argument, from .jpg to animated .gif. If you have some time, set [this online .gif](https://i.imgur.com/iu2bXuh.gif) as your `src` for your `img` tag to see it in action. But I digress. 
 
 **Your final HTML document should look like this:**
 
@@ -118,4 +123,15 @@ An `<img>` tag, as the name suggests, is a markup tag to identify an image. Howe
 </html>
 ```
 
-Do the usual: commit and push. Take a look at
+Do the usual: commit and push. Take a look at the website now. It might look like this...
+
+<p align="center"><img src="resources/pages-img-1.png"/></p>
+
+...Or, the web browser might have some issues with this HTML document and spit out this:
+
+<p align="center"><img src="resources/pages-img-2.png"/></p>
+
+Something's wrong here, huh? Here's how to fix it:
+
+### Paragraphs with the `<p>` tag
+
