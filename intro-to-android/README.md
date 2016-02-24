@@ -166,20 +166,6 @@ A.) Use an Android Virtual Device (AVD).
 
 B.) Load your app onto a physical device.
 
-### Using an AVD
-
-An AVD is an emulator of a physical android device; basically a program on your computer that accurately simulates what will happen when you load your app onto an actual device. What you do is you *create* an AVD that represents the device you want to test on, then you run your app using that AVD. Let's do an example.
-
-First, to create an AVD from Android Studio, go to `Tools -> Android -> AVD Manager`. This will open a new window that looks something like the following:
-
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image14.png)
-
-Now you can either select a pre-existing device like the one we have there, or create a new device. We will create a new AVD. Clicking the button in the bottom left corner will bring up yet another window that looks like this:
-
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image15.png)
-
-Here is where we can choose what device we want to base our AVD off of. Choose whatever device you desire, then press next. Navigating through the pages will reveal different settings you can change. Fill these in however you require, then click "Finish" and you're device will have been created. From there you can use it to test out your app by simply clicking the green triangle button in the AVD manager.
-
 ### Using a Physical Device
 
 Though sometimes it may be more practical to use an AVD, there is nothing quite like the feel of a physical device. Android Studio allows you to test our app on your device very easily. If you simply hook up your device to your computer via USB connection, then hit run, you will be brought to a window that looks like this:
@@ -192,9 +178,185 @@ In this dialog, simply choose the device you have connected (in this case, the o
 
 Instructions for configuring your device can be found [here](#Enabling ADB on Android 5.0 Based Devices).
 
-## More Awesome Things for our App
+# A More Useful App
+
+Now that we've covered the basics of the Android API and Android Studio, let's put our skills to the test by designing something a little more useful. As we further our knowledge of Android, we're gonna inevitably come up with things we want to make with it but don't have the skills necessary to accomplish them. Thus, for our second app, we're going to create an "App Idea Storage", that'll allow us to quickly store any ideas we come up with to our phones and recall them later.
+
+## Getting Started
+
+To get started, we're gonna have to create another project. Using the same procedure as before, create a new project called something like `AppIdeaStorage`. Make sure to remove the "hello world" text view that's there by default, so we have a completely blank canvas to work from.
+
+When we first start our app, we want to begin on a page that'll let us quickly add an app idea by filling in a few forms and clicking a button. This'll give us an opportunity to experiment with a whole lot more widgets and features of the Android API.
+
+### `LinearLayout`
+
+For this app's main activity, we're going to use a `LinearLayout`. In a `LinearLayout`, objects are placed adjacent to each other either horizontally or vertically depending on the layout's `orientation property`. To change the layout to a `LinearLayout`, go to the "Text" tab and change `RelativeLayout` to `LinearLayout`, then add the attribute `android:orientation="vertical"` (this can also be done by going to the properties panel in the design window and editing the `orientation` property there). Your initial content Xml file should look like this:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image17.png)
 
 
+### Getting Images into Android Studio
+
+For your convenience, we've designed two basic logos that can be used for the app:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/app_logo.png)
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/app_logo_alt.png)
+
+The easiest way to add images to an Android Studio project is to locate the project's resources folder (`app/src/main/res` usually), and from there drag and drop your image into one of either `drawable-hdpi`, `drawable-mdpi`, `drawable-xhdpi`, and `drawable-xxhdpi`. These folders represent images with different `dpi`'s ("dosts per inch"), which directly corresponds to the quality of the image. In this case, since our app logo images are so large, we should add them to the `xxhdpi` folder.
+
+You should now see them pop up in the Project explorer panel on the left in Android Studio. You'll notice that, if your view mode is set to `Android`, the images don't actually appear in their correct folder (`drawable-xxhdpi`) but rather just show up in the `drawable` folder with `(xxhdpi)` next to it's name.
+
+Now are images are ready for use in an `ImageView`.
+
+### `ImageView` Widget
+
+Just like how a `TextView` object represents text, an `ImageView` represents an *image*. As usual, to use it drag it from the widgets panel into the designer window and place it centered at the top of the layout. No image will show up yet though, it will simply appear as a blue square (while it's selected). To set an image, double click the square and click the ellipses next to the `src` field. This will bring up a dialog that looks as follows:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image18.png)
+
+In this window, scroll through the files in the `Project` tab until you locate the app logo (in our case we named the file `app_logo_alt`). (*Tip*: The image will show up in the `Drawable` folder, so you can close the `Color` folder to make it easier to find what you need.) Click "OK" and now the logo is in your app.
+
+### Text Fields
+
+We want the user to be able to input information about their app idea, so how are they going to do this? They'll use *text fields*. Text fields are special widgets that allow the user to input text. Then later, in Java, you can retrieve the text they added and use it to do other things.
+
+We're going to add three different text fields to our main activity. The different available text field widgets can be found by scrolling down in the Palette (below the general "Widgets" section). The first text field we'll add is one for the app's name. Click and drag to place a `Plain Text` text field into the activity underneath the app logo. In the `Properties` panel, change the `id` of the newly added widget to something meaningful like `appIdeaName`.
+
+Now we want to give some indication of the purpose of the text field; we can't just have a bunch of fields and expect the user to know what they're for. To help specify purpose, we set the `hint` property of the text field. Scroll until you find the hint property in the Properties panel, and then change it to something like `App Name`. Now your app should look something like this (depending on which logo you chose):
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image19.png)
+
+We're also going to make some small adjustments to this widget. First, we're going to set it's `singleLine` property to `true` (by checking the checkbox next to it in the Properties panel). This will ensure that the name of an app never takes up more than one line (though it can stretch beyond the length of the text field). We're also going to go to the `inputType` property and mark `textCapWords`:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image22.png)
+
+This ensures that every input word of text will automatically be capitalized.
+
+The second text field we'll add under that is one for the project's "Due Date". This will be a `Date` text field. Using the same procedure as for the App Name text field, add a Due Date text field underneath it. What differentiates the `Date` text field from an ordinary text field is that when you go to type something into the `Date` text field, only the number keys and the "/" character will be available to place, whereas the entire keyboard can be used for an ordinary `Plain Text` text field.
+
+Finally, we'll add a "Description" section. We want to give lots of room for description, so we'll use a `Multiline Text` text field this time. We're also going to go into it's `inputType` property and check `textCapSentences` to indicate that the first word of sentences are to be automatically capitalized.
+
+If you did everything correctly, you should end up with something like the following:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image20.png)
+
+### `SeekBar`
+
+We want to allow one more piece of information to be input; the "Priority" of the app (i.e. how important you think it is). We'll represent the priority of the app idea using a `SeekBar`, which allows the user to drag a "thumb" across a line to define an amount of something. Drag and drop the `SeekBar` widget into the designer window under our "Description" field. Here, the thumb is the circle. As with every other widget, give it a useful `id` like `priorityBar`.
+
+There's two properties we want to change; `max` and `progress`. `Max` determines the value the bar represents when the thumb is all the way to the right, and `progress` represents the initial/default value of the bar. We'll set it to 5 for now.
+
+*Note:* If you're wondering why these names are kind of weird, it's because `SeekBar` is a subclass of `ProgressBar`.
+
+### `Button`
+
+Arguably one of the most important widgets you'll encounter is the `Button` widget, which represents any clickable button. In our app, pressing the button will cause our data to get added to the list of app ideas. We'll worry about actually making it work in a bit, for now let's just get the widgets *there*.
+
+Drag and drop the `Button` widget into activity underneath the `SeekBar`. By default it's text says `"New Button"`, but we want it to say something like `"Add App Idea!"`. Double click it to change this field (you can also create a resource for the string).
+
+We want to prevent the user from being able to submit an "empty" app. In other words, by default we want the button to be *disabled*, and when the user fills in information about their app the button will *enable*. To set the default state of the button to be disabled, make sure it's `enabled` property is `false` (i.e. the checkbox is unmarked). Again, we'll worry about actually making these things *work* later on.
+
+### Extra Details and Design
+
+Experiment with some of the properties of the widgets you just placed! There's lots of things you can do to make it pretty and unique, it's just a matter of messing around and learning what the different properties do. Here's an example of something we were able to create:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image23.png)
+
+## How do I make it functional?
+
+Up to this point we've only been focusing on how our UI *looks*, and not actually how it works. If you were to test the app in it's current state, all the widgets would work *independently*, but not *together*. For example, we want the button to become enabled once sufficient information has been entered. In order to accomplish this, we have to edit the `.java` file for our main activity.
+
+In the project panel on the left, go to `app/java` and locate the java file representing your main activity. In this case, it should look something like the following:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image24.png)
+
+Double click to open it up. Welcome to the java part of Android, where things *really* start to ramp up!
+
+The class you're looking at is the class that represents our main activity, hence is why it inherits from `AppCompatActivity` (which inherits from `Activity`). Every activity has an `onCreate` method which gets called when the activity first gets created. Let's take a look at the one that's been automatically generated for us:
+
+```
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+    fab.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
+    });
+}
+```
+
+For purposes of experimentation, try replacing it with the following method:
+
+```
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+}
+```
+
+This is identical to the original method, but with the stuff about the toolbar and floating action button missing. Now run your app. Can you spot the differences?
+
+There's a few things that need some explaining:
+
+### What is `R`?
+
+That `R` thing is a static class generated by Android. It represents **every resource in your application** (hence is why it's called `R`). For example, `R.id` is a nested static class which contains the `id`'s of everything we've added, and we can use said `id` to locate the actual object with that id (which is what the line `Toolbar toolbar = (ToolBar) findViewById(R.id.toolbar)` is doing).
+
+*Note*: If you build your project, you can actually check out what the generated `R.java` class looks like! It'll be in `app/build/generated/source/r`.
+
+### What is a `Bundle`?
+
+A `Bundle` is an object that, simply put, passes data between activities. When you create a new activity, you can pass in information as a `Bundle` object. This is useful because it allows you to easily communicate pertinent information throughout the lifecycle of your app.
+
+For more information, see the documentation for `Bundle`, which can be found [here](http://developer.android.com/reference/android/os/Bundle.html). There's an extensive list of `get` and `put` methods for different types of values.
+
+### What does `setContentView` do?
+
+In Android, all of the UI is written in Xml right? Well when an activity starts it needs to know what UI content to display to the user. `setContentView(R.layout.activity_main)` sets the activity's content to the given layout; `layout.activity_main`. Though we haven't used or talked about it, `activity_main.xml` acts as a wrapper around `content_main.xml`. If you navigate to the file, you'll see that it looks a lot like content file, but with "more" things; a `CoordinatorLayout`, an `AppBarLayout` with a `Toolbar` and a `FloatingActionButton`, and right in the middle it includes `content_main`:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image25.png)
+
+So when we set the activity's content to `layout.activity_main`, it adds all this content *including* our layout in `content_main.xml` to the activity.
+
+You will *almost always* call `setContentView` in the `onCreate` method of an activity.
+
+### Making our app work
+
+Let's spend some time making our app actually *function*. First, lets add fields to our activity representing the different widgets:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image26.png)
+
+*Note*: When you type the names `EditText` and `SeekBar` and `Button`, by default they will be underlined in red. We have to import them before we can actually use them. Fortunately, Android Studio provides us with an easy way of adding an import statement for unimported classes. Right after typing a name, like `EditText`, hit `Alt + Enter`, and an import statement will be automatically added.
+
+Now, in the `onCreate` method, we need to add the code to retrieve the widgets and assign them to these fields. To retrieve a widget, use the `findViewById` method. This method returns a `View` object, so we have to cast it to the proper type before we assign it. The code should look like this:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image27.png)
+
+#### Enabling the button when sufficient input is provided
+
+We want the button to become enabled when the user has input the minimum required information. The only piece of required information is the name of the app idea. Thus we need some code that checks when text has been added to the `appIdeaName` widget, and then enables our button. How do we go about doing this? We need to add a `Listener` to our `appIdeaName` widget:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image28.png)
+
+A *listener* is an object that waits for something to happen, and then calls a certain method. In this case, the listener is our `TextWatcher` object and the method that gets called is `onTextChanged`. In this method, we call `addAppButton.setEnabled`. This method allows us to set whether or not the button is enabled (by supplying a boolean argument). For our case, we want the button to become enabled when there is any text at all in the `appIdeaName` text field. To check this, we simply check if `s.length() > 0`.
+
+*Note*: Another way of checking if there is text is by saying
+```
+addAppButton.setEnabled(!appIdeaName.getText().toString().trim().isEmpty());
+```
+though this is more wordy.
+
+There are a variety of different listeners you can add to different objects that respond to different events, such as when a button is pressed or when a slider is moved.
 
 ## Other Important Things
 
