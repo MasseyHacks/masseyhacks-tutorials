@@ -22,6 +22,10 @@
 
 For attendees to be able to participate in the lecture, they must have the Java Development Kit (JDK) and the Android Studio Integrated Development Environment (IDE) which also includes the Android Software Develompent Kit (SDK).
 
+## Required Skills
+
+It is expected that the attendees will be comfortable coding in Java and understand the fundamentals of Xml. An intermediate understanding of OOP is helpful but not required.
+
 ### System Requirements
 
 - One of the following systems:
