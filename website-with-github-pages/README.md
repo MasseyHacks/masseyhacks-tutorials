@@ -2,7 +2,9 @@
 
 ## Websites on GitHub?!
 
-Yup.
+For each GitHub account, you'll be able to host a website at `<username>.github.io` for free, as long as you're willing to share the code within that website as a GitHub repo (or, if you're not comfortable with that, buy a private repo for your website). Each organisation and project can also get a place on `github.io`. This service is called GitHub Pages.
+
+This workshop will focus on two things. First, it will teach you how to make a simple website out of HTML/CSS. Secondly, it will teach you how to host that website on GitHub. This workshop is not intended to be a through guide to both, and is targeted to people who have little to no experience at both.
 
 ## Step 0: Prerequisites
 1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github) by attending the workshop during the hackathon! The rest of these prerequisites is just a copy of the things you need for that workshop.
@@ -15,3 +17,64 @@ Yup.
 	- GitHub Desktop: A friendly GUI version for those who don't know how to use a command line.
 		- [Download GitHub Desktop for Windows/OSX](https://desktop.github.com/)
 		- Linux not supported, sorry. If you're a Linux user, chances are you're downloading regular command line git right now.
+
+## Step 1: Creating the Repository
+
+GitHub Pages operates out of a GitHub repository. Go to the new repository creation screen and create a repository called `<username>.github.io`, where `<username>` is your GitHub username. It is important that you name the repo in this EXACT format, or GitHub will not identify it for GitHub Pages.
+
+<p align="center"><img src="resources/pages-create-repo.png"/></p>
+
+Create the repository and set everything up locally on your computer.
+
+## Step 2: Hello World!
+
+Websites are just a directory: a collection of folders and files. For example, when you access `www.example.com/folder/file.html`, `example.com` is usually marked as a directory on a computer somewhere, where `folder` is a folder in that directory, and `file.html` is a file within `folder`. When a web browser accesses just `example.com`, the web browser actually accesses (usually) `example.com/index.html`: a file named `index.html` within the `example.com` directory. Let's make one of those now.
+
+### Your First `index.html`
+
+Within the directory that you set aside for your repo, create a file called `index.html`. All HTML files follow the same format:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    </body>
+</html>
+```
+
+Go ahead and throw these lines within `index.html`.
+
+HTML stans for HyperText Markup Language. A markup language revolves around things called tags. The tags within thie file are `<html>`, `<head>`, and `<body>`. A tag sometimes begins with a beginning tag, for example `<html>`, and ends with a terminating tag that has a slash in front of the name of the tag, here `</html>`. Sometimes, however, the tag doesn't need to be terminated, for example, the `<!DOCTYPE html>` tag.
+
+Markup languages use tags in order to identify words for some purpose. Here are the purposes of the tags that are introduced in our `index.html`:
+ - `<html>`: The root tag. A web browser will search for an `<html>` tag, since all other tags will be inside it.
+ - `<head>`: Where metadata, information on the HTML document, is placed, for example, the title of the HTML document. `<head>` is usually the first tag within `<html>`.
+ - `<body>`: The main content area within an HTML document. It should start immediately after the `</head>` tag and end right before the `</html>` tag. Things shown to the user are usually within `<body>`.
+ - `<!DOCTYPE html>`: Just a header to tell everyone that this is an HTML document.
+
+For now, don't worry with the specifics. Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
+
+```
+    <body>
+    	Hello World!
+    </body>
+```
+
+This should be the final HTML document:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    	Hello World!
+    </body>
+</html>
+```
+
+Commit and push the repository to GitHub. Now, visit `<username>.github.io`.
+
+<p align="center"><img src="resources/pages-hello-world.png"/></p>
