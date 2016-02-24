@@ -336,6 +336,8 @@ Let's spend some time making our app actually *function*. First, lets add fields
 
 ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image26.png)
 
+*Note*: When you type the names `EditText` and `SeekBar` and `Button`, by default they will be underlined in red. We have to import them before we can actually use them. Fortunately, Android Studio provides us with an easy way of adding an import statement for unimported classes. Right after typing a name, like `EditText`, hit `Alt + Enter`, and an import statement will be automatically added.
+
 Now, in the `onCreate` method, we need to add the code to retrieve the widgets and assign them to these fields. To retrieve a widget, use the `findViewById` method. This method returns a `View` object, so we have to cast it to the proper type before we assign it. The code should look like this:
 
 ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image27.png)
@@ -347,6 +349,14 @@ We want the button to become enabled when the user has input the minimum require
 ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image28.png)
 
 A *listener* is an object that waits for something to happen, and then calls a certain method. In this case, the listener is our `TextWatcher` object and the method that gets called is `onTextChanged`. In this method, we call `addAppButton.setEnabled`. This method allows us to set whether or not the button is enabled (by supplying a boolean argument). For our case, we want the button to become enabled when there is any text at all in the `appIdeaName` text field. To check this, we simply check if `s.length() > 0`.
+
+*Note*: Another way of checking if there is text is by saying
+```
+addAppButton.setEnabled(!appIdeaName.getText().toString().trim().isEmpty());
+```
+though this is more wordy.
+
+There are a variety of different listeners you can add to different objects that respond to different events, such as when a button is pressed or when a slider is moved.
 
 ## Other Important Things
 
