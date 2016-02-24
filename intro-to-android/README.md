@@ -219,6 +219,16 @@ In this window, scroll through the files in the `Project` tab until you locate t
 
 ### Text Fields
 
+We want the user to be able to input information about their app idea, so how are they going to do this? They'll use *text fields*. Text fields are special widgets that allow the user to input text. Then later, in Java, you can retrieve the text they added and use it to do other things.
+
+We're going to add three different text fields to our main activity. The different available text field widgets can be found by scrolling down in the Palette (below the general "Widgets" section). The first text field we'll add is one for the app's name. Click and drag to place it into the activity underneath the app logo.
+
+### `SeekBar` / `RatingBar`
+
+### `Button`
+
+### Extra Details and Design
+
 ## Other Important Things
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:

@@ -4,6 +4,9 @@
 - (If there's room) cover Chapter 4 of "Android Studio Essentials" (Android Studio UI Tour)
 - Expand on the available widgets more and make our example app more interesting. (~20% done)
 - Add info on Text Fields.
+- Complete "`SeekBar` / `RatingBar`" section.
+- Complete "`Button`" section.
+- Complete "`Extra Details and Design`" section.
 - Estimate time for remaining sections.
 - Spell-check (DIRELY NEEDED).
 - Add table of contents.
