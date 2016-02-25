@@ -193,7 +193,30 @@ Here is how my HTML document renders:
 
 ### Links with the `<a>` tag
 
+Usually, a web page serves as a stepping stone to other web pages. Clicking on a link will take you somewhere else in the Internet. Links are added to HTML documents using the `<a>` tag.
 
+As a demonstration, let's add some links that lead to places that are important to you. Add a link to your GitHub profile onto your website by editing your `<body>`, like so:
+
+```html
+    <body>
+    	<img src="img/avatar.jpg"></img>
+    	<h1>Jeffrey Zhao</h1>
+    	<h3>Student, Pirate, Dog</h3>
+    	<a href="https://github.com/<username>">GitHub</a>		<!-- Added link to GitHub profile -->
+    </body>
+```
+
+This body will now render the following HTML document:
+
+<p align="center"><img src="resources/pages-link-demonstration.png"/></p>
+
+There's now the iconic blue/purple HTML link at the bottom of your portfolio website. If you click on it, you'll end up at your GitHub portfolio!
+
+Examining the `<a>` tag, there are several things to notice. Like images, they taking in an attribute `href`, the location that they will link to. However, they can also take in text within the markup tags, and that text will become the name of the link. Here, `href="https://github.com/<username>">` made this `<a>` tag link to your GitHub profile, and the text within it, `GitHub`, gave the link its name.
+
+The `href` attribute doesn't just accept URLs. For example 
+
+### Combining Tags
 
 [//]: # (DO NOT TOUCH the below table. -Jeffrey)
 
