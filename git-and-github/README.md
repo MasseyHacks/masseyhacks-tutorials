@@ -59,6 +59,7 @@ Now you're going to have to make a local repo on your computer, and this one wil
     3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
     4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
         <p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
+        
 ### Why do we have two repositories?
 
 Remember: Git and GitHub are two different programs. There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo.
@@ -94,7 +95,13 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 	- `git add *`: Adds all the files in the current directory.
 	- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
 
-**Desktop users**:  
+**Desktop users**:  GitHub Desktop makes your job much easier by automatically detecting which files have been changed or added and providing you a graphical interface for chooising which ones you want to keep:
+
+<p align="center"><img src="resources/github-desktop-changes-made.png"/></p>
+
+Pressing the ![](resources/github-desktop-checkmark.png) next to a file will change whether or not git will include the changes when you go to *commit* (later on). You can even click on the file to show you what changes were made:
+
+<p align="center"><img src="resources/github-desktop-show-changes.png"/></p>
 
 ### Committing a Change
 
@@ -102,7 +109,9 @@ Now you're going to have to tell Git that you'd like to officially record the ch
 
 **Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
-**Desktopians**: 
+**Desktopians**: In the main window, once you've chosen which files you want to include in the commit by checkmarking them in the list above, go to the lower panel and add a description and a summary, then press "Commit to master".
+
+<p align="center"><img src="resources/github-desktop-committing.png"</p>
 
 ### PUSH!
 
@@ -110,7 +119,9 @@ Now we're going to make the changes that you've made to your local git repo offi
 
 **Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
 
-**Deskies**, 
+**Deskies**, pushing is really easy for GitHub Desktop. Just press the ![](resources/github-desktop-syncing.png) button in the top-left corner of the "History" tab.
+
+It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have.
 
 ### Wowow, it's in the cloud!
 
@@ -136,7 +147,15 @@ The commit where I added `important-change.txt` had an id of `07047e2`. Let's un
 
 **Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, call `git push -f origin master`. The `-f` tag tells `git push` to forcibly push it. Git is smart: it realises that the current state of the repo is the same as one of a previous commit, and won't push to be efficient.
 
-**Desktop users**
+**Desktop users**, you have two options. Right after you commit, you can press "Undo" in the bottom-left corner of the window right after you commit:
+
+<p align="center"><img src="resources/github-desktop-undo-last-commit.png"</p>
+
+or you can press the `revert` button on the commit page:
+
+<p align="center"><img src="resources/github-desktop-revert.png"</p>
+
+Both ways do the same thing.
 
 Now go back to the official GitHub repo page and refresh. Look at the commit history now. The last commit you made is all gone. In practice, all of the commits between the last commit to the repo and the commit that you reverted back to will be **irreversibly erased**. You cannot revert this action.
 
