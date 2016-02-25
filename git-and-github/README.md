@@ -49,8 +49,16 @@ Now you're going to have to make a local repo on your computer, and this one wil
 	3. Back in the terminal, call the command `git remote add origin <link to repo>`. This tells the local git repo about the online GitHub repository.
 	4. Now let's get the two repositories in sync. The online repo has a `README.md` file. Clone it on the local repo by calling `git pull origin master`. Don't bother with `origin` or `master` for now.
 - Desktop Users:
-	1. Unlike terminal users, you don't need to make a local repo. GitHub Desktop does it automatically for you. *Sign in*
-
+	1. Unlike terminal users, you don't need to make a local repo. GitHub Desktop does it automatically for you. First you have to sign in.
+        i. In the upper right hand corner of the program, click the ![]("resources/github-desktop-gear.png") icon and go to "Options":
+            <p align="center"><img src="github-desktop-choose-options.png"/></p>
+        ii. Go to **Accounts** and click **Add account**.
+        iii. Under **Log in** fill in your username and password for GitHub and click **Log in**.
+    2. Now that you're logged in, click the encircled + icon in the top-right corner: ![]("resources/github-desktop-plus.png"). This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
+        <p align="center"><img src="resources/github-desktop-add-repo-menu.png"/></p>
+    3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
+    4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
+        <p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
 ### Why do we have two repositories?
 
 Remember: Git and GitHub are two different programs. There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo.
@@ -81,7 +89,7 @@ This new file is going to represent a change to your code project. Now, lets get
 
 Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file has been changed.
 
-**Terminal users**: Uue the command `git add` to add the file. There are lots of options to choose from:
+**Terminal users**: Use the command `git add` to add the file. There are lots of options to choose from:
 	- `git add <filename>`: Adds the given file and nothing else.
 	- `git add *`: Adds all the files in the current directory.
 	- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
@@ -90,7 +98,7 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 
 ### Committing a Change
 
-Now you're going to have to tell Git that you'd like to officialy record the changes in the repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
+Now you're going to have to tell Git that you'd like to officially record the changes in the repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
 
 **Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
@@ -120,13 +128,13 @@ Head to the GitHub page for your repo and click on the left most entry to the to
 
 It should be just two commits: the initial commit that was made when you created the repo, and the commit that you made when you made a change back in Section 2.
 
-Each entry contains information on the user that made the commit, the message that was given for the commit, the time it was made, and some wierd mish-mash of letters and numbers on the right. That mish-mash is what's known as a commit id, a string that uniquely identifies this certain commit. It's actually a small prefix of an SHA hash and, if you click on the clipboard to the left, you can get the full hash that identifies this commit. For me, `0747e2` was actually `07047e2b04c85b9fe3609f7b91558732e3c663ed`.
+Each entry contains information on the user that made the commit, the message that was given for the commit, the time it was made, and some weird mish-mash of letters and numbers on the right. That mish-mash is what's known as a commit id, a string that uniquely identifies this certain commit. It's actually a small prefix of an SHA hash and, if you click on the clipboard to the left, you can get the full hash that identifies this commit. For me, `0747e2` was actually `07047e2b04c85b9fe3609f7b91558732e3c663ed`.
 
 ### Reverting to a Better Time
 
 The commit where I added `important-change.txt` had an id of `07047e2`. Let's undo that mistake. Copy the shortened id of the commit that you want to move back to. In this case, it's the very first commit: `6a800ef`.
 
-**Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, call `git push -f origin master`. THe `-f` tag tells `git push` to forcibly push it. Git is smart: it realises that the current state of the repo is the same as one of a previous commit, and won't push to be efficient.
+**Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, call `git push -f origin master`. The `-f` tag tells `git push` to forcibly push it. Git is smart: it realises that the current state of the repo is the same as one of a previous commit, and won't push to be efficient.
 
 **Desktop users**
 
@@ -166,4 +174,4 @@ You'll be redirected to a new repo on your profile, one that is a clone of the r
 
 ### Changing your Fork
 
-Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Add some file or something to it, and commit and push the change to your fork. 
+Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Add some file or something to it, and commit and push the change to your fork.
