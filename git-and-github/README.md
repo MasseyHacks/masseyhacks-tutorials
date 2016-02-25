@@ -59,6 +59,7 @@ Now you're going to have to make a local repo on your computer, and this one wil
     3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
     4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
         <p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
+        
 ### Why do we have two repositories?
 
 Remember: Git and GitHub are two different programs. There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo.
@@ -94,7 +95,13 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 	- `git add *`: Adds all the files in the current directory.
 	- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
 
-**Desktop users**:  
+**Desktop users**:  GitHub Desktop makes your job much easier by automatically detecting which files have been changed or added and providing you a graphical interface for chooising which ones you want to keep:
+
+<p align="center"><img src="resources/github-desktop-changes-made.png"/></p>
+
+Pressing the ![](resources/github-desktop-checkmark.png) next to a file will change whether or not git will include the changes when you go to *commit* (later on). You can even click on the file to show you what changes were made:
+
+<p align="center"><img src="resources/github-desktop-show-changes.png"/></p>
 
 ### Committing a Change
 
@@ -102,7 +109,9 @@ Now you're going to have to tell Git that you'd like to officially record the ch
 
 **Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
-**Desktopians**: 
+**Desktopians**: In the main window, once you've chosen which files you want to include in the commit by checkmarking them in the list above, go to the lower panel and add a description and a summary, then press "Commit to master".
+
+<p align="center"><img src="resources/github-desktop-committing.png"</p>
 
 ### PUSH!
 
