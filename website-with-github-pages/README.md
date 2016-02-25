@@ -260,7 +260,7 @@ For example, I would append these three lines to the end of my body.
 </a>
 ```
 
-Examine the new addition. The twitter icon is added into the HTML document through `<img src="img/twitter.png"></img>`. The surrounding `<a href="https://twitter.com/realDonaldTrump">` turns that image into a linkable object, and clicking on the Twitter icon will lead you to the URL that you linked.
+Examine the new addition. The twitter icon is added into the HTML document through `<img src="img/twitter.png"></img>`. The surrounding `<a href="https://twitter.com/<username>">` turns that image into a linkable object, and clicking on the Twitter icon will lead you to the URL that you linked.
 
 <p align="center"><img src="resources/pages-link-img.gif"/></p>
 
@@ -336,6 +336,11 @@ Here is what each component does:
  - **Property:** An attribute of an HTML tag that will be changed. Here, the property is `text-align`.
  - **Value**: What to change the property of the selector to. Here, the value is `center`.
 
-Each CSS rule applies to all HTML tags within any HTML file that it is included. CSS rules can have multiple property and value pairs. Though we didn't really encounter them, each HTML object has a number of attributes that have a set value that determines how the object will act. CSS exists to work alongside HTML in order to change the behaviour of its objects to whatever value is specified.
+Though we didn't really encounter them, each HTML object has a number of attributes that have a set value that determines how the object will act. CSS exists to work alongside HTML in order to change the behaviour of its objects to whatever value is specified. Here, `text-align` is a property of every `body` tag, and this CSS rule sets the value of `text-align` to center.
+
+Each CSS rule applies to all HTML tags to the HTML document. This means that every single `<body>` tag will have its `text-align` attribute set to `center`. CSS rules can have multiple property and value pairs, which means that I can set more attributes of `body` by adding more properties within the curly braces.
 
 If we read the CSS that I just gave you in simple English, it would probably sound like "Select every `body` tag on this HTML page and set the alignment of the text within the body tag to be centered."
+
+### Changing Fonts
+
