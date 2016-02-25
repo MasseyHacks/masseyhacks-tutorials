@@ -350,7 +350,11 @@ If we read the CSS that I just gave you in simple English, it would probably sou
 
 ### Final Touches
 
-Every HTML tag has some attributes that can be altered by CSS, and they can usually be found by simply searching online what you'd like to do with an HTML object. Don't feel pressured to add your CSS rules the exact same way that I do it. Feel free to fiddle with the values within your CSS rules and change them how you'd wish. I've appended the following CSS rules to my `style.css`:
+Every HTML tag has some attributes that can be altered by CSS, and they can usually be found by simply searching online what you'd like to do with an HTML object. Don't feel pressured to add your CSS rules the exact same way that I do it. Feel free to fiddle with the values within your CSS rules and change them how you'd wish. 
+
+How do I know which HTML objects and attributes to edit? What do I do to get something to behave a certain way? [That's a very good question.](README.md#google-and-stackoverflow-google-and-stackoverflow-google-and-stackoverflow)
+
+I've appended the following CSS rules to my `style.css`:
 
 ```css
 /* comments in css are within these star slashes */
@@ -381,25 +385,30 @@ Add, commit, push. Visit `<username>.github.io`. How does your portfolio look?
 
 Congratulations! You've reached the end of the tutorial, for the most part. Though it is pretty barebones by today's standards, that portfolio is a great first step into the world of web development. Section 5 will now list some things that will help you make more steps!
 
-### Inspect Element
-
-One of the ways to really speed up your web development is using your web browser's inspect element feature. You might have opened it up on accident before: a dialog box that starts listing a bunch of HTML and CSS. Usually, the inspect element feature of your browser allows you to make temporary edits to the HTML and CSS of the website that is being inspected, which allows to see your changes occur in real time.
-
-MORE HERE
-
-### Jekyll with GitHub Pages
-
-Don't want to trouble yourself with creating an enitre website from scratch? Would you like to start with a basic foundation? GitHub Pages works very well with [Jekyll](https://jekyllrb.com/), a static page generator that turns your Markdown into HTML documents for you. [Read the guide here](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/).
-
 ### Google and StackOverflow! Google and StackOverflow! Google and StackOverflow!
 
 Seriously. These two websites are a programmer's best friend. [StackOverflow](https://stackoverflow.com/) is basically Yahoo! Answers, but for professional programmers in all areas, including web development. If you don't know what Google is, I'm not sure what to say. If you don't know how to do something with HTML or CSS, just consult the search engine, and click on StackOverflow links often.
+
+You've probably asked questions like these hundreds of times within the tutorial:
+ - How do I make lists in HTML?
+ - How do I know the names of the attributes to edit with CSS?
+ - How do I make web applications?
 
 For example, say I wanted to set a background image behind my portfolio. How do I do that? Which HTML object and which property do I edit? Who knows? 
 
 Google does.
 
-<p align="center"><img src="resources/google-is-god.gif"/></p>
+<p align="center"><img src="resources/pages-google-is-god.png"/></p>
+
+### Inspect Element
+
+One of the ways to really speed up your web development is using your web browser's inspect element feature. You might have opened it up on accident before: a dialog box that starts listing a bunch of HTML and CSS. Usually, the inspect element feature of your browser allows you to make temporary edits to the HTML and CSS of the website that is being inspected, which allows to see your changes occur in real time.
+
+<p align="center"><img src="resources/pages-inspect-element.gif"/></p>
+
+### Jekyll with GitHub Pages
+
+Don't want to trouble yourself with creating an enitre website from scratch? Would you like to start with a basic foundation? GitHub Pages works very well with [Jekyll](https://jekyllrb.com/), a static page generator that turns your Markdown into HTML documents for you. [Read the guide here](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/).
 
 ### Further Education
 
@@ -411,4 +420,4 @@ Here are some I'd recommend:
 
  - HTMLDog Guides for [HTML](http://www.htmldog.com/guides/html/), [CSS](http://www.htmldog.com/guides/css/), and [JavaScript](http://www.htmldog.com/guides/javascript/) are very concise beginner focused texts.
  - If you're the type of person who sits back and watches educational videos, check out [TreeHouse](https://teamtreehouse.com/library/html#introduction).
- - 
+ - Though I haven't tried them, there are full interactive courses being offered at [SnoopCode](http://www.snoopcode.com/) and [CodeAcademy](https://www.codecademy.com/learn/web).
