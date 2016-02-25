@@ -421,3 +421,7 @@ Here are some I'd recommend:
  - HTMLDog Guides for [HTML](http://www.htmldog.com/guides/html/), [CSS](http://www.htmldog.com/guides/css/), and [JavaScript](http://www.htmldog.com/guides/javascript/) are very concise beginner focused texts.
  - If you're the type of person who sits back and watches educational videos, check out [TreeHouse](https://teamtreehouse.com/library/html#introduction).
  - Though I haven't tried them, there are full interactive courses being offered at [SnoopCode](http://www.snoopcode.com/) and [CodeAcademy](https://www.codecademy.com/learn/web).
+
+That's about it! I hope you've enjoyed this workshop.
+
+[@descrip](https://github.com/descrip)
