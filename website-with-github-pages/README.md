@@ -8,7 +8,7 @@ This workshop will focus on two things. First, it will teach you how to make a s
 
 You'll finish with a simple portfolio website stating who you are and what you do. [Here's a peek at the finished product.](https://descrip.github.io/finish/index.html)
 
-## Step 0: Prerequisites
+## Section 0: Prerequisites
 1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github) by attending the workshop during the hackathon! The rest of these prerequisites is just a copy of the things you need for that workshop.
 2. You're going to need a GitHub account. Register one by pressing the big green "Sign Up" on the top right. 
 3. Get yourself a copy of git on your computer. You've got two choices:
@@ -20,7 +20,7 @@ You'll finish with a simple portfolio website stating who you are and what you d
 		- [Download GitHub Desktop for Windows/OSX](https://desktop.github.com/)
 		- Linux not supported, sorry. If you're a Linux user, chances are you're downloading regular command line git right now.
 
-## Step 1: Creating the Repository
+## Section 1: Creating the Repository
 
 GitHub Pages operates out of a GitHub repository. Go to the new repository creation screen and create a repository called `<username>.github.io`, where `<username>` is your GitHub username. It is important that you name the repo in this EXACT format, or GitHub will not identify it for GitHub Pages.
 
@@ -28,7 +28,7 @@ GitHub Pages operates out of a GitHub repository. Go to the new repository creat
 
 Create the repository and set everything up locally on your computer.
 
-## Step 2: Hello World!
+## Section 2: Hello World!
 
 Websites are just a directory: a collection of folders and files. For example, when you access `www.example.com/folder/file.html`, `example.com` is usually marked as a directory on a computer somewhere, where `folder` is a folder in that directory, and `file.html` is a file within `folder`. When a web browser accesses just `example.com`, the web browser actually accesses (usually) `example.com/index.html`: a file named `index.html` within the `example.com` directory. Let's make one of those now.
 
@@ -86,7 +86,7 @@ Commit and push the repository to GitHub. Now, visit `<username>.github.io`.
 
 Congratulations! Your website is up and running on GitHub pages, and that `Hello World!` available for everyone in the world to see. If you don't want to wait for `github.io` to process your new website, you can quickly open up `index.html` with your web browser and it will show you exactly the same thing.
 
-## Step 3: Fleshing it Out
+## Section 3: Fleshing it Out
 
 Though it might be your first website, right now it's way too ugly to be presentable. Let's start adding some more things!
 
@@ -184,7 +184,7 @@ Here is how my HTML document renders:
 
 ### Links with the `<a>` tag
 
-Usually, a web page serves as a stepping stone to other web pages. Clicking on a link will take you somewhere else in the Internet. Links are added to HTML documents using the `<a>` tag.
+Usually, a web page serves as a Sectionping stone to other web pages. Clicking on a link will take you somewhere else in the Internet. Links are added to HTML documents using the `<a>` tag.
 
 As a demonstration, let's add some links that lead to places that are important to you. Add a link to your GitHub profile onto your website by editing your `<body>`, like so:
 
@@ -284,7 +284,41 @@ Here is my final body:
 
 I've since added a `<p>` around the Twitter icon link to keep it to its own line, since the height of the icon screws up the rest of the text links.
 
-## Step 4: Stylish CSS
+Add, commit, push, and marvel at how your website looks on GitHub Pages.
+
+## Section 4: Stylish CSS
 
 Here is the point where we introduce the second language: CSS. CSS stands for Cascading Style Sheets, and is used to change the properties of HTML objects (and usually to make them look better).
 
+There are so many features of CSS that this tutorial will barely stratch its surface. For now, let's start with some basics.
+
+### Creating a CSS File
+
+Within your directory, next to `index.html`, create a file called `style.css`. This file will contain the CSS that affects `index.html`, so `index.html` has to tell the web browser that there is a CSS file to apply when rendering the HTML document. The way that web developers denote a CSS file along with an HTML document lies within its metadata, which means that you'll have to add a line to the `<head>` tags:
+
+```html
+<head>
+	<link rel="stylesheet" href="style.css">
+</head>
+```
+
+Don't focus too much on this `link` tag for now, just know that its `href` attribute should list the source of the CSS file, and that its `rel` attribute identifies it as such.
+
+If you reload the website now, you'll see that there hasn't been much change. That's because we don't have anything in the CSS file! Let's add something.
+
+### Centering Objects
+
+Within the CSS file, throw the following code inside:
+
+```
+body{
+	text-align: center;
+}
+```
+
+If you refresh the page now, you'll see something surprising: all of the HTML elements have centered themselves!
+
+<p align="center"><img src="resources/pages-centered.png"/></p>
+
+Let's dissect what those three lines actually do:
+ - 
