@@ -352,7 +352,7 @@ If we read the CSS that I just gave you in simple English, it would probably sou
 
 Every HTML tag has some attributes that can be altered by CSS, and they can usually be found by simply searching online what you'd like to do with an HTML object. Don't feel pressured to add your CSS rules the exact same way that I do it. Feel free to fiddle with the values within your CSS rules and change them how you'd wish. 
 
-How do I know which HTML objects and attributes to edit? What do I do to get something to behave a certain way? [That's a very good question.](README.md#google-and-stackoverflow-google-and-stackoverflow-google-and-stackoverflow)
+How do I know which HTML objects and attributes to edit? What do I do to get something to behave a certain way? That's a very good question -- check out Section 5.
 
 I've appended the following CSS rules to my `style.css`:
 
