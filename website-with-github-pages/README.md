@@ -275,6 +275,12 @@ Here is my final body:
 	<a href="about.html">About Me</a> | 
 	<a href="res/resume.pdf">Resume</a>
 	<p>
+		<a href="https://plus.google.com/+LinusTorvalds/posts">
+			<img src="img/googleplus.png"></img>
+		</a>
+		<a href="https://www.facebook.com/events/1673647522918268/">
+			<img src="img/facebook.png"></img>
+		</a>
 		<a href="https://twitter.com/realDonaldTrump">
 			<img src="img/twitter.png"></img>
 		</a>
@@ -282,7 +288,7 @@ Here is my final body:
 </body>
 ```
 
-I've since added a `<p>` around the Twitter icon link to keep it to its own line, since the height of the icon screws up the rest of the text links.
+I've since added a `<p>` around the Twitter icon link to keep it to its own line, since the height of the icon screws up the rest of the text links. I've also added image link icons to both Google Plus and Facebook profiles. All of them are definitely mine.
 
 Add, commit, push, and marvel at how your website looks on GitHub Pages.
 
@@ -306,11 +312,11 @@ Don't focus too much on this `link` tag for now, just know that its `href` attri
 
 If you reload the website now, you'll see that there hasn't been much change. That's because we don't have anything in the CSS file! Let's add something.
 
-### Centering Objects
+### Learning CSS by Centering Objects
 
 Within the CSS file, throw the following code inside:
 
-```
+```css
 body{
 	text-align: center;
 }
@@ -322,7 +328,7 @@ If you refresh the page now, you'll see something surprising: all of the HTML el
 
 Let's dissect what these lines actually do. CSS comprises of multiple style rules -- in this case, one. Style rules are in the general form of:
 
-```
+```css
 selector{
 	property1: value1;
 	property2: value2;
@@ -342,5 +348,67 @@ Each CSS rule applies to all HTML tags to the HTML document. This means that eve
 
 If we read the CSS that I just gave you in simple English, it would probably sound like "Select every `body` tag on this HTML page and set the alignment of the text within the body tag to be centered."
 
-### Changing Fonts
+### Final Touches
 
+Every HTML tag has some attributes that can be altered by CSS, and they can usually be found by simply searching online what you'd like to do with an HTML object. Don't feel pressured to add your CSS rules the exact same way that I do it. Feel free to fiddle with the values within your CSS rules and change them how you'd wish. I've appended the following CSS rules to my `style.css`:
+
+```css
+/* comments in css are within these star slashes */
+
+h1{	/*applied to all h1 tags:*/
+	font-family: sans-serif;	/*set font to a sanserif one*/
+	margin: 5px;	/*make the margin aroumd h1 objects 5 pixels wide*/
+}
+
+h3{	/*applied to all h3 tags:*/
+	margin: 5px;	/*make the margin aroumd h3 objects 5 pixels wide*/
+}
+
+a{	/*applied to all a tags:*/
+	text-decoration: none;		/*normally, text-decoration: underline. setting it to none remoes it.*/
+}
+```
+
+Each CSS rule changes small properties of my portfolio website, slowly bringing it to this final portfolio:
+
+<p align="center"><img src="resources/pages-final.png"/></p>
+
+Add, commit, push. Visit `<username>.github.io`. How does your portfolio look?
+
+## Section 5: Final and Future Thoughts
+
+:tada:
+
+Congratulations! You've reached the end of the tutorial, for the most part. Though it is pretty barebones by today's standards, that portfolio is a great first step into the world of web development. Section 5 will now list some things that will help you make more steps!
+
+### Inspect Element
+
+One of the ways to really speed up your web development is using your web browser's inspect element feature. You might have opened it up on accident before: a dialog box that starts listing a bunch of HTML and CSS. Usually, the inspect element feature of your browser allows you to make temporary edits to the HTML and CSS of the website that is being inspected, which allows to see your changes occur in real time.
+
+MORE HERE
+
+### Jekyll with GitHub Pages
+
+Don't want to trouble yourself with creating an enitre website from scratch? Would you like to start with a basic foundation? GitHub Pages works very well with [Jekyll](https://jekyllrb.com/), a static page generator that turns your Markdown into HTML documents for you. [Read the guide here](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/).
+
+### Google and StackOverflow! Google and StackOverflow! Google and StackOverflow!
+
+Seriously. These two websites are a programmer's best friend. [StackOverflow](https://stackoverflow.com/) is basically Yahoo! Answers, but for professional programmers in all areas, including web development. If you don't know what Google is, I'm not sure what to say. If you don't know how to do something with HTML or CSS, just consult the search engine, and click on StackOverflow links often.
+
+For example, say I wanted to set a background image behind my portfolio. How do I do that? Which HTML object and which property do I edit? Who knows? 
+
+Google does.
+
+<p align="center"><img src="resources/google-is-god.gif"/></p>
+
+### Further Education
+
+Web development is an entire industry and career, and there is no way that I'd be able to teach you everything there is to know about it in an hour. Many people hone their skills in web development through independent study, as there are so many amazing guides on the Internet to follow. 
+
+HTML and CSS are two of the three crucial languages to web development. The third is [JavaScript](https://www.javascript.com/), which isn't really necessary for a basic portfolio website like the one you've just made. However, if you're interested in making a website that has a lot more functionality, I'd definitely recommend learning how to do it.
+
+Here are some I'd recommend:
+
+ - HTMLDog Guides for [HTML](http://www.htmldog.com/guides/html/), [CSS](http://www.htmldog.com/guides/css/), and [JavaScript](http://www.htmldog.com/guides/javascript/) are very concise beginner focused texts.
+ - If you're the type of person who sits back and watches educational videos, check out [TreeHouse](https://teamtreehouse.com/library/html#introduction).
+ - 
