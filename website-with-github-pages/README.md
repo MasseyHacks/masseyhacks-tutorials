@@ -168,22 +168,13 @@ The `<h1>` tag is what's called a header tag. Any of the text within the `<h1>` 
 
 As the number within `<hX>` increases, the size and impact of the header decreases. The header tags start from `<h1>` and end at `<h6>`. 
 
-Let's remove that `<p>` tag, because who has `Hello World!` on a portfolio website? The largest text on your website should be your name, right? Let's do that right now, with an `<h1>` tag. Remove the `<p>` tag within your body, and add your name within the `<body>` surrounded by `<h1>` and `</h1>`. Your `<body>` should look like this:
+Let's remove that `<p>` tag, because who has `Hello World!` on a portfolio website? The largest text on your website should be your name, right? Let's do that right now, with an `<h1>` tag. Remove the `<p>` tag within your body, and add your name within the `<body>` surrounded by `<h1>` and `</h1>`. Then, add some extra information as a slightly smaller header. Put a description of who you are and what you do as `<h3>` within your body. For example, here is my current body:
 
 ```html
     <body>
     	<img src="img/avatar.jpg"></img>
-    	<h1>Jeffrey Zhao</h1>	<!-- added name as h1 -->
-    </body>
-```
-
-Let's add some extra information as a slightly smaller header. Put a description of who you are and what you do as `<h3>` within your body. For example, here is my current body:
-
-```html
-    <body>
-    	<img src="img/avatar.jpg"></img>
-    	<h1>Jeffrey Zhao</h1>
-    	<h3>Student, Pirate, Dog</h3>	<!-- added name as h3 -->
+    	<h1>Jeffrey Zhao</h1>	<!-- added name as h1-->
+    	<h3>Student, Pirate, Dog</h3>	<!-- added description as h3 -->
     </body>
 ```
 
@@ -214,9 +205,44 @@ There's now the iconic blue/purple HTML link at the bottom of your portfolio web
 
 Examining the `<a>` tag, there are several things to notice. Like images, they taking in an attribute `href`, the location that they will link to. However, they can also take in text within the markup tags, and that text will become the name of the link. Here, `href="https://github.com/<username>">` made this `<a>` tag link to your GitHub profile, and the text within it, `GitHub`, gave the link its name.
 
-The `href` attribute doesn't just accept URLs. For example 
+The `href` attribute doesn't just accept URLs. For example, you can link another HTML file in the same directory by having the tag be `<a href="<filename>.html">`. Create a file called `about.html` in the same directory `index.html` and make it according to the rules stated earlier in this workshop, about your credentials. For example, here's my `about.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+	<p>Bachelor's Degree from Dog College</p>
+	<p>Four Years of Experience as Front-End Pirate</p>
+    </body>
+</html>
+```
+
+Afterwards, add `<a href="about.html">About Me</a>` to your body, on a line under the GitHub profile link. Your `About Me` link will show up next to the GitHub profile one, and, when you click on it, you'll be directed to the `about.html`!
+
+The `href` attribute isn't limited to just HTML documents. Say if you wanted to upload a resume to your website. Create a folder called `res` in the same directory as `index.html` and plop the resume in there. Say that the resume is named `resume.pdf`. You can create a link to the resume with `<a href="res/resume.pdf">Resume</a>`. By placing that under your `About Me` link, your `Resume` link will be the third one on that line.
+
+Here is my final `<body>` for `index.html`:
+
+```html
+<body>
+    <img src="img/avatar.jpg"></img>
+    <h1>Jeffrey Zhao</h1>
+    <h3>Student, Pirate, Dog</h3>
+    <a href="https://github.com/descrip">GitHub</a>
+	<a href="about.html">About Me</a>
+	<a href="res/resume.pdf">Resume</a>
+</body>
+```
+
+Here's a gif showing the three links in action:
+
+<p align="center"><img src="resources/pages-link-3.png"/></p>
 
 ### Combining Tags
+
+Tags can usually used in tandem. 
 
 [//]: # (DO NOT TOUCH the below table. -Jeffrey)
 
