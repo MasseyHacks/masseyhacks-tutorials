@@ -162,9 +162,13 @@ You can also place the image within the same paragraph as the `Hello World!` tex
 
 ### Headers with the `<h1>` tag
 
-Right after fixing the error, however, we're going to remove that `<p>` tag, because who has `Hello World!` on a portfolio website? The largest text on your website should be your name, right? Let's do that right now.
+The `<h1>` tag is what's called a header tag. Any of the text within the `<h1>` markup tags will be bolded, and its font size will be increased. The reason why there is a `1` in `h1` is because there are multiple levels of header tags:
 
-Remove the `<p>` tag within your body, and add your name within the `<body>` surrounded by `<h1>` and `</h1>`. Your `<body>` should look like this:
+<p align="center"><img src="resources/pages-header-demonstration.png"/></p>
+
+As the number within `<hX>` increases, the size and impact of the header decreases. The header tags start from `<h1>` and end at `<h6>`. 
+
+Let's remove that `<p>` tag, because who has `Hello World!` on a portfolio website? The largest text on your website should be your name, right? Let's do that right now, with an `<h1>` tag. Remove the `<p>` tag within your body, and add your name within the `<body>` surrounded by `<h1>` and `</h1>`. Your `<body>` should look like this:
 
 ```html
     <body>
@@ -173,20 +177,7 @@ Remove the `<p>` tag within your body, and add your name within the `<body>` sur
     </body>
 ```
 
-The `<h1>` tag is what's called a header tag. Any of the text within the `<h1>` markup tags will be bolded, and its font size will be increased. The reason why there is a `1` in `h1` is because there are multiple levels of header tags:
-
-# This text is within the `<h1>` tag.
-## This text is within the `<h2>` tag.
-### This text is within the `<h3>` tag.
-#### This text is within the `<h4>` tag.
-##### This text is within the `<h5>` tag.
-###### This text is within the `<h6>` tag.
-
-As the number within `<hX>` increases, the size and impact of the header decreases. The header tags start from `<h1>` and end at `<h6>`.
-
-Let's add some extra information as a slightly smaller header. Put a description of who you are and what you do as `<h3>` within your body.
-
-For example, here is my current body:
+Let's add some extra information as a slightly smaller header. Put a description of who you are and what you do as `<h3>` within your body. For example, here is my current body:
 
 ```html
     <body>
@@ -199,6 +190,10 @@ For example, here is my current body:
 Here is how my HTML document renders:
 
 <p align="center"><img src="resources/pages-headers-border.png"/></p>
+
+### Links with the `<a>` tag
+
+
 
 [//]: # (DO NOT TOUCH the below table. -Jeffrey)
 
