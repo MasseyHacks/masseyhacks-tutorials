@@ -83,7 +83,7 @@ This new file is going to represent a change to your code project. Now, lets get
 
 ### Adding a File:
 
-Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file exists. **You only need to add a file after creating it; if you're just making a change, `add` is unnecessary.** If you haven't made a new file and just edited an old one, you can skip directly to **Committing a Change**.
+Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file has been changed.
 
 **Terminal users**: Uue the command `git add` to add the file. There are lots of options to choose from:
 	- `git add <filename>`: Adds the given file and nothing else.
@@ -94,7 +94,7 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 
 ### Committing a Change
 
-Now you're going to have to tell Git that you've made changes to the local repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
+Now you're going to have to tell Git that you'd like to officialy record the changes in the repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
 
 **Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
