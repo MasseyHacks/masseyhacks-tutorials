@@ -52,9 +52,7 @@ Now you're going to have to make a local repo on your computer, and this one wil
 	1. Unlike terminal users, you don't need to make a local repo. GitHub Desktop does it automatically for you. First you have to sign in.
     
         i. In the upper right hand corner of the program, click the ![](resources/github-desktop-gear.png) icon and go to "Options":
-        
             <p align="center"><img src="resources/github-desktop-choose-options.png"/></p>
-            
         ii. Go to **Accounts** and click **Add account**.
         iii. Under **Log in** fill in your username and password for GitHub and click **Log in**.
     2. Now that you're logged in, click the encircled + icon in the top-right corner: ![](resources/github-desktop-plus.png). This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
