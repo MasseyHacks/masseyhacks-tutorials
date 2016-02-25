@@ -358,6 +358,132 @@ though this is more wordy.
 
 There are a variety of different listeners you can add to different objects that respond to different events, such as when a button is pressed or when a slider is moved.
 
+#### Adding functionality when the button is pressed
+
+We're also going to add a listener to our button widget so that we can do things when it's clicked. The listener we want to add should respond to when the button is clicked, thus we need to use `addAppButton.setOnClickListener`. We're going to set it to a `new View.OnClickListener()` object:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image29.png)
+
+The line in our `onClick` method makes a message display at the bottom of the screen saying "Your app has been added!".
+
+Another important thing we need to do when the button is pressed is **save** the app idea that was just created. To do this, first we're going to create a new class called `AppIdea` to represent an app idea. Right click on the app's main package in the Project panel and select `New -> Java Class`. Name it `AppIdea`, then replace the class with the following code:
+
+```
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class AppIdea implements Parcelable {
+
+    private String name;
+    private String dueDate;
+    private String description;
+    private int priority;
+
+    public AppIdea(final String name, final String dueDate, final String description, final int priority) {
+        this.name = name;
+        this.dueDate = dueDate;
+        this.description = description;
+        this.priority = priority;
+    }
+
+    public AppIdea(Parcel in) {
+        String[] data = new String[4];
+        in.readStringArray(data);
+
+        name = data[0];
+        dueDate = data[1];
+        description = data[2];
+        priority = Integer.getInteger(data[3]);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[] { name, dueDate, description, Integer.toString(priority) });
+    }
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public AppIdea createFromParcel(Parcel in) {
+            return new AppIdea(in);
+        }
+
+        public AppIdea[] newArray(int size) {
+            return new AppIdea[size];
+        }
+    };
+}
+
+```
+
+This is just a basic class that has the four pieces of information that uniquely identify an app idea, along with getters and setters for each. It also implements `Parcelable`, which will allow us to pass it to other activites, but you don't have to worry about that for now.
+
+*Note*: You can automatically generate getters and setters for a field by right clicking on it's name and selecting "Generate". In the resulting context menu, choose "Getter and Setter", and select "OK" in the resulting dialog box.
+
+In our `MainActivity` we want to add the following field:
+
+`private ArrayList<AppIdea> appIdeas = new ArrayList<AppIdea>();`
+
+This list will store the `AppIdea` instances we create.
+
+Now every time we press the `addAppIdeaButton`, we want to create an `AppIdea` instance and add it to the `appIdeas` list. The button's `onClick` listener should look as follows:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image30.png)
+
+## Adding another Activity
+
+Now, we have *almost* everything. We can fill in our text fields describing our app, we can create said app by pressing a button, and we can store a list of the apps we've created. There's just one problem; there's no way of viewing the apps we've created! To fix this, we're going to **add another activity** to our app.
+
+To add a new activity, right click on the main package in the Project panel and click `New -> Activity -> Empty Activity`. We'll call this activity `AppListActivity`. Now we're going to leave the activity blank for now, and go back to our main activity. We're going to add a button that will take us to the `AppListActivity`.
+
+Drag and drop a Button widget into the design window and place it underneath the "Add App Idea" button. Give this button an id like `"goToAppListButton"`. Now in `MainActivity.java`, we're going to add another `Button` field to reference it:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image31.png)
+
+and in the `onCreate` method we're going to assign it:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image32.png)
+
+Now, as with our "Add App Idea" button, we're going to set it's onClickListener:
+
+![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image33.png)
+
+We want clicking the button to result in our `AppListActivity` being constructed and the `MainActivity` being closed.
+
 ## Other Important Things
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
