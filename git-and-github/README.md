@@ -1,16 +1,12 @@
 # Working with Git and GitHub
 
-## What is git? Why does it have a hub?
-
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team?
 
 Git was invented for this purpose. It's a program that controls your code, especially for working in a team. GitHub is a website (the one that you're on right now) which gives free hosting space for code projects that use git -- provided that you're okay with other people seeing your code.
 
 If you plan to do any coding with your friends or coworkers, in the industry or just for fun, you'll probably end up using git. So it's pretty important that you learn to use it.
 
-### A word of Caution
-
-This workshop is not meant to be a thorough course to git and GitHub. Instead, this will teach you all you need to know about the two to be able to work in a group effectively in the course of just an hour. If you're looking for an indepth tutorial to git and GitHub, Google it!
+This workshop is not meant to be a thorough course to git and GitHub. Instead, this will teach you just what you need to know about the two to be able to work in a group effectively in the course of just an hour.
 
 ## Section 0: Prerequisites
 
@@ -83,7 +79,7 @@ This new file is going to represent a change to your code project. Now, lets get
 
 ### Adding a File:
 
-Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file exists. **You only need to add a file after creating it; if you're just making a change, `add` is unnecessary.** If you haven't made a new file and just edited an old one, you can skip directly to **Committing a Change**.
+Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file has been changed.
 
 **Terminal users**: Uue the command `git add` to add the file. There are lots of options to choose from:
 	- `git add <filename>`: Adds the given file and nothing else.
@@ -94,7 +90,7 @@ Git doesn't recognise new files unless you want it to. First, you'll need to tel
 
 ### Committing a Change
 
-Now you're going to have to tell Git that you've made changes to the local repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
+Now you're going to have to tell Git that you'd like to officialy record the changes in the repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
 
 **Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
 
