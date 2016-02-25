@@ -82,7 +82,7 @@ Let's get something viewable. Throw in something inbetween the `<body>` tags to 
 
 Commit and push the repository to GitHub. Now, visit `<username>.github.io`.
 
-<p align="center"><img src="resources/pages-hello-world.png"/></p>
+<p align="center"><img src="resources/pages-hello-world-border.png"/></p>
 
 Congratulations! Your website is up and running on GitHub pages, and that `Hello World!` available for everyone in the world to see. If you don't want to wait for `github.io` to process your new website, you can quickly open up `index.html` with your web browser and it will show you exactly the same thing.
 
@@ -125,11 +125,11 @@ Quick note: the `src` attribute can also take a URL, for example, an imgur link.
 
 Do the usual: commit and push. Take a look at the website now. It might look like this...
 
-<p align="center"><img src="resources/pages-img-1.png"/></p>
+<p align="center"><img src="resources/pages-img-1-border.png"/></p>
 
 ...Or, the web browser might have some issues with this HTML document and spit out this:
 
-<p align="center"><img src="resources/pages-img-2.png"/></p>
+<p align="center"><img src="resources/pages-img-2-border.png"/></p>
 
 Something's wrong here, huh? Here's how to fix it:
 
@@ -157,7 +157,7 @@ To illustrate this, let's add a couple of `<p>` tags. Try out the following `<bo
 
 The HTML document will now render like this:
 
-<p align="center"><img src="resources/pages-with-p.png"/></p>
+<p align="center"><img src="resources/pages-with-p-border.png"/></p>
 
 
 TODO: Add more to `<p>`
