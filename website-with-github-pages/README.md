@@ -320,5 +320,22 @@ If you refresh the page now, you'll see something surprising: all of the HTML el
 
 <p align="center"><img src="resources/pages-centered.png"/></p>
 
-Let's dissect what those three lines actually do:
- - 
+Let's dissect what these lines actually do. CSS comprises of multiple style rules -- in this case, one. Style rules are in the general form of:
+
+```
+selector{
+	property1: value1;
+	property2: value2;
+	property3: value3;
+}
+```
+
+Here is what each component does:
+
+ - **Selector:** The HTML tag at which a rule will be applied. Here, the selector is `body`.
+ - **Property:** An attribute of an HTML tag that will be changed. Here, the property is `text-align`.
+ - **Value**: What to change the property of the selector to. Here, the value is `center`.
+
+Each CSS rule applies to all HTML tags within any HTML file that it is included. CSS rules can have multiple property and value pairs. Though we didn't really encounter them, each HTML object has a number of attributes that have a set value that determines how the object will act. CSS exists to work alongside HTML in order to change the behaviour of its objects to whatever value is specified.
+
+If we read the CSS that I just gave you in simple English, it would probably sound like "Select every `body` tag on this HTML page and set the alignment of the text within the body tag to be centered."
