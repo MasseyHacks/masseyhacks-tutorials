@@ -62,9 +62,9 @@ One last thing: comments in HTML start with `<!--` and end with `-->`. Any text 
 Let's get something viewable. Throw in something inbetween the `<body>` tags to show to the user.
 
 ```html
-    <body>
-    	Hello World!
-    </body>
+<body>
+    Hello World!
+</body>
 ```
 
 **Your final HTML document should look like this:**
@@ -99,10 +99,10 @@ Got an image of yourself? Create a folder named `img` within the website directo
 Now, over in `index.html`, add an `<img>` tag into the `<body>` tag.
 
 ```html
-    <body>
-    	<img src="img/avatar.jpg"></img>	<!--img tag added to this line-->
-    	Hello World!
-    </body>
+<body>
+    <img src="img/avatar.jpg"></img>	<!--img tag added to this line-->
+    Hello World!
+</body>
 ```
 
 An `<img>` tag, as the name suggests, is a markup tag to identify an image. However, instead of having text within `img`, the source of the image is given as an attribute in the tag. `src` is the name of that attribute. `img/avatar.jpg` is the link to the image, relative to `index.html`. 
@@ -124,10 +124,10 @@ Something's wrong here, huh? Here's how to fix it:
 Let's take a look at our current body:
 
 ```html
-    <body>
-    	<img src="img/avatar.jpg"></img>
-    	Hello World!
-    </body>
+<body>
+    <img src="img/avatar.jpg"></img>
+    Hello World!
+</body>
 ```
 
 The `Hello World!` is the real problem here. Text shouldn't be put directly into `<body>`. Instead, there is a special tag for them: `<p>`, or paragraph. Everything within `<p>` tags will be consigned to a single paragraph, and there will be a spacing between paragraphs.
@@ -135,10 +135,10 @@ The `Hello World!` is the real problem here. Text shouldn't be put directly into
 To illustrate this, let's add a couple of `<p>` tags. Try out the following `<body>`:
 
 ```html
-    <body>
-    	<img src="img/avatar.jpg"></img>
-    	<p>Hello World!</p>	<!--surround text with p tags-->
-    </body>
+<body>
+    <img src="img/avatar.jpg"></img>
+    <p>Hello World!</p>	<!--surround text with p tags-->
+</body>
 ```
 
 The HTML document will now render like this:
@@ -150,10 +150,10 @@ The HTML document will now render like this:
 You can also place the image within the same paragraph as the `Hello World!` text. The following `<body>`...
 
 ```html
-    <body>
-    	<p><img src="img/avatar.jpg"></img>
-    	Hello World!</p>	<!--surround text with p tags-->
-    </body>
+<body>
+    <p><img src="img/avatar.jpg"></img>
+    Hello World!</p>	<!--surround text with p tags-->
+</body>
 ```
 
 ...Renders this on your web browser:
@@ -171,11 +171,11 @@ As the number within `<hX>` increases, the size and impact of the header decreas
 Let's remove that `<p>` tag, because who has `Hello World!` on a portfolio website? The largest text on your website should be your name, right? Let's do that right now, with an `<h1>` tag. Remove the `<p>` tag within your body, and add your name within the `<body>` surrounded by `<h1>` and `</h1>`. Then, add some extra information as a slightly smaller header. Put a description of who you are and what you do as `<h3>` within your body. For example, here is my current body:
 
 ```html
-    <body>
-    	<img src="img/avatar.jpg"></img>
-    	<h1>Jeffrey Zhao</h1>	<!-- added name as h1-->
-    	<h3>Student, Pirate, Dog</h3>	<!-- added description as h3 -->
-    </body>
+<body>
+    <img src="img/avatar.jpg"></img>
+    <h1>Jeffrey Zhao</h1>	<!-- added name as h1-->
+    <h3>Student, Pirate, Dog</h3>	<!-- added description as h3 -->
+</body>
 ```
 
 Here is how my HTML document renders:
@@ -189,12 +189,12 @@ Usually, a web page serves as a stepping stone to other web pages. Clicking on a
 As a demonstration, let's add some links that lead to places that are important to you. Add a link to your GitHub profile onto your website by editing your `<body>`, like so:
 
 ```html
-    <body>
-    	<img src="img/avatar.jpg"></img>
-    	<h1>Jeffrey Zhao</h1>
-    	<h3>Student, Pirate, Dog</h3>
-    	<a href="https://github.com/<username>">GitHub</a>		<!-- Added link to GitHub profile -->
-    </body>
+<body>
+    <img src="img/avatar.jpg"></img>
+    <h1>Jeffrey Zhao</h1>
+    <h3>Student, Pirate, Dog</h3>
+    <a href="https://github.com/<username>">GitHub</a>		<!-- Added link to GitHub profile -->
+</body>
 ```
 
 This body will now render the following HTML document:
@@ -227,52 +227,64 @@ Here is my final `<body>` for `index.html`:
 
 ```html
 <body>
-    <img src="img/avatar.jpg"></img>
-    <h1>Jeffrey Zhao</h1>
-    <h3>Student, Pirate, Dog</h3>
-    <a href="https://github.com/descrip">GitHub</a>
-	<a href="about.html">About Me</a>
+	<img src="img/avatar.jpg"></img>
+	<h1>Jeffrey Zhao</h1>
+	<h3>Student, Pirate, Dog</h3>
+    	<a href="https://github.com/descrip">GitHub</a> | 
+	<a href="about.html">About Me</a> | 
 	<a href="res/resume.pdf">Resume</a>
 </body>
 ```
 
+You should notice that I've added a ` | ` between each link. It's just a separator.
+
 Here's a gif showing the three links in action:
 
-<p align="center"><img src="resources/pages-link-3.png"/></p>
+<p align="center"><img src="resources/pages-link-3.gif"/></p>
 
 ### Combining Tags
 
-Tags can usually used in tandem. 
+Tags can usually used in tandem. For example, say I wanted to link to my Twitter account. Let's add it with an image link: an image that, when clicked on, acts as a link and directs to a certain page, in this case my Twitter account.
 
-[//]: # (DO NOT TOUCH the below table. -Jeffrey)
+First, let's search for a good Twitter icon to act as my image link. 
 
-<table>
-	<tr>
-		<td>
-			<div class="highlight highlight-text-html-basic">
-				<pre>
-&lt;<span class="pl-ent" >body</span>&gt;
-    &lt;<span class="pl-ent" >img</span> src="img/avatar.jpg"&gt;&lt;/img&gt;
-    &lt;<span class="pl-ent" >p</span>&gt;Hello World!&lt;/<span class="pl-ent" >p</span>&gt;
-&lt;/<span class="pl-ent" >body</span>&gt;
-				</pre>
-			</div>
-		</td>
-		<td>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<div class="highlight highlight-text-html-basic">
-				<pre>
-&lt;<span class="pl-ent" >body</span>&gt;
-    &lt;<span class="pl-ent" >img</span> src="img/avatar.jpg"&gt;&lt;/img&gt;
-    &lt;<span class="pl-ent" >p</span>&gt;Hello&lt;/<span class="pl-ent" >p</span>&gt; &lt;<span class="pl-ent" >p</span>&gt;World!&lt;/<span class="pl-ent" >p</span>&gt;
-&lt;/<span class="pl-ent" >body</span>&gt;
-				</pre>
-			</div>
-		</td>
-		<td>
-		</td>
-	</tr>
-</table>
+<p align="center"><img src="resources/pages-google-twitter-icon.png"/></p>
+
+Save the image into the `img` folder, and add it into the body using an `<img>` tag. However, this time, surround the `<img>` tag by an outer `<a>` tag, that links to your Twitter profile.
+
+For example, I would append these three lines to the end of my body.
+
+```html
+<a href="https://twitter.com/<username>">	<!-- added image link -->
+	<img src="img/twitter.png"></img>
+</a>
+```
+
+Examine the new addition. The twitter icon is added into the HTML document through `<img src="img/twitter.png"></img>`. The surrounding `<a href="https://twitter.com/realDonaldTrump">` turns that image into a linkable object, and clicking on the Twitter icon will lead you to the URL that you linked.
+
+<p align="center"><img src="resources/pages-link-img.gif"/></p>
+
+Here is my final body:
+
+```html
+<body>
+    <img src="img/avatar.jpg"></img>
+    <h1>Jeffrey Zhao</h1>
+    <h3>Student, Pirate, Dog</h3>
+    <a href="https://github.com/descrip">GitHub</a> | 
+	<a href="about.html">About Me</a> | 
+	<a href="res/resume.pdf">Resume</a>
+	<p>
+		<a href="https://twitter.com/realDonaldTrump">
+			<img src="img/twitter.png"></img>
+		</a>
+	</p>
+</body>
+```
+
+I've since added a `<p>` around the Twitter icon link to keep it to its own line, since the height of the icon screws up the rest of the text links.
+
+## Step 4: Stylish CSS
+
+Here is the point where we introduce the second language: CSS. CSS stands for Cascading Style Sheets, and is used to change the properties of HTML objects (and usually to make them look better).
+
