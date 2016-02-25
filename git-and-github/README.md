@@ -119,7 +119,9 @@ Now we're going to make the changes that you've made to your local git repo offi
 
 **Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
 
-**Deskies**, 
+**Deskies**, pushing is really easy for GitHub Desktop. Just press the ![](resources/github-desktop-syncing.png) button in the top-left corner of the "History" tab.
+
+It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have.
 
 ### Wowow, it's in the cloud!
 
@@ -145,7 +147,15 @@ The commit where I added `important-change.txt` had an id of `07047e2`. Let's un
 
 **Terminal users**, call the command `git reset --hard <commit id>`. Afterwards, call `git push -f origin master`. The `-f` tag tells `git push` to forcibly push it. Git is smart: it realises that the current state of the repo is the same as one of a previous commit, and won't push to be efficient.
 
-**Desktop users**
+**Desktop users**, you have two options. Right after you commit, you can press "Undo" in the bottom-left corner of the window right after you commit:
+
+<p align="center"><img src="resources/github-desktop-undo-last-commit.png"</p>
+
+or you can press the `revert` button on the commit page:
+
+<p align="center"><img src="resources/github-desktop-revert.png"</p>
+
+Both ways do the same thing.
 
 Now go back to the official GitHub repo page and refresh. Look at the commit history now. The last commit you made is all gone. In practice, all of the commits between the last commit to the repo and the commit that you reverted back to will be **irreversibly erased**. You cannot revert this action.
 
