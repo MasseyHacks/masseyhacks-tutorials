@@ -1,0 +1,25 @@
+/*
+img{
+	width: 200px;
+}
+*/
+
+body{
+	text-align: center;
+	/*
+	background-image: url("http://usinagechicoine.com/images/metalBackgroundImg.jpg");
+	*/
+}
+
+h1{
+	font-family: sans-serif;
+	margin: 5px;
+}
+
+h3{
+	margin: 5px;
+}
+
+a{
+	text-decoration: none;
+}

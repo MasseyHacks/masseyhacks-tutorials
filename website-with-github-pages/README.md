@@ -4,7 +4,7 @@ For each GitHub account, you'll be able to host a website at `<username>.github.
 
 This workshop will focus on two things. First, it will teach you how to make a simple website out of HTML/CSS. Secondly, it will teach you how to host that website on GitHub. This workshop is not intended to be a through guide to both, and is targeted to people who have little to no experience at both.
 
-You'll finish with a simple portfolio website stating who you are and what you do. [Here's a peek at the finished product.](https://descrip.github.io/finish/index.html)
+You'll finish with a simple portfolio website stating who you are and what you do. [You can take a peek at the finished product,](https://descrip.github.io/finish/index.html) or see [the files for a finished version of my portfolio here.](final)
 
 ## Section 0: Prerequisites
 1. You're going to need to know how to use git with GitHub. I'd recommend going through our [Git and GitHub Tutorial](git-and-github) by attending the workshop during the hackathon! The rest of these prerequisites is just a copy of the things you need for that workshop.
@@ -376,6 +376,8 @@ Each CSS rule changes small properties of my portfolio website, slowly bringing 
 <p align="center"><img src="resources/pages-final.png"/></p>
 
 Add, commit, push. Visit `<username>.github.io`. How does your portfolio look?
+
+[You can find the files for a finished version of my portfolio here.](final)
 
 ## Section 5: Final and Future Thoughts
 
