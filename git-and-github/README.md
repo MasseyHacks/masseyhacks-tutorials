@@ -170,28 +170,32 @@ Actually, in my opinion, it's a pretty bad way to do it. If this workshop had mo
 
 The whole point of git and GitHub is being able to collaborate on a project with some teammates. Now you know how to work the two alone, it's time to learn how to work with friends -- or, more specifically, collaborators.
 
+At this point in time, I'm going to ask you guys to split into pairs in order to simulate working teams. If you're reading this alone, grab a friend or pretend you have one.
+
 ### Adding a Collaborator
 
 On your GitHub repo page, head over to `Settings`. You might have to type in your password at this point. Afterwards, on the left hand panel, click `Collaborators`. You'll end up at a page like this:
 
 <p align="center"><img src="resources/github-collaborator-screen.png" /></p>
 
-This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it.
+This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it. Go ahead and add your friend as a collaborator onto your account.
 
 You can add people as collaborators and work on the same repo from there, but that's horribly inefficient. What if someone's work overwrites someone else's changes? What if someone pushes a change that breaks the entire project, but there's so many things between their commit and the last commit that, if you were to revert, it would take a lot of work to bring back?
 
 You can all collaborate on one repo, but it's definitely not a good idea. If everyone was just going to work on one repo, a program like git wouldn't be needed. There is another way.
 
-### Forking
+### A New Fork
 
 Instead of everyone working on the same repo, the most common strategy is to work on forks of that repo. A fork is a clone of the repo that is specifically meant for you. You can make whatever changes you'd like to your fork of the repo, and, when you'd like, the changes that you make to your fork can be pushed to the official repo.
 
-Let's not get into too many specifics about why forking is better. For now, lets learn how to fork a repo first. Head to someone else's `hello-world` repo and press the fork button on the top right:
+Let's not get into too many specifics about why forking is better. For now, lets learn how to fork a repo first. In your pair, pick someone's repo to perform the forking on. Head to his or her (or your) `hello-world` repo and press the fork button on the top right:
 
 <p align="center"><img src="resources/fork_button.jpg" /></p>
 
-You'll be redirected to a new repo on your profile, one that is a clone of the repo that you just forked. Assuming that you already have a `hello-world` repo, this one is probably called `hello-world-1`. 
+You'll be redirected to a new repo on your profile, one that is a clone of the repo that you just forked. Assuming that you already have a `hello-world` repo, this one is probably called `hello-world-1`. Your fork, `hello-world-1`, is a completely different repo from `hello-world`.
 
 ### Changing your Fork
 
-Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Add some file or something to it, and commit and push the change to your fork.
+Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Create a file called `fork-change.txt` and add some text into it. Add, commit, and push to your fork. Do not push to your repo!
+
+If you check out the GitHub repo pages, you'll see the new commit on your fork, `hello-world-1`. However, the commit will not be on the main repo that you forked from, `hello-world`. This is for the best: your changes will not affect the main repo, only your fork. This means that you have your own little environment to make changes to, which you can do until you're staisfied. 
