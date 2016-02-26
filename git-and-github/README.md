@@ -167,7 +167,7 @@ It's too bad real life isn't this easy to revert.
 
 ### This is not the only way
 
-Actually, in my opinion, it's a pretty bad way to do it. If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git. If you have some time, I'd definitely recommend learning more into it. Just Google.
+Actually, in my opinion, it's a pretty bad way to do it. If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git when it comes to using it within a small team for a hackathon. If you have some time, I'd definitely recommend learning more into it. Just Google!
 
 ## Section 4: Collaboration!
 
@@ -183,8 +183,13 @@ On your GitHub repo page, head over to `Settings`. You might have to type in you
 
 This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it. Go ahead and add your friend as a collaborator onto your account.
 
-Now, have the other user perform the steps shown some sections ago. Create a local repo 
+Any collaborator can now add, commit, and push freely to the repo as much as he or she wishes! As long as they follow the steps from a couple of sections ago and clone it to a local repository.
 
-Any collaborator can now add, commit, and push freely to the repo as much as he or she wishes!
+### Merging
 
-### Conflicts
+Let's see this in action. Let's have someone
+
+### Merge Conflicts
+
+Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file?
+
