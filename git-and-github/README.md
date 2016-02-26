@@ -84,7 +84,7 @@ GitHub also supports Markdown editing with `README`'s. Normally, the filename is
 
 Say you make a change to your local repo. Open up your favourite text editor (bonus points if it's Vim) and create a new text file in the repo. It can be anything you want, and you can put whatever you'd like in it.
 
-<p align="center"><img src="resources/github-wowow.gif" alt="wowowowowwowowowowowowow"/></p>
+<p align="center"><img src="resources/github-wowow-2.gif" alt="wowowowowwowowowowowowow"/></p>
 
 This new file is going to represent a change to your code project. Now, lets get this change from your local git repo to the online official GitHub repo.
 
@@ -187,7 +187,27 @@ Any collaborator can now add, commit, and push freely to the repo as much as he 
 
 ### Merging
 
-Let's see this in action. Let's have someone
+Let's see this in action. Within the directory, have one person in the pair create a file `a.txt`, and the other person create a file `b.txt`. Make sure that the user that is creating `b.txt` is using terminal git. If both people wihtin your pair use GitHub Desktop, it's fine to have a Desktop user create `b.txt`. Let the person who created `a.txt` add, commit, and push first. They should be able to do so without any trouble, and, if you refresh the repo webpage, you should be able to see `a.txt` within the list of files.
+
+Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. If the person uses the Desktop version (MICHAEL MAKE SURE THIS IS CORRECT), simply syncing the local repository will push `b.txt` to the official collaborated repo. However, if the second collaborator is using command line git:
+
+<p align="center"><img src="resources/github-must-pull.gif" /></p>
+
+The attempt to push `b.txt` will be rejected! Here's the rejection message:
+
+```
+To git@github.com:awolawol/hello-world.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:awolawol/hello-world.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+In simple English, this error message states that the problem git has is that the second user's repo is behind the actual official repo. He or she does not have all of the commits that the official repo has, as the first user added a new one when pushing `a.txt`. The second user's git repo has no knowledge of that commit, until now.
+
+In order to fix this error, the second user must get all of those new commits from the online official repo to their local repo. 
 
 ### Merge Conflicts
 
