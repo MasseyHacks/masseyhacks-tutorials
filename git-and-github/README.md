@@ -1,5 +1,7 @@
 # Working with Git and GitHub
 
+# CTRL+F TODO
+
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team?
 
 Git was invented for this purpose. It's a program that controls your code, especially for working in a team. GitHub is a website (the one that you're on right now) which gives free hosting space for code projects that use git -- provided that you're okay with other people seeing your code.
@@ -223,9 +225,9 @@ That's all I have to teach you. Both git and GitHub are crucial tools in the ind
 
 ### How do I figure things out?
 
-Google and StackOverflow! Seriously, pretty much all of the programmers that organised MasseyHacks are self-taught and learned through continuously searching Google and reading free guids on the Internet.
+Google and StackOverflow! Seriously, pretty much all of the programmers that organised MasseyHacks are self-taught and learned through continuously searching Google and reading free guids on the Internet. Let's say I wanted to figure out how to make a copy of a repository:
 
-Let's say I wanted to 
+<p align="center"><img src="resources/github-google-is-god.gif" /></p>
 
 ### What did I learn?
 
