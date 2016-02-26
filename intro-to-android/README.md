@@ -50,23 +50,23 @@ It's easy to get overwhelmed by the amount of content available at first glance,
 
 Upon initially loading, your Android Studio Window will look something like this:
 
-![Initial Window](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image1.png)
+<p align="center"><img src="images/image1.png" /></p>
 
 The leftmost rectangle is the *Project* tool window (highlighted in red below), which displays the files and folders associated with your project. The _window mode_ (highlighted in blue) determines the mode in which the information is displayed. By default it's set to _Android_, which displays only the essential files and folders. Another common mode is _Project_ which lists _all_ files and folders associated with your project. Check out the other modes too!
 
-![Project Tool Window](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image2.png)
+<p align="center"><img src="images/image2.png" /></p>
 
 The central *Designer window* (green) shows us whatever we're currently working on. This could be a java file or an xml file or a graphical display. Right now it's giving us a preview of what our app will look like. Specifically, it's showing us our _blank activity_. As you can see, right now our app will simply be a blank window with the text "Hello World!" displayed in the top left corner. Currently in your editor, you should have the file `content_android_sample.xml` open. If not, you can locate it in the Project window under `app/res/layout`. 
 
 In the left of the designer window is a panel called the *palette* (pictured below), which contains a bunch of user interface _components_ that we can add to our activity to make our app look the way we want it to. You should recognize some of these components, such as `Large Text` and `Button` as these are pretty common things to include in a user interface.
 
-![Palette](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image5.png)
+<p align="center"><img src="images/image5.png" /></p>
 
 Not all components are things that the user can clearly see like text and buttons, that's why the palette is divided up into _widgets_ and _layouts_. Layouts define the visual structure for your activity, whereas widgets are things with _function_ that can be placed in your activity.
 
 If you go over to the side panel on the right of the designer window, you can see the _Component Tree_ for your activity (pictured below). This represents the hierarchy of components in your activity. As we can see, our activity consists of a `RelativeLayout`, which contains a single `TextView` object whose text is set to "Hello World!".
 
-![Component Tree](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image5.png)
+<p align="center"><img src="images/image5.png" /></p>
 
 #### Interlude: What's a RelativeLayout?
 
@@ -82,9 +82,10 @@ It really doesn't matter where you put the text, but for the purposes of this tu
 
 To change the text the widget displays, double click on it in the designer and change the `Text` field to whatever you want ("Hey MasseyHackers!" for this tutorial). Another way you can do this is by selecting the widget in the component tree and going to the panel beneath the component tree labelled _Properties_ (pictured below). This panel displays all the properties of the selected object, and allows you to change them to whatever you want. There's a TON there, but we only want to change the `text` property, so scroll down until you find it, then click on it to edit the text.
 
-![Properties Window](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image7.png)
+<p align="center"><img src="images/image7.png" /></p>
 
 You may notice that the Large Text widget we just placed has a little light bulb icon over it in the component tree. If you hover your mouse over it and click (or press "Alt" + "Enter") it will display the following message:
+
 ```
 [I18N] Hardcoded string "Hey MasseyHackers!", should use @string resource
 ```
@@ -95,7 +96,7 @@ _Note_: the `I18N` stands for "Internationalization", which comes from the fact 
 
 The awesome thing about the lightbulb is that it gives you solutions for the problems it identifies. If we click the message, we'll be brought to a dialog that looks like the following:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image8.png)
+<p align="center"><img src="images/image8.png" /></p>
 
 The dialog asks you to create a "resource" for the string. A resource is basically just a variable stored in an Xml file. You can se the `Resource Name` to be whatever you want, but, as with variable names, it should describe the purpose of the string. You can ignore `Source set`. The `File name` field is just the name of the file you want to store your resource in. You can just leave it alone for now. Press `OK`, and now the lightbulb icon should be gone from your text widget.
 
@@ -107,7 +108,7 @@ Throughout the tutorial, we've made reference to Xml files, like `content_androi
 
 If you notice in the bottom left corner of the designer window there are two tabs labelled "Design" and "Text" respectively (![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image9.png)). If you click on the "Text" tab (while the `content_android_sample.xml` file is open), a text file will open up that should look something like the following:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image10.png)
+<p align="center"><img src="images/image10.png" /></p>
 
 You should recognize some things in this file. Namely, we have a `RelativeLayout` element, and a `TextView` element inside it. This corresponds to the component tree back when were we using the "Design" tab, which showed us that our app consisted of a `RelativeLayout` component with a `TextView` subcomponent. This is how Android Studio knows what to do; it reads the elements in the file and turns them into the app's component tree. Almost every Android app you make will have this general Xml format.
 
@@ -115,13 +116,13 @@ Another important thing to recognize is that the attributes on each of the eleme
 
 Not everything we do has to be done in the graphical design window. We can actually make changes directly to the Xml file and see the effects it has on the appearance of our app in real time in the preview on the right. Let's test this out! We're going to change the background colour of our app to a light blue. To do this, we have to add the attribute `android:background` to the `RelativeLayout` object and set it equal to `"#96E5FF"` (which just happens to be the colour we want to use in hexadecimal form). Now you're `RelativeLayout` element should look something like the following:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image11.png)
+<p align="center"><img src="images/image11.png" /></p>
 
 After you make this change, you should see the effect immediately in the preview to the right. The background has turned light blue, just as we wanted!
 
 There are all sorts of attributes we can add to our elements, so lets do a few more just to get the hang of it. Let's change the colour of our text now to a contrasting dark orange (rgb = `"#FF8800"`). The name of the attribute we have to add now is called `android:textColor`. Thus our `TextView` element should look like this:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image12.png)
+<p align="center"><img src="images/image12.png" /></p>
 
 #### Interlude: Android Studio Autocomplete
 
@@ -133,7 +134,7 @@ We'll add one last attribute, which will change the font of our text. The name o
 
 So our final `TextView` element should be:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image13.png)
+<p align="center"><img src="images/image13.png" /></p>
 
 #### Interlude: Fonts in Android
 
@@ -151,7 +152,7 @@ There are two main ways of testing your app: either use an Android Virtual Devic
 
 Though sometimes it may be more practical to use an AVD, there is nothing quite like the feel of a physical device. Android Studio allows you to test our app on your device very easily. If you simply hook up your device to your computer via USB connection, then hit run, you will be brought to a window that looks like this:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image16.png)
+<p align="center"><img src="images/image16.png" /></p>
 
 In this dialog, simply choose the device you have connected (in this case, the only one listed) and hit "OK". Make sure "Launch emulator" is not enabled, and neither is "Use same device for future launches" (unless you are absolutely positive you will be using the same device to test your app in the future). Upon hitting OK, you should see your app appear on your device's screen momentarily!
 
@@ -173,16 +174,15 @@ When we first start our app, we want to begin on a page that'll let us quickly a
 
 For this app's main activity, we're going to use a `LinearLayout`. In a `LinearLayout`, objects are placed adjacent to each other either horizontally or vertically depending on the layout's `orientation property`. To change the layout to a `LinearLayout`, go to the "Text" tab and change `RelativeLayout` to `LinearLayout`, then add the attribute `android:orientation="vertical"` (this can also be done by going to the properties panel in the design window and editing the `orientation` property there). Your initial content Xml file should look like this:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image17.png)
-
+<p align="center"><img src="images/image17.png" /></p>
 
 ### Getting Images into Android Studio
 
 For your convenience, we've designed two basic logos that can be used for the app:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/app_logo.png)
+<p align="center"><img src="images/app_logo.png" /></p>
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/app_logo_alt.png)
+<p align="center"><img src="images/app_logo_alt.png" /></p>
 
 The easiest way to add images to an Android Studio project is to locate the project's resources folder (`app/src/main/res` usually), and from there drag and drop your image into one of either `drawable-hdpi`, `drawable-mdpi`, `drawable-xhdpi`, and `drawable-xxhdpi`. These folders represent images with different `dpi`'s ("dosts per inch"), which directly corresponds to the quality of the image. In this case, since our app logo images are so large, we should add them to the `xxhdpi` folder.
 
@@ -194,7 +194,7 @@ Now are images are ready for use in an `ImageView`.
 
 Just like how a `TextView` object represents text, an `ImageView` represents an *image*. As usual, to use it drag it from the widgets panel into the designer window and place it centered at the top of the layout. No image will show up yet though, it will simply appear as a blue square (while it's selected). To set an image, double click the square and click the ellipses next to the `src` field. This will bring up a dialog that looks as follows:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image18.png)
+<p align="center"><img src="images/image18.png" /></p>
 
 In this window, scroll through the files in the `Project` tab until you locate the app logo (in our case we named the file `app_logo_alt`). (*Tip*: The image will show up in the `Drawable` folder, so you can close the `Color` folder to make it easier to find what you need.) Click "OK" and now the logo is in your app.
 
@@ -206,11 +206,11 @@ We're going to add three different text fields to our main activity. The differe
 
 Now we want to give some indication of the purpose of the text field; we can't just have a bunch of fields and expect the user to know what they're for. To help specify purpose, we set the `hint` property of the text field. Scroll until you find the hint property in the Properties panel, and then change it to something like `App Name`. Now your app should look something like this (depending on which logo you chose):
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image19.png)
+<p align="center"><img src="images/image19.png" /></p>
 
 We're also going to make some small adjustments to this widget. First, we're going to set it's `singleLine` property to `true` (by checking the checkbox next to it in the Properties panel). This will ensure that the name of an app never takes up more than one line (though it can stretch beyond the length of the text field). We're also going to go to the `inputType` property and mark `textCapWords`:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image22.png)
+<p align="center"><img src="images/image22.png" /></p>
 
 This ensures that every input word of text will automatically be capitalized.
 
@@ -220,7 +220,7 @@ Finally, we'll add a "Description" section. We want to give lots of room for des
 
 If you did everything correctly, you should end up with something like the following:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image20.png)
+<p align="center"><img src="images/image20.png" /></p>
 
 ### `SeekBar`
 
@@ -242,7 +242,7 @@ We want to prevent the user from being able to submit an "empty" app. In other w
 
 Experiment with some of the properties of the widgets you just placed! There's lots of things you can do to make it pretty and unique, it's just a matter of messing around and learning what the different properties do. Here's an example of something we were able to create:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image23.png)
+<p align="center"><img src="images/image23.png" /></p>
 
 ## How do I make it functional?
 
@@ -250,7 +250,7 @@ Up to this point we've only been focusing on how our UI *looks*, and not actuall
 
 In the project panel on the left, go to `app/java` and locate the java file representing your main activity. In this case, it should look something like the following:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image24.png)
+<p align="center"><img src="images/image24.png" /></p>
 
 Double click to open it up. Welcome to the java part of Android, where things *really* start to ramp up!
 
@@ -305,7 +305,7 @@ For more information, see the documentation for `Bundle`, which can be found [he
 
 In Android, all of the UI is written in Xml right? Well when an activity starts it needs to know what UI content to display to the user. `setContentView(R.layout.activity_main)` sets the activity's content to the given layout; `layout.activity_main`. Though we haven't used or talked about it, `activity_main.xml` acts as a wrapper around `content_main.xml`. If you navigate to the file, you'll see that it looks a lot like content file, but with "more" things; a `CoordinatorLayout`, an `AppBarLayout` with a `Toolbar` and a `FloatingActionButton`, and right in the middle it includes `content_main`:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image25.png)
+<p align="center"><img src="images/image25.png" /></p>
 
 So when we set the activity's content to `layout.activity_main`, it adds all this content *including* our layout in `content_main.xml` to the activity.
 
@@ -315,19 +315,19 @@ You will *almost always* call `setContentView` in the `onCreate` method of an ac
 
 Let's spend some time making our app actually *function*. First, lets add fields to our activity representing the different widgets:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image26.png)
+<p align="center"><img src="images/image26.png" /></p>
 
 *Note*: When you type the names `EditText` and `SeekBar` and `Button`, by default they will be underlined in red. We have to import them before we can actually use them. Fortunately, Android Studio provides us with an easy way of adding an import statement for unimported classes. Right after typing a name, like `EditText`, hit `Alt + Enter`, and an import statement will be automatically added.
 
 Now, in the `onCreate` method, we need to add the code to retrieve the widgets and assign them to these fields. To retrieve a widget, use the `findViewById` method. This method returns a `View` object, so we have to cast it to the proper type before we assign it. The code should look like this:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image27.png)
+<p align="center"><img src="images/image27.png" /></p>
 
 #### Enabling the button when sufficient input is provided
 
 We want the button to become enabled when the user has input the minimum required information. The only piece of required information is the name of the app idea. Thus we need some code that checks when text has been added to the `appIdeaName` widget, and then enables our button. How do we go about doing this? We need to add a `Listener` to our `appIdeaName` widget:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image28.png)
+<p align="center"><img src="images/image28.png" /></p>
 
 A *listener* is an object that waits for something to happen, and then calls a certain method. In this case, the listener is our `TextWatcher` object and the method that gets called is `onTextChanged`. In this method, we call `addAppButton.setEnabled`. This method allows us to set whether or not the button is enabled (by supplying a boolean argument). For our case, we want the button to become enabled when there is any text at all in the `appIdeaName` text field. To check this, we simply check if `s.length() > 0`.
 
@@ -343,7 +343,7 @@ There are a variety of different listeners you can add to different objects that
 
 We're also going to add a listener to our button widget so that we can do things when it's clicked. The listener we want to add should respond to when the button is clicked, thus we need to use `addAppButton.setOnClickListener`. We're going to set it to a `new View.OnClickListener()` object:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image29.png)
+<p align="center"><img src="images/image29.png" /></p>
 
 The line in our `onClick` method makes a message display at the bottom of the screen saying "Your app has been added!".
 
@@ -443,7 +443,7 @@ This list will store the `AppIdea` instances we create.
 
 Now every time we press the `addAppIdeaButton`, we want to create an `AppIdea` instance and add it to the `appIdeas` list. The button's `onClick` listener should look as follows:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image30.png)
+<p align="center"><img src="images/image30.png" /></p>
 
 ## Adding another Activity
 
@@ -453,15 +453,15 @@ To add a new activity, right click on the main package in the Project panel and 
 
 Drag and drop a Button widget into the design window and place it underneath the "Add App Idea" button. Give this button an id like `"goToAppListButton"`. Now in `MainActivity.java`, we're going to add another `Button` field to reference it:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image31.png)
+<p align="center"><img src="images/image31.png" /></p>
 
 and in the `onCreate` method we're going to assign it:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image32.png)
+<p align="center"><img src="images/image32.png" /></p>
 
 Now, as with our "Add App Idea" button, we're going to set it's onClickListener:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image33.png)
+<p align="center"><img src="images/image33.png" /></p>
 
 We want clicking the button to result in our `AppListActivity` being constructed and the `MainActivity` being closed.
 
@@ -469,7 +469,7 @@ We want clicking the button to result in our `AppListActivity` being constructed
 
 In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
 
-![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image3.png)
+<p align="center"><img src="images/image3.png" /></p>
 
 To the right of that menu you should see a button that looks like ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image4.png). This determines the orientation of the display. You can click the middle of the button to automatically toggle between portrait and landscape, or you can click the arrow to bring up a dropdown menu with even more options.
 
