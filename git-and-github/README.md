@@ -50,11 +50,10 @@ Now you're going to have to make a local repo on your computer, and this one wil
 	4. Now let's get the two repositories in sync. The online repo has a `README.md` file. Clone it on the local repo by calling `git pull origin master`. Don't bother with `origin` or `master` for now.
 - Desktop Users:
 	1. Unlike terminal users, you don't need to make a local repo. GitHub Desktop does it automatically for you. First you have to sign in.
-    
-        i. In the upper right hand corner of the program, click the ![](resources/github-desktop-gear.png) icon and go to "Options":
-            <p align="center"><img src="resources/github-desktop-choose-options.png"/></p>
-        ii. Go to **Accounts** and click **Add account**.
-        iii. Under **Log in** fill in your username and password for GitHub and click **Log in**.
+		i. In the upper right hand corner of the program, click the ![](resources/github-desktop-gear.png) icon and go to "Options":
+			<p align="center"><img src="resources/github-desktop-choose-options.png"/></p>
+		ii. Go to **Accounts** and click **Add account**.
+		iii. Under **Log in** fill in your username and password for GitHub and click **Log in**.
     2. Now that you're logged in, click the encircled + icon in the top-right corner: ![](resources/github-desktop-plus.png). This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
         <p align="center"><img src="resources/github-desktop-add-repo-menu.png"/></p>
     3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
@@ -179,6 +178,26 @@ On your GitHub repo page, head over to `Settings`. You might have to type in you
 <p align="center"><img src="resources/github-collaborator-screen.png" /></p>
 
 This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it. Go ahead and add your friend as a collaborator onto your account.
+
+Now, have the other user perform the steps shown some sections ago. Create a local repo 
+
+Any collaborator can now add, commit, and push freely to the repo as much as he or she wishes!
+
+### Conflicts
+
+
+
+
+
+
+
+
+
+
+
+
+
+# OLD
 
 You can add people as collaborators and work on the same repo from there, but that's horribly inefficient. What if someone's work overwrites someone else's changes? What if someone pushes a change that breaks the entire project, but there's so many things between their commit and the last commit that, if you were to revert, it would take a lot of work to bring back?
 
