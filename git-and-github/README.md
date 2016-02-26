@@ -54,11 +54,11 @@ Now you're going to have to make a local repo on your computer, and this one wil
 			<p align="center"><img src="resources/github-desktop-choose-options.png"/></p>
 		ii. Go to **Accounts** and click **Add account**.
 		iii. Under **Log in** fill in your username and password for GitHub and click **Log in**.
-    2. Now that you're logged in, click the encircled + icon in the top-right corner: ![](resources/github-desktop-plus.png). This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
-        <p align="center"><img src="resources/github-desktop-add-repo-menu.png"/></p>
-    3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
-    4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
-        <p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
+	2. Now that you're logged in, click the encircled **+** icon in the top right. This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
+		<p align="center"><img src="resources/github-desktop-add-repo-menu.png"/></p>
+	3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
+	4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
+		<p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
         
 ### Why do we have two repositories?
 
