@@ -215,9 +215,17 @@ When calling `git pull`, you will be prompted with a Vim process to comment on w
 
 ### Merge Conflicts
 
-Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file?
+Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file? This is called a merge conflict.
 
-TODO ADD MORE ON MERGE CONFLICTS
+Let's see what happens by purposefully creating one! Have both people in your pair edit README.txt at the same time. Let one person add, commit, and push first. They should be able to do so successfully. But, when the second person tries to push his or her commits to the official repository, it will be rejected.
+
+Following the last steps, you should be able to pull and merge the repository, right? But when you do this now:
+
+TODO: ADD DESKTOP IMAGE OF MERGE CONFLICT
+
+This specifically is called an **edit collision**: when two users change the same part of the same file, and GitHub doesn't know which edit to accept. How does git fix this? Git let's you decide.
+
+
 
 ## Section 5: That's it!
 
