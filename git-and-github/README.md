@@ -223,15 +223,15 @@ TODO ADD MORE ON MERGE CONFLICTS
 
 That's all I have to teach you. Both git and GitHub are crucial tools in the industry, and, if you're going to Software Engineering as a career, these two tools will probably be taught within the first few weeks. There's a lot more depth to both git and GitHub that I have completely ignored in this tutorial in order to teach you all that you need to know for this hackathon within an hour.
 
+### What did I learn?
+
+Git and GitHub are two programs that are used for collaboration on a code project within a team. First, you must [create a repository to house your project in](README.md#section-1-making-a-repository). Then, to flesh out your code project and repository, you must [add, commit, and push any changes to them](README.md#section-2-add-commit-push). Committing is especially important, as it keeps track of a history of the changes that you've made to the repository, such that [you can revert back to any commit at any time](README.md#section-3-rolling-back-the-repository-to-a-previous-commit). Finally, [you can add other people to your repo as collaborators](README.md#section-4-collaboration) in order to work on a single code project as a team, as long as you're careful with merging.
+
 ### How do I figure things out?
 
 Google and StackOverflow! Seriously, pretty much all of the programmers that organised MasseyHacks are self-taught and learned through continuously searching Google and reading free guids on the Internet. Let's say I wanted to figure out how to make a copy of a repository:
 
 <p align="center"><img src="resources/github-google-is-god.gif" /></p>
-
-### What did I learn?
-
-Git and GitHub are two programs that are used for collaboration on a code project within a team. First, you must [create a repository to house your project in](README.md#section-1-making-a-repository). Then, to flesh out your code project and repository, you must [add, commit, and push any changes to them](README.md#section-2-add-commit-push). Committing is especially important, as it keeps track of a history of the changes that you've made to the repository, such that [you can revert back to any commit at any time](README.md#section-3-rolling-back-the-repository-to-a-previous-commit). Finally, [you can add other people to your repo as collaborators](README.md#section-4-collaboration) in order to work on a single code project as a team, as long as you're careful with merging.
 
 ### What more can I learn?
 
@@ -241,4 +241,4 @@ Again, this tutorial is barely scratching the surface. We did not discuss branch
  - [Atlassian Git Guru Guides](https://www.atlassian.com/git/tutorials/) are really indepth and thorough. Definitely use this to go indepth for git.
  - There is a [GitHub Desktop Documentation](https://help.github.com/desktop/), but honestly, it kind of sucks. We've already taught you most of what you need for Desktop, and it's pretty simple and intuitive to use in the first place. The rest of the complexity can be found in the Atlassian tutorial.
 
-Congratulations! :tada: You've made it out alive!
+Congratulations! :tada: You've made it out alive! Now you know how to use the basics of Git and GitHub. [@descrip][https://github.com/descrip]
