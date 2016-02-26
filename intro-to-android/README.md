@@ -23,14 +23,18 @@ Android Studio is the IDE (Integrated Development Environment) that allows you t
     - If you don't own a domain name, don't worry about it. As said prior, this is just some unique identifier name specific to your app. The important thing is not that it refers to an actual domain, simply that it is _unique_. The easiest thing to do is to just use the default `Company Domain` given, which will be something like `<name>.example.com`.
     - The `Project Location` is simply where the project will be stored.
 3. Click `Next` when you've filled out the necessary info. This will bring you to the _Form Factors_ screen.
+
     - Make sure `Phone and Tablet` is checked. This will indicate that your app is intended for phones and tablets. The other options, `Wear`, `TV`, and `Android Auto`, refer to wearable devices (such as Google Glass), Google TV, and automobile dashboards respectively. Leave these unchecked.
     - Select `API 16: Android 4.1 (Jelly Bean)` as the `Minimum SDK` setting. This ensures that your app will run on most devices. The older the version selected, the wider the range of devices your app will run on. If we selected `API 23: Android 6.0 (Marshmallow)`, your app would only run on a small percentage of all devices (< 1% as indicated).
+
 4. Click `Next`. This will bring you to the _Add an activity to Mobile_ screen. For the purposes of this tutorial, simply select `Blank Activity`.
 5. In the new dialog, set the following fields:
+
     - `Activity Name` - AndroidSampleActivity
     - `Layout Name` - activity_android_sample
     - `Title` - AndroidSampleActivity
     - `Menu Resource Name` - menu_android_sample
+    
 *Note*: *Do not* select `Use a Fragment` for now.
 
 6. Click `Finish`. It may take a few minutes for the project to build, and once the Android Studio window is loaded, give it a few minutes to load everything (as there is a LOT it has to load).
