@@ -1,5 +1,7 @@
 # Working with Git and GitHub
 
+# CTRL+F TODO
+
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team?
 
 Git was invented for this purpose. It's a program that controls your code, especially for working in a team. GitHub is a website (the one that you're on right now) which gives free hosting space for code projects that use git -- provided that you're okay with other people seeing your code.
@@ -84,7 +86,7 @@ GitHub also supports Markdown editing with `README`'s. Normally, the filename is
 
 Say you make a change to your local repo. Open up your favourite text editor (bonus points if it's Vim) and create a new text file in the repo. It can be anything you want, and you can put whatever you'd like in it.
 
-<p align="center"><img src="resources/github-wowow.gif" alt="wowowowowwowowowowowowow"/></p>
+<p align="center"><img src="resources/github-wowow-2.gif" alt="wowowowowwowowowowowowow"/></p>
 
 This new file is going to represent a change to your code project. Now, lets get this change from your local git repo to the online official GitHub repo.
 
@@ -163,8 +165,6 @@ Both ways do the same thing.
 
 Now go back to the official GitHub repo page and refresh. Look at the commit history now. The last commit you made is all gone. In practice, all of the commits between the last commit to the repo and the commit that you reverted back to will be **irreversibly erased**. You cannot revert this action.
 
-It's too bad real life isn't this easy to revert.
-
 ### This is not the only way
 
 Actually, in my opinion, it's a pretty bad way to do it. If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git when it comes to using it within a small team for a hackathon. If you have some time, I'd definitely recommend learning more into it. Just Google!
@@ -187,9 +187,58 @@ Any collaborator can now add, commit, and push freely to the repo as much as he 
 
 ### Merging
 
-Let's see this in action. Let's have someone
+Let's see this in action. Within the directory, have one person in the pair create a file `a.txt`, and the other person create a file `b.txt`. Make sure that the user that is creating `b.txt` is using terminal git. If both people wihtin your pair use GitHub Desktop, it's fine to have a Desktop user create `b.txt`. Let the person who created `a.txt` add, commit, and push first. They should be able to do so without any trouble, and, if you refresh the repo webpage, you should be able to see `a.txt` within the list of files.
+
+Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. If the person uses the Desktop version (TODO MICHAEL MAKE SURE THIS IS CORRECT), simply syncing the local repository will push `b.txt` to the official collaborated repo. However, if the second collaborator is using command line git:
+
+<p align="center"><img src="resources/github-must-pull.gif" /></p>
+
+The attempt to push `b.txt` will be rejected! Here's the rejection message:
+
+```
+To git@github.com:awolawol/hello-world.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:awolawol/hello-world.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+In simple English, this error message states that the problem git has is that the second user's repo is behind the actual official repo. He or she does not have all of the commits that the official repo has, as the first user added a new one when pushing `a.txt`. The second user's git repo has no knowledge of that commit, until now.
+
+In order to fix this error, the second user must get all of those new commits from the online official repo to their local repo. Do this by calling the command `git pull origin master`. This command will take all of the new commits from the offical online repo and **merge** them with your current repository. For now, the only merge is to add the new `a.txt` created by the first user.
+
+<p align="center"><img src="resources/github-pulling.gif" /></p>
+
+When calling `git pull`, you will be prompted with a Vim process to comment on what you've done in this merge and why you did it. If you're familiar with Vim, great! Say some words on what you've done. Otherwise, close Vim with `:q`, and the pull will finish. Near the end, after calling `ls`, you can see the `a.txt` appear in my directory.
 
 ### Merge Conflicts
 
 Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file?
 
+TODO ADD MORE ON MERGE CONFLICTS
+
+## Section 5: That's it!
+
+That's all I have to teach you. Both git and GitHub are crucial tools in the industry, and, if you're going to Software Engineering as a career, these two tools will probably be taught within the first few weeks. There's a lot more depth to both git and GitHub that I have completely ignored in this tutorial in order to teach you all that you need to know for this hackathon within an hour.
+
+### How do I figure things out?
+
+Google and StackOverflow! Seriously, pretty much all of the programmers that organised MasseyHacks are self-taught and learned through continuously searching Google and reading free guids on the Internet. Let's say I wanted to figure out how to make a copy of a repository:
+
+<p align="center"><img src="resources/github-google-is-god.gif" /></p>
+
+### What did I learn?
+
+Git and GitHub are two programs that are used for collaboration on a code project within a team. First, you must [create a repository to house your project in](README.md#section-1-making-a-repository). Then, to flesh out your code project and repository, you must [add, commit, and push any changes to them](README.md#section-2-add-commit-push). Committing is especially important, as it keeps track of a history of the changes that you've made to the repository, such that [you can revert back to any commit at any time](README.md#section-3-rolling-back-the-repository-to-a-previous-commit). Finally, [you can add other people to your repo as collaborators](README.md#section-4-collaboration) in order to work on a single code project as a team, as long as you're careful with merging.
+
+### What more can I learn?
+
+Again, this tutorial is barely scratching the surface. We did not discuss branches, forks, cloning, tagging, and so much more. If you're looking to learn more about Git and GitHub, here are some helpful links:
+
+ - Here's a great simple reference guide for command line users: [git - the simple guide](https://rogerdudler.github.io/git-guide/).
+ - [Atlassian Git Guru Guides](https://www.atlassian.com/git/tutorials/) are really indepth and thorough. Definitely use this to go indepth for git.
+ - There is a [GitHub Desktop Documentation](https://help.github.com/desktop/), but honestly, it kind of sucks. We've already taught you most of what you need for Desktop, and it's pretty simple and intuitive to use in the first place. The rest of the complexity can be found in the Atlassian tutorial.
+
+Congratulations! :tada: You've made it out alive!
