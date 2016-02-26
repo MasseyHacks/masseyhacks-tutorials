@@ -119,9 +119,11 @@ Now we're going to make the changes that you've made to your local git repo offi
 
 **Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
 
-**Deskies**, pushing is really easy for GitHub Desktop. Just press the ![](resources/github-desktop-syncing.png) button in the top-left corner of the "History" tab.
+**Deskies**, pushing is really easy for GitHub Desktop. Just press the `Sync` button in the top-left corner of the "History" tab. It looks like this:
 
-It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have.
+<p align="center"><img src="resources/github-desktop-syncing.png"</p>
+
+It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have, but more on that in a later section.
 
 ### Wowow, it's in the cloud!
 
@@ -184,37 +186,3 @@ Now, have the other user perform the steps shown some sections ago. Create a loc
 Any collaborator can now add, commit, and push freely to the repo as much as he or she wishes!
 
 ### Conflicts
-
-
-
-
-
-
-
-
-
-
-
-
-
-# OLD
-
-You can add people as collaborators and work on the same repo from there, but that's horribly inefficient. What if someone's work overwrites someone else's changes? What if someone pushes a change that breaks the entire project, but there's so many things between their commit and the last commit that, if you were to revert, it would take a lot of work to bring back?
-
-You can all collaborate on one repo, but it's definitely not a good idea. If everyone was just going to work on one repo, a program like git wouldn't be needed. There is another way.
-
-### A New Fork
-
-Instead of everyone working on the same repo, the most common strategy is to work on forks of that repo. A fork is a clone of the repo that is specifically meant for you. You can make whatever changes you'd like to your fork of the repo, and, when you'd like, the changes that you make to your fork can be pushed to the official repo.
-
-Let's not get into too many specifics about why forking is better. For now, lets learn how to fork a repo first. In your pair, pick someone's repo to perform the forking on. Head to his or her (or your) `hello-world` repo and press the fork button on the top right:
-
-<p align="center"><img src="resources/fork_button.jpg" /></p>
-
-You'll be redirected to a new repo on your profile, one that is a clone of the repo that you just forked. Assuming that you already have a `hello-world` repo, this one is probably called `hello-world-1`. Your fork, `hello-world-1`, is a completely different repo from `hello-world`.
-
-### Changing your Fork
-
-Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Create a file called `fork-change.txt` and add some text into it. Add, commit, and push to your fork. Do not push to your repo!
-
-If you check out the GitHub repo pages, you'll see the new commit on your fork, `hello-world-1`. However, the commit will not be on the main repo that you forked from, `hello-world`. This is for the best: your changes will not affect the main repo, only your fork. This means that you have your own little environment to make changes to, which you can do until you're staisfied. 
