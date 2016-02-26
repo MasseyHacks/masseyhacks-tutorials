@@ -50,16 +50,17 @@ Now you're going to have to make a local repo on your computer, and this one wil
 	4. Now let's get the two repositories in sync. The online repo has a `README.md` file. Clone it on the local repo by calling `git pull origin master`. Don't bother with `origin` or `master` for now.
 - Desktop Users:
 	1. Unlike terminal users, you don't need to make a local repo. GitHub Desktop does it automatically for you. First you have to sign in.
-    
-        i. In the upper right hand corner of the program, click the ![](resources/github-desktop-gear.png) icon and go to "Options":
-            <p align="center"><img src="resources/github-desktop-choose-options.png"/></p>
-        ii. Go to **Accounts** and click **Add account**.
-        iii. Under **Log in** fill in your username and password for GitHub and click **Log in**.
-    2. Now that you're logged in, click the encircled + icon in the top-right corner: ![](resources/github-desktop-plus.png). This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
-        <p align="center"><img src="resources/github-desktop-add-repo-menu.png"/></p>
-    3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
-    4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
-        <p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
+		
+		 - In the upper right hand corner of the program, click the ![](resources/github-desktop-gear.png) icon and go to "Options":
+			<p align="center"><img src="resources/github-desktop-choose-options.png"/></p>
+		 -  Go to **Accounts** and click **Add account**.
+		 -  Under **Log in** fill in your username and password for GitHub and click **Log in**.
+	
+	2. Now that you're logged in, click the encircled **+** icon in the top right. This will open a menu that will allow to "Add" a pre-existing local repository, "Create" a completely new repostory, or "Clone" a repository that you have on github.com.
+		<p align="center"><img src="resources/github-desktop-add-repo-menu.png"/></p>
+	3. We want to "Clone" the repo we made on github, so navigate to the "Clone" tab. A list of all your github.com repos will show up. From there, select your `hello-world` repo.
+	4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
+		<p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
         
 ### Why do we have two repositories?
 
@@ -120,9 +121,11 @@ Now we're going to make the changes that you've made to your local git repo offi
 
 **Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
 
-**Deskies**, pushing is really easy for GitHub Desktop. Just press the ![](resources/github-desktop-syncing.png) button in the top-left corner of the "History" tab.
+**Deskies**, pushing is really easy for GitHub Desktop. Just press the `Sync` button in the top-left corner of the "History" tab. It looks like this:
 
-It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have.
+<p align="center"><img src="resources/github-desktop-syncing.png"</p>
+
+It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have, but more on that in a later section.
 
 ### Wowow, it's in the cloud!
 
@@ -164,7 +167,7 @@ It's too bad real life isn't this easy to revert.
 
 ### This is not the only way
 
-Actually, in my opinion, it's a pretty bad way to do it. If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git. If you have some time, I'd definitely recommend learning more into it. Just Google.
+Actually, in my opinion, it's a pretty bad way to do it. If this workshop had more time, I would be teaching you `git checkout` or `git reset --soft`. However, both commands require knowledge of branches or commit trees, something that overall isn't that important to using git when it comes to using it within a small team for a hackathon. If you have some time, I'd definitely recommend learning more into it. Just Google!
 
 ## Section 4: Collaboration!
 
@@ -180,22 +183,13 @@ On your GitHub repo page, head over to `Settings`. You might have to type in you
 
 This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it. Go ahead and add your friend as a collaborator onto your account.
 
-You can add people as collaborators and work on the same repo from there, but that's horribly inefficient. What if someone's work overwrites someone else's changes? What if someone pushes a change that breaks the entire project, but there's so many things between their commit and the last commit that, if you were to revert, it would take a lot of work to bring back?
+Any collaborator can now add, commit, and push freely to the repo as much as he or she wishes! As long as they follow the steps from a couple of sections ago and clone it to a local repository.
 
-You can all collaborate on one repo, but it's definitely not a good idea. If everyone was just going to work on one repo, a program like git wouldn't be needed. There is another way.
+### Merging
 
-### A New Fork
+Let's see this in action. Let's have someone
 
-Instead of everyone working on the same repo, the most common strategy is to work on forks of that repo. A fork is a clone of the repo that is specifically meant for you. You can make whatever changes you'd like to your fork of the repo, and, when you'd like, the changes that you make to your fork can be pushed to the official repo.
+### Merge Conflicts
 
-Let's not get into too many specifics about why forking is better. For now, lets learn how to fork a repo first. In your pair, pick someone's repo to perform the forking on. Head to his or her (or your) `hello-world` repo and press the fork button on the top right:
+Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file?
 
-<p align="center"><img src="resources/fork_button.jpg" /></p>
-
-You'll be redirected to a new repo on your profile, one that is a clone of the repo that you just forked. Assuming that you already have a `hello-world` repo, this one is probably called `hello-world-1`. Your fork, `hello-world-1`, is a completely different repo from `hello-world`.
-
-### Changing your Fork
-
-Remember, back in section two, when you added or changed a file in order to see how a change would work in your repo? Now you're going to do the same thing, but to your fork. Create a file called `fork-change.txt` and add some text into it. Add, commit, and push to your fork. Do not push to your repo!
-
-If you check out the GitHub repo pages, you'll see the new commit on your fork, `hello-world-1`. However, the commit will not be on the main repo that you forked from, `hello-world`. This is for the best: your changes will not affect the main repo, only your fork. This means that you have your own little environment to make changes to, which you can do until you're staisfied. 
