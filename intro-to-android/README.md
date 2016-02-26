@@ -17,36 +17,21 @@ Android Studio is the IDE (Integrated Development Environment) that allows you t
 ## Creating a Project
 
 1. Open Android Studio
-
 2. In the Setup Wizard, click `Start a new Android Studio Project` to open the New Project Wizard.
-
-    i. Set the `Application Name` field to something like `AndroidSample`. This is not just the name that will be used to refer to the app in Android Studio, but will also be the name of the app once we get it onto your phones.
-    
-    ii. The `Package Name` is just a unique identifier for your app in the Google Play Store. The general naming convention is the reverse of your company's domain name, followed by the name of the application. For example, if your company domain is `www.mycompany.com` and the application has been named `AndroidSample`, then the package name might be `com.mycompany.androidsample`.
-    
-    If you don't own a domain name, don't worry about it. As said prior, this is just some unique identifier name specific to your app. The important thing is not that it refers to an actual domain, simply that it is _unique_. The easiest thing to do is to just use the default
-    `Company Domain` given, which will be something like `<name>.example.com`.
-    
-    iii. The `Project Location` is simply where the project will be stored.
-    
+    - Set the `Application Name` field to something like `AndroidSample`. This is not just the name that will be used to refer to the app in Android Studio, but will also be the name of the app once we get it onto your phones.
+    - The `Package Name` is just a unique identifier for your app in the Google Play Store. The general naming convention is the reverse of your company's domain name, followed by the name of the application. For example, if your company domain is `www.mycompany.com` and the application has been named `AndroidSample`, then the package name might be `com.mycompany.androidsample`.
+    - If you don't own a domain name, don't worry about it. As said prior, this is just some unique identifier name specific to your app. The important thing is not that it refers to an actual domain, simply that it is _unique_. The easiest thing to do is to just use the default `Company Domain` given, which will be something like `<name>.example.com`.
+    - The `Project Location` is simply where the project will be stored.
 3. Click `Next` when you've filled out the necessary info. This will bring you to the _Form Factors_ screen.
-
-    i. Make sure `Phone and Tablet` is checked. This will indicate that your app is intended for phones and tablets. The other options, `Wear`, `TV`, and `Android Auto`, refer to wearable devices (such as Google Glass), Google TV, and automobile dashboards respectively. Leave these unchecked.
-    
-    ii. Select `API 16: Android 4.1 (Jelly Bean)` as the `Minimum SDK` setting. This ensures that your app will run on most devices. The older the version selected, the wider the range of devices your app will run on. If we selected `API 23: Android 6.0 (Marshmallow)`, your app would only run on a small percentage of all devices (< 1% as indicated).
-    
+    - Make sure `Phone and Tablet` is checked. This will indicate that your app is intended for phones and tablets. The other options, `Wear`, `TV`, and `Android Auto`, refer to wearable devices (such as Google Glass), Google TV, and automobile dashboards respectively. Leave these unchecked.
+    - Select `API 16: Android 4.1 (Jelly Bean)` as the `Minimum SDK` setting. This ensures that your app will run on most devices. The older the version selected, the wider the range of devices your app will run on. If we selected `API 23: Android 6.0 (Marshmallow)`, your app would only run on a small percentage of all devices (< 1% as indicated).
 4. Click `Next`. This will bring you to the _Add an activity to Mobile_ screen. For the purposes of this tutorial, simply select `Blank Activity`.
-
 5. In the new dialog, set the following fields:
+    - `Activity Name` - AndroidSampleActivity
+    - `Layout Name` - activity_android_sample
+    - `Title` - AndroidSampleActivity
+    - `Menu Resource Name` - menu_android_sample
 
-    i. `Activity Name` - AndroidSampleActivity
-    
-    ii. `Layout Name` - activity_android_sample
-    
-    iii. `Title` - AndroidSampleActivity
-    
-    iv. `Menu Resource Name` - menu_android_sample
-    
 *Note*: *Do not* select `Use a Fragment` for now.
 
 6. Click `Finish`. It may take a few minutes for the project to build, and once the Android Studio window is loaded, give it a few minutes to load everything (as there is a LOT it has to load).
@@ -160,11 +145,7 @@ In fact, there just plain *isn't* a way of representing external fonts in pure X
 
 So we've spent some time developing this relatively simple app, but we haven't really gone into how we're supposed to *test* and *use* it? These are two incredibly important practices in development that require addressing.
 
-There are two main ways of testing your app:
-
-A.) Use an Android Virtual Device (AVD).
-
-B.) Load your app onto a physical device.
+There are two main ways of testing your app: either use an Android Virtual Device (AVD) or load your app onto a physical device.
 
 ### Using a Physical Device
 
@@ -275,7 +256,7 @@ Double click to open it up. Welcome to the java part of Android, where things *r
 
 The class you're looking at is the class that represents our main activity, hence is why it inherits from `AppCompatActivity` (which inherits from `Activity`). Every activity has an `onCreate` method which gets called when the activity first gets created. Let's take a look at the one that's been automatically generated for us:
 
-```
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -296,7 +277,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 For purposes of experimentation, try replacing it with the following method:
 
-```
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -368,7 +349,7 @@ The line in our `onClick` method makes a message display at the bottom of the sc
 
 Another important thing we need to do when the button is pressed is **save** the app idea that was just created. To do this, first we're going to create a new class called `AppIdea` to represent an app idea. Right click on the app's main package in the Project panel and select `New -> Java Class`. Name it `AppIdea`, then replace the class with the following code:
 
-```
+```java
 import android.os.Parcel;
 import android.os.Parcelable;
 
