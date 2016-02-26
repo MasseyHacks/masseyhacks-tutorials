@@ -240,3 +240,5 @@ Again, this tutorial is barely scratching the surface. We did not discuss branch
  - Here's a great simple reference guide for command line users: [git - the simple guide](https://rogerdudler.github.io/git-guide/).
  - [Atlassian Git Guru Guides](https://www.atlassian.com/git/tutorials/) are really indepth and thorough. Definitely use this to go indepth for git.
  - There is a [GitHub Desktop Documentation](https://help.github.com/desktop/), but honestly, it kind of sucks. We've already taught you most of what you need for Desktop, and it's pretty simple and intuitive to use in the first place. The rest of the complexity can be found in the Atlassian tutorial.
+
+Congratulations! :tada: You've made it out alive!
