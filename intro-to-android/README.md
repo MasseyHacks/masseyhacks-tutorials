@@ -139,7 +139,7 @@ Let's give our app an icon, so that when we load it onto our phone we can easily
 
 i. Right click on the `app` folder in the project panel and select `New -> Image Asset`.
 
-ii. In the resulting dialog box, on the line highlighted below locate the directory of the snowman icon you downloaded. You don't have to change anything else.
+ii. In the resulting dialog box, on the line highlighted below locate the directory of the snowman icon you downloaded (from ![here](images/snowman.png)). You don't have to change anything else.
 
 <p align="center"><img src="images/adding-icon.png"/></p>
 
