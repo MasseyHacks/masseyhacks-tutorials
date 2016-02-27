@@ -62,9 +62,11 @@ Now you're going to have to make a local repo on your computer, and this one wil
 	4. Click the check mark at the bottom. This will bring up a dialog box asking where to put the repository. Choose the directory you want to put it, then press "Ok". The window should now look like this:
 		<p align="center"><img src="resources/github-desktop-hello-world-repo.png"/></p>
         
-### Why do we have two repositories?
+### Okay, what did I just do?
 
-Remember: Git and GitHub are two different programs. There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo.
+There's this model when working with git and GitHub for your code project. Understand that git and GitHub are two separate programs: git is the local program that manages your repo on your computer, and GitHub is a website that hosts your code project online and in the cloud. 
+
+There will be a central official repository online, hosted by GitHub. However, you should perform the changes that you want to make on the project on your local git repository, and then tell git to make those same changes on the official GitHub repo. This way, your local repo, the one that you're making changes to, is in its own separate environment. If you screw up and trash the entire repo, that's fine! Clone the official repo again! And the official and online GitHub repo, the one that will be presented to everyone, will always be safe from disaster.
 
 This might seem tedious if you're working alone, but think about what happens in a team. It would be pretty chaotic if everyone made their own direct changes on the official online repository. If everyone had their own little local version of the official repository, they could use git to keep changes constant between everyone's local repositories and the official online repo.
 
@@ -258,11 +260,13 @@ this line wase commited by the first user and pushed successfully.
 
 See the `>>>>>>>` and the `<<<<<<<`? Those two markers section off a part of the file to denote where the merge conflict exists: right in the middle of it. There is a separating `=======` in the middle. Above the `=======`, you have the changes to the file that second user was trying to add. Under the `=======` are the changes that the first user made to the file before the second user committed.
 
-Git was kind enough to mark the merge conflict for us. Now, all that's left is to, as git told us, `fix conflicts and then commit the result`. Do just that:
+Git was kind enough to mark the merge conflict for us. Now, all that's left is to, as git told us, `fix conflicts and then commit the result`. So, using the conflict marks that git provides for you, manually go through the file and edit it to a final version that you want to be on the official repo.
 
 <p align="center"><img src="resources/github-conflict-fix.gif" /></p>
 
-The merge conflict should resolve, and your changes will push successfully!
+The merge conflict should resolve, and your changes will push successfully, with this new file as the final file on the offical repo!
+
+If you don't want to deal with merge conflicts, just don't have multiple people working on the same file at the same time.
 
 ## Section 5: That's it!
 
@@ -284,4 +288,4 @@ Again, this tutorial is barely scratching the surface. We did not discuss branch
  - [Atlassian Git Guru Guides](https://www.atlassian.com/git/tutorials/) are really indepth and thorough. Definitely use this to go indepth for git.
  - There is a [GitHub Desktop Documentation](https://help.github.com/desktop/), but honestly, it kind of sucks. We've already taught you most of what you need for Desktop, and it's pretty simple and intuitive to use in the first place. The rest of the complexity can be found in the Atlassian tutorial.
 
-Congratulations! :tada: You've made it out alive! Now you know how to use the basics of Git and GitHub. [@descrip][https://github.com/descrip]
+Congratulations! :tada: You've made it out alive! Now you know how to use the basics of Git and GitHub. I hope you enjoyed learning from this tutorial as much as I did writing it. [@descrip](https://github.com/descrip)
