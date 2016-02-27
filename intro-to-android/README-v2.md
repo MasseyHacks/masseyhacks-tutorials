@@ -162,7 +162,160 @@ A `ListView` is a `ViewGroup` that allows you to display a list of other `View`s
 
 This is all we can do for now regarding the UI. Let's start fleshing out the Java code now, and by the end we'll be able to combine these two pieces to form a fully functioning app.
 
+# Diving into the Java side of things
 
+Upon initially creating an app in Android Studio, you should have a single java file by default: `MainActivity`. This class represents, as the name suggests, the main activity your app starts up on. Open up the code in the editor and take a look.
+
+<p align="center"><img src="images/initial-main-activity-code.png"/></p>
+
+As the name suggests, the `onCreate` method gets called a single time, *the moment the activity gets created*. In our case, since our `MainActivity` is our app's initial activity, when the app first starts out the `onCreate` method will get called. Activity classes have a whole gamut of methods you can use that get called at different points in it's lifetime. For a quick reference, take a look at the following picture:
+
+<p align="center"><img src="images/activity_lifecycle.png"/></p>
+
+The first thing we're going to do is store a reference to our `ListView`. Remember how we said the `id` of a widget is sort of like it's variable name? Well this is where it comes into play. To retrieve our `ListView`, we have to use the method `findViewById`:
+
+```
+ListView lvWeather = (ListView) findViewById(R.id.lvWeather);
+```
+
+That `R` object stands for "Resources" and contains references to all the resources you created. `R.id` contains references to all the `id`s you specified. Notice how `lvWeather` is the id of the `ListView` we made.
+
+The function `findViewById` returns a `View` object, so we have to *cast* it to the proper type (`ListView`).
+
+Now we're going to create a class called `Forecast` that will be used to represent a single piece of data in our list.
+
+## The `Forecast` Class
+
+To create a new class, right click the package in the project panel and select `New -> Java Class`. Enter `Forecast` as the name and you'll be brought to a page like the following:
+
+<p align="center"><img src="images/forecast-intro.png"/></p>
+
+Since this class is relatively simple, you can just copy the code below into your editor, replacing the old `public class Forecast`:
+
+```
+public class Forecast {
+
+    private String day;
+    private String weather;
+    private int degrees;
+
+    public Forecast(String day, String weather, int degrees) {
+        this.day = day;
+        this.weather = weather;
+        this.degrees = degrees;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public String getWeather() {
+        return weather;
+    }
+
+    public int getDegrees() {
+        return degrees;
+    }
+
+}
+```
+
+This simply stores a string representing the day name, a string representing the weather, and an integer represnting the degrees (Celcius). It also includes "getters" for each field.
+
+Now in our `MainActivity` class we're going to generate a list of example `Forecast` objects that will later be used to fill our `ListView`. First, in `onCreate` we simply create a `List<Forecast>` to contain the forcasts:
+
+<p align="center"><img src="images/forecasts-assignment.png"/></p>
+
+Now we simply have to fill the list with arbitrary "test data":
+
+<p align="center"><img src="images/forecasts-adding-data.png"/></p>
+
+For reference, here is what the two classes side-by-side should look like at this point:
+
+<p align="center"><img src="images/main-activity-half-done.png"/><img src="images/forecast-class.png"/></p>
+
+We're going to leave the `MainActivity` and `Forecast` classes alone for a little bit and talk about another important base class in Android: `Adapter`s.
+
+## What is an Adapter?
+
+An `Adapter` in Android is essentially a bridge connecting UI components and data that fills it. For example, a `ListAdapter` is an Adapter that acts as a bridge between a `ListView` and the underyling data that will be used to propagate it. This can be tricky to understand just off of a description, so we'll create an example class to get the juices flowing.
+
+Add a new java class called `WeatherAdapter`. We want it to inherit from `BaseAdapter`:
+
+<p align="center"><img src="images/weather-adapter-signature.png"/></p>
+
+Now we're going to add the following fields and constructor to our `WeatherAdapter`:
+
+<p align="center"><img src="images/weather-adapter-fields-and-constructor.png"/></p>
+
+At this point you may be asking yourself, "what's a `Context`? Are we ever gonna stop using classes I haven't learned about?" The answer to the second question is no; Android is a *gigantic* framework, and no matter how long you work with Android you'll almost certainly come across a new class you've never seen before in your work. The best way to learn about these is to use the official Android documentation, which you can access in Android Studio by clicking on the name of the class and pressing `Ctrl + Q`, or going online.
+
+In response to the first question, `Context` is like the base class for almost everything in Android. It provides access to some of the global application information. As the name suggests, it represents the context of current state of the application/object. It lets newly created objects understand what has been going on. If you want to do anything with UI, you need a context. If you want to interact with the device, you need context. The Context base class is **essential** to any Android application.
+
+What *specifically* makes it so useful is a little more advanced than the content in this workshop. Just know it is incredibly important.
+
+Now you may notice that the class signature will be underlined indicating a compiler error. The problem is that `BaseAdapter` is an *abstract class*, and thus there are methods we *must* add to it. The first three are relatively straightforward:
+
+<p align="center"><img src="images/weather-adapter-simple-required-methods.png"/></p>
+
+- `getCount` simply returns the number of items being held by the adapter.
+
+- `getItem` returns the item at the given position.
+
+- we can ignore `getItemID` for now.
+
+The last required method is not so simple (don't copy it all yet, it deserves thorough explanation):
+
+<p align="center"><img src="images/weather-adapter-get-view.png"/></p>
+
+This method sort of explains the importance of an `Adapter` as a whole. Remember how we have a `ListView` in our main activity, and we also had a "template" layout for a single day (`view_day_forecast.xml`). What our `WeatherAdapter` is it's filling in that `ListView` with copies of our template `view_day_forecast`. The method `getView` **returns the view that will occupy a given position in the `ListView`**. For example, if `getView` were called with `position = 0`, then it would retrieve the first `Forecast` object we have and use its information to fill in a copy of the `view_day_forecast`, then return it. This is how our `ListView` will get filled with our forecasts, and **this** is why `Adapter`s are so important.
+
+The following image shows the same code as above but with the different sections colour-coded by "task":
+
+<p align="center"><img src="images/weather-adapter-get-view-colour-coded.png"/></p>
+
+
+![](images/red-icon) - This line retrieves our `view_day_forecast` as a `View` object so we can modify it.
+
+![](images/green-icon) - This line retrieves the `Forecast` at the given position (i.e. the `Forecast` who's `view` we're going to create).
+
+![](images/blue-icon) - These lines retrieve the `TextView` widgets we added to our `view_day_forecast` `View`, representing the day name, the weather, and the temperature respectively.
+
+![](images/purple-icon) - These lines take the values from the current `Forecast` object and set them as the text to the corresponding `TextView` widget using the widget's `setText` method. For example, `forecast.getDay()` gets assigned as the text to the `tvDay` widget, and so on. In the last one, all we're doing is adding the character `°` (the degree symbol) to the end of the string.
+
+Finally, we return the newly created view.
+
+#### What is `LayoutInflater`?
+
+The `LayoutInflater` is a class that instantiates a `layout` and returns it as a `View` object. In this case, we pass it in our `view_day_forecast` layout and it returns it as a `View` object that we can modify.
+
+When we first call `LayoutInflater.from(context)`, what we're doing is returning a `LayoutInflater` object that corresponds to the given application `Context` (another reason why `Context` is important). Only *then* can we use it to actually instantiate our layout.
+
+## We're done! Right?
+
+Let's run our app and give it a shot!
+
+*Take some time to run and observe the result*
+
+Well, the result is  pretty underwhelming weather app (though it's still probably as accurate as the weather network ooooooooooooooooooooh sick burn). There's nothing in our list! What gives?
+
+If you really think about it, we never actually *used* that `WeatherAdapter` class we worked so hard on. What a waste of effort! We can easily change that by **populating the list**.
+
+### Populating the `ListView`
+
+The act of *populating our `ListView`* involes somehow getting our list of `Forecast` objects to the `WeatherAdapter` so that they can be converted into `View`s and added to our `ListView`. Sounds complicated? It actually isn't!
+
+First go back to our `MainActivity` class. At the end of it's `onCreate` method, add the following line:
+
+<p align="center"><img src="images/populating-our-list-part1.png"/></p>
+
+This actually creates an instance of our `WeatherAdapter` object and supplies it with both the `Context` (being the `MainActivity` object itself, which inherits from `Context`), and the list of `Forecast` objects that will eventually fill our `ListView`. Now there's only one more line to add:
+
+<p align="center"><img src="images/populating-our-list-part2.png"/></p>
+
+This applies our `WeatherAdapter` to our `ListView`, so that now the `ListView` can be populated by the `View` objects created by our `WeatherAdapter`.
+
+If you save and run now, you should have a much more satisfying result :)
 
 
 
