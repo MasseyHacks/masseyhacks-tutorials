@@ -187,7 +187,7 @@ Any collaborator can now add, commit, and push freely to the repo as much as he 
 
 Let's see this in action. Within the directory, have one person in the pair create a file `a.txt`, and the other person create a file `b.txt`. Make sure that the user that is creating `b.txt` is using terminal git. If both people wihtin your pair use GitHub Desktop, it's fine to have a Desktop user create `b.txt`. Let the person who created `a.txt` add, commit, and push first. They should be able to do so without any trouble, and, if you refresh the repo webpage, you should be able to see `a.txt` within the list of files.
 
-Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. If the person uses the Desktop version, simply syncing the local repository will push `b.txt` to the official collaborated repo. However, if the second collaborator is using command line git:
+Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. However, if the second collaborator is using command line git:
 
 <p align="center"><img src="resources/github-must-pull.gif" /></p>
 
@@ -217,11 +217,15 @@ Okay, this is pretty dangerous. Say if two people are both collaborators on one 
 
 Let's see what happens by purposefully creating one! Have both people in your pair edit README.txt at the same time. Let one person add, commit, and push first. They should be able to do so successfully. But, when the second person tries to push his or her commits to the official repository, it will be rejected, like in the last step, where we talked about merging. However, a simple `git pull`, for command line users, or `Sync`, for Desktop users, won't fix this problem.
 
-<p align="center"><img src="resources/github-conflict-pull.gif" /></p>
+This will happen to command line users:
+
+<p align="center"><img src="resources/github-conflict-pull-2.gif" /></p>
+
+Desktop users: after clicking on the `Sync` button, the program should tell you that it cannot merge the changes.
 
 This specifically is called an **edit collision**: when two users change the same part of the same file, and GitHub doesn't know which edit to accept. How does git fix this? Git let's you decide.
 
-Read the error message carefully:
+Read the error message from `git pull` carefully:
 
 ```
 Enter passphrase for key '/home/jeffrey/.ssh/id_rsa': 
@@ -239,7 +243,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 The line `CONFLICT (content): Merge conflict in README.md` states the existence of the merge conflict, and that the `Automatic merge failed; fix conflicts and then commit the result`. In simple English, git is telling you that it tried to merge, but it couldn't, due to a conflict in `README.md`. Git then tells you to go and fix it yourself, and commit it afterwards.
 
-Well, how does the `README.md` look like right now? Open it up and see:
+Well, how does the `README.md` look like right now? Open it up and see! Desktop users should start editing within the GUI. Terminal users will have to navigate to the file within the directory and edit it with their own tools. When you open `README.md`, you should see something like this:
 
 ```
 # hello-world
