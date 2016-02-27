@@ -5,26 +5,29 @@
     i. [What the heck is Android?](#what-the-heck-is-android)
     
     ii. [Creating a Project](#creating-a-project)
-        i. [What's an Activity?](#whats-an-activity)
+    
+        1. [What's an Activity?](#whats-an-activity)
         
     iii. [Inside Android Studio](#inside-android-studio)
-        i. [What's a `RelativeLayout`?](#whats-a-relativelayout)
         
-        ii. [Adding an Icon](#adding-an-icon)
+        1. [What's a `RelativeLayout`?](#whats-a-relativelayout)
         
-        iii. [Building and Launching](#building-and-launching)
+        2. [Adding an Icon](#adding-an-icon)
+        
+        3. [Building and Launching](#building-and-launching)
         
     iv. [The Anatomy of an Android App](#the-anatomy-of-an-android-app)
-        i. [Making the UI for our app](#making-the-ui-for-our-app)
         
-        ii. [Adding some text](#adding-some-text)
+        1. [Making the UI for our app](#making-the-ui-for-our-app)
         
-        iii. [What are all those dp, sp, px, etc?](#what-are-all-those-dp-sp-px-etc)
+        2. [Adding some text](#adding-some-text)
         
-        iv. [Making the list](#making-the-list)
+        3. [What are all those dp, sp, px, etc?](#what-are-all-those-dp-sp-px-etc)
+        
+        4. [Making the list](#making-the-list)
             i. [What is a `ListView`?](#what-is-a-listview)
             
-        v. [What's this talk of `View`s?](#whats-this-talk-of-views)
+        5. [What's this talk of `View`s?](#whats-this-talk-of-views)
         
 2. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
 
@@ -37,19 +40,20 @@
     iv. [What is `LayoutInflater`?](#what-is-layoutinflater)
     
     v. [We're done! Right?](#were-done-right)
-        i. [Populating the `ListView`](#populating-the-listview)
+        
+        1. [Populating the `ListView`](#populating-the-listview)
         
 3. [Extra Help](#extra-help)
 
     i. [Enabling ADB on Android 5.0 Based Devices](#enabling-adb-on-android-50-based-devices)
-    
-        i. [Windows ADB Configuration](#windows-adb-configuration)
         
-        ii. [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
+        1. [Windows ADB Configuration](#windows-adb-configuration)
         
-        iii. [Linux ADB Configuration](#linux-adb-configuration)
+        2. [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
         
-        iv. [Testing the ADB Connection](#testing-the-adb-connection)
+        3. [Linux ADB Configuration](#linux-adb-configuration)
+        
+        4. [Testing the ADB Connection](#testing-the-adb-connection)
         
         
 # Intro to Android
