@@ -275,13 +275,13 @@ The following image shows the same code as above but with the different sections
 <p align="center"><img src="images/weather-adapter-get-view-colour-coded.png"/></p>
 
 
-![](images/red-icon) - This line retrieves our `view_day_forecast` as a `View` object so we can modify it.
+![](images/red-icon.png) - This line retrieves our `view_day_forecast` as a `View` object so we can modify it.
 
-![](images/green-icon) - This line retrieves the `Forecast` at the given position (i.e. the `Forecast` who's `view` we're going to create).
+![](images/green-icon.png) - This line retrieves the `Forecast` at the given position (i.e. the `Forecast` who's `view` we're going to create).
 
-![](images/blue-icon) - These lines retrieve the `TextView` widgets we added to our `view_day_forecast` `View`, representing the day name, the weather, and the temperature respectively.
+![](images/blue-icon.png) - These lines retrieve the `TextView` widgets we added to our `view_day_forecast` `View`, representing the day name, the weather, and the temperature respectively.
 
-![](images/purple-icon) - These lines take the values from the current `Forecast` object and set them as the text to the corresponding `TextView` widget using the widget's `setText` method. For example, `forecast.getDay()` gets assigned as the text to the `tvDay` widget, and so on. In the last one, all we're doing is adding the character `°` (the degree symbol) to the end of the string.
+![](images/purple-icon.png) - These lines take the values from the current `Forecast` object and set them as the text to the corresponding `TextView` widget using the widget's `setText` method. For example, `forecast.getDay()` gets assigned as the text to the `tvDay` widget, and so on. In the last one, all we're doing is adding the character `°` (the degree symbol) to the end of the string.
 
 Finally, we return the newly created view.
 
@@ -316,6 +316,12 @@ This actually creates an instance of our `WeatherAdapter` object and supplies it
 This applies our `WeatherAdapter` to our `ListView`, so that now the `ListView` can be populated by the `View` objects created by our `WeatherAdapter`.
 
 If you save and run now, you should have a much more satisfying result :)
+
+For reference, your final `MainActivity` class should look like this:
+
+<p align="center"><img src="images/final-main-activity.png"/></p>
+
+
 
 
 
