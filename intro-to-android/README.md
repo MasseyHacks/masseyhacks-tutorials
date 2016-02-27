@@ -1,6 +1,7 @@
 # Table of Contents
 
-i. [Intro to Android](#intro-to-android)
+1. [Intro to Android](#intro-to-android)
+
     i. [What the heck is Android?](#what-the-heck-is-android)
     
     ii. [Creating a Project](#creating-a-project)
@@ -25,7 +26,8 @@ i. [Intro to Android](#intro-to-android)
             
         v. [What's this talk of `View`s?](#whats-this-talk-of-views)
         
-ii. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
+2. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
+
     i. [The `Forecast` Class](#the-forecast-class)
     
     ii. [What is an Adapter?](#what-is-an-adapter)
@@ -37,8 +39,10 @@ ii. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
     v. [We're done! Right?](#were-done-right)
         i. [Populating the `ListView`](#populating-the-listview)
         
-iii. [Extra Help](#extra-help)
+3. [Extra Help](#extra-help)
+
     i. [Enabling ADB on Android 5.0 Based Devices](#enabling-adb-on-android-50-based-devices)
+    
         i. [Windows ADB Configuration](#windows-adb-configuration)
         
         ii. [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
