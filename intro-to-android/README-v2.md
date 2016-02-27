@@ -324,8 +324,197 @@ For reference, your final `MainActivity` class should look like this:
 <p align="center"><img src="images/final-main-activity.png"/></p>
 
 
+# Extra Help
 
+### WARNING: THIS SECTION IS NOT PART OF THE WORKSHOP
 
+**Only refer to this section if you are experiencing issues.**
+
+## Enabling ADB on Android 5.0 Based Devices
+
+(This section is taken directly from Android Studio Essentials)
+
+Before ADB can connect to an Android device, that device must first be configured to allow the connection. On phone and tablet devices running Android 5.0 or later, the steps to achieve this are as follows.
+
+1. Open the Settings on the device and select the *About tablet* or *About phone* option.
+2. On the *About* screen, scroll down to the *Build number* field and tap on it seven times until a message appears indicating that developer mode has been enabled.
+3. Return to the main settings screen and note the appearance of a new option titled *Developer options*. Select this option and locate the setting on the developer screen entitled *USB debugging*. Enable the checkbox next to this item to enable the adb debugging connection.
+4. Swipe downward from the top of the screen to display the notifications panel and note that the device is currently connected as a *media device* (this assumes you are performing these steps while the device is plugged in).
+
+At this point, the device is now configured to accept debugging connections from adb on the development system. All that remains is to configure the development system to detect the device when it is attached. Whilst this is a relatively straightforward process, the steps involved differ depending on the development system is running Windows, Mac OS X or Linux. Note that the following steps assume that the Android SDK *platform-tools* directory is included in the operating system PATH environment variable.
+
+### Windows ADB Configuration
+
+The first step in configuring a Windows based development system to connect to an Android device using ADB is to install the appropriate USB drivers on the system. In the case of some devices, the *Google USB Driver* must be installed (a full listing of devices supported by the Google USB driver can be found online [here](http://developer.android.com/sdk/win-usb.html)).
+
+To install this driver, perform the following steps:
+
+1. Launch Android Studio and open the Android SDK Manager, either by selecting `Configure -> SDK Manager` from the Welcome screen, or using the `Tools -> Android -> SDK Manager` menu option when working on an existing project.
+2. Scroll down to the *Extras* section and check the status of the *Google USB Driver* package to make sure that it is listed as *Installed*.
+3. If the driver is not installed, select it and click on the *Install packages* button to initiate the installation.
+4. Once installation is complete, close the Android SDK Manager.
+
+For Android devices not supported by the Google USB driver, it will be necessary to download the drivers provided by the device manufacturer. A listing of drivers and download information can be obtained online [here](http://developer.android.com/tools/extras/oem-usb.html).
+
+When an Android device is attached to a Windows system it is configured as a *Portable Device*. In order for the device to connect to ADB it must be configured as an *Android ADB Composite Device*. 
+
+First, connect the Android device to the computer system if it is not currently connected. Next, display the Control Panel and select Device Manager. In the resulting dialog, check for a category entitled *Other Devices*. Unfold this category and check to see if the Android device is listed.
+
+Right-click on the device name and select *Update Driver Software* from the menu. Select the option to *Browse my computer for driver software* and in the next dialog, keep the *Include subfolder* option selected and click on the *Browse...* button. Navigate to the location into which the USB drivers were installed. In the case of the Google USB driver, this will be in the `sdk\extras\google\usb_driver` subfolder of the Android Studio installation directory (the location of which can be found in the SDK Manager). Once located, click on *OK* to select the driver folder followed by *Next* to initiate the installation.
+
+During the installation, a Windows Security prompt will appear seeking permission to install the driver. When this dialog appears, click on the `Install` button to proceed.
+
+Once the installation completes, the Windows driver update screen will refresh to display a message indicating that the driver has been installed and that the device is now recognized as an Android Composite ADB Interface.
+
+Return to the Device Manager and note that the device is no longer listed under `Other Devices` and is now categorized as an Android Composite ADB Interface.
+
+With the drivers installed and the device now being recognized as the correct device type, open a Command Prompt window and execute the following command:
+
+```
+adb devices
+```
+
+This command should output information about the connected device similar to the following:
+
+```
+List of devices attached
+015d41d4454bf80c        offline
+```
+
+If the device is listed as *offline* or *unauthorized*, go to the device display and check for the dialog seeking permission to *Allow USB debugging*.
+
+Enable the checkbox next to the option that reads *Always allow from this computer*, before clicking on *OK*. Repeating the *adb devices* command should now list the device as being ready:
+
+```
+List of devices attached
+015d41d4454bf80c        device
+```
+
+In the event that the device is not listed, execute the following commands to restart the ADB server:
+
+```
+adb kill-server
+adb start-server
+```
+
+If the device is still not listed, try executing the following command:
+
+```
+android update adb
+```
+
+Note that it may also be necessary to reboot the system.
+
+### Mac OS X ADB Configuration
+
+In order to configure the ADB environment on a Mac OS X system, connect the device to the computer system using a USB cable, open a terminal window and execute the following command:
+
+```
+android update adb
+```
+
+Next, restart the adb server by issuing the following commands in the terminal window:
+
+```
+$ adb kill-server
+$ adb start-server
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+```
+
+Once the server is successfully running, execute the following command to verify that the device has been detected:
+
+```
+$ adb devices
+List of devices attached
+74CE000600000001        offline
+```
+
+If the device is listed as *offline*, go to the Android device and check for the presence of the dialog seeking permission to *Allow USB debugging*. Enable the checkbox next to the option that reads *Always allow from this computer*, before clicking on *OK*. Repeating the *adb devices* command should now list the device as being available:
+
+```
+List of devices attached
+015d41d4454bf80c        device
+```
+
+In the event that the device is not listed, try logging out and then back in to the Mac OS X desktop and, if the problem persists, rebooting the system.
+
+### Linux adb Configuration
+
+For the purposes of this tutorial, we will once again use Ubuntu Linux as a refence example in terms of configuring adb on Linux to connect to a physical Android device for application testing.
+
+Begin by attaching the Android device to a USB port on the Ubuntu Linux System. Once connected, open a Terminal window and execute the Linux `lsusb` command to list currently available USB devices:
+
+```
+~$ lsusb
+Bus 001 Device 003: ID 18d1:4e44 asus Nexus 7 [9999]
+Bus 001 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+```
+
+Each USB device detected on the system will be listed along with a vendor ID and a product ID. A list of vendor IDs can be found online [here](http://developer.android.com/tools/device.html#VendorIds). The above output shows that a Google Nexus 7 device has been detected. Make a note of the vendor and product ID numbers displayed for your particular device (in the above case these are 18D1 and 4E44 respectively).
+
+Use the *sudo* command to edit the *51-android.rules* file located in the */etc/udev/rules.d* directory. For example:
+
+```
+sudo gedit  /etc/udev/rules.d/51-android.rules
+```
+
+Within the editor, add the appropriate entry for the Android device, replacing `vendor_id` and `product_id` with the vendor product IDs returned previously by the lsusb command:
+
+```
+SUBSYSTEM==="usb", ATTR{idVendor}=="vendor_id",
+ATTRS{idProduct}=="product_id", MODE="0660", OWNER="root",
+GROUP="androidadb", SYMLINK+="android%n"
+```
+
+Once the entry has been added, save the file and exit from the editor.
+
+Next, use an editor to modify (or create if it does not yet exist) the adb_usb.ini file:
+
+```
+gedit   ~/.android/adb_usb.ini
+```
+
+Once the file is loaded into the editor, add the following lines (once again replacing `vendor_id` and `product_id` with the vendor and product IDs returned previously by the `lsusb` command) before saving the file and exiting:
+
+```
+0xvendor_id
+0xproduct_id
+```
+
+Using the above syntax, the entries for the Nexus 7 would, for example, read:
+
+```
+0x18d1
+0x4e44
+```
+
+The final task is to create the *androidadb* user group and add your user account to it. To achieve this, execute the following commands making sure to replace `username` with your Ubuntu user account name:
+
+```
+sudo addgroup --system androidadb
+sudo adduser username androidadb
+```
+Once the above changes have been made, reboot the Ubuntu system. Once the system has restarted, open a Terminal window, start the adb server and check the list of attached devices:
+
+```
+$ adb start-server
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+$ adb devices
+List of devices attached
+015d41d4454bf80c        offline
+```
+
+If the device is listed as *offline*, go to the Android device and check for the dialog seeking permission to *Allow USB debugging*.
+
+### Testing the ADB Connection
+
+Assuming that the adb configuration has been successful on your chosen devleopment platform, the next step is to try running the test application you created. Launch Android Studio, open the AndroidSample project and, once the project has loaded, click on the run button located in the Android Studio toolbar (the sideways green triangle).
+
+Assuming that the project has not previously been configured to run automatically in an emulator environment, the *Choose Device* dialog will appear with the connected Android device listed as a currently running device.
+
+To make this the default device for testing, enable the *Use same device for future launches* option. With the device selected, click on the *OK* button to install and run the application on the device. As with the emulator environment, diagnostic output relating to the installation and launch of the application on the device will be logged in the Run tool window.
 
 
 
