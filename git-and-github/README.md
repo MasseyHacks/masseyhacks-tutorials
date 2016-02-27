@@ -1,7 +1,5 @@
 # Working with Git and GitHub
 
-# CTRL+F TODO
-
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team?
 
 Git was invented for this purpose. It's a program that controls your code, especially for working in a team. GitHub is a website (the one that you're on right now) which gives free hosting space for code projects that use git -- provided that you're okay with other people seeing your code.
@@ -189,7 +187,7 @@ Any collaborator can now add, commit, and push freely to the repo as much as he 
 
 Let's see this in action. Within the directory, have one person in the pair create a file `a.txt`, and the other person create a file `b.txt`. Make sure that the user that is creating `b.txt` is using terminal git. If both people wihtin your pair use GitHub Desktop, it's fine to have a Desktop user create `b.txt`. Let the person who created `a.txt` add, commit, and push first. They should be able to do so without any trouble, and, if you refresh the repo webpage, you should be able to see `a.txt` within the list of files.
 
-Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. If the person uses the Desktop version (TODO MICHAEL MAKE SURE THIS IS CORRECT), simply syncing the local repository will push `b.txt` to the official collaborated repo. However, if the second collaborator is using command line git:
+Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. However, if the second collaborator is using command line git:
 
 <p align="center"><img src="resources/github-must-pull.gif" /></p>
 
@@ -215,19 +213,64 @@ When calling `git pull`, you will be prompted with a Vim process to comment on w
 
 ### Merge Conflicts
 
-Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file?
+Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file? This is called a merge conflict.
 
-TODO ADD MORE ON MERGE CONFLICTS
+Let's see what happens by purposefully creating one! Have both people in your pair edit README.txt at the same time. Let one person add, commit, and push first. They should be able to do so successfully. But, when the second person tries to push his or her commits to the official repository, it will be rejected, like in the last step, where we talked about merging. However, a simple `git pull`, for command line users, or `Sync`, for Desktop users, won't fix this problem.
+
+This will happen to command line users:
+
+<p align="center"><img src="resources/github-conflict-pull-2.gif" /></p>
+
+Desktop users: after clicking on the `Sync` button, the program should tell you that it cannot merge the changes.
+
+This specifically is called an **edit collision**: when two users change the same part of the same file, and GitHub doesn't know which edit to accept. How does git fix this? Git let's you decide.
+
+Read the error message from `git pull` carefully:
+
+```
+Enter passphrase for key '/home/jeffrey/.ssh/id_rsa': 
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:awolawol/hello-world
+ * branch            master     -> FETCH_HEAD
+   2aa6655..a60bbc9  master     -> origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+The line `CONFLICT (content): Merge conflict in README.md` states the existence of the merge conflict, and that the `Automatic merge failed; fix conflicts and then commit the result`. In simple English, git is telling you that it tried to merge, but it couldn't, due to a conflict in `README.md`. Git then tells you to go and fix it yourself, and commit it afterwards.
+
+Well, how does the `README.md` look like right now? Open it up and see! Desktop users should start editing within the GUI. Terminal users will have to navigate to the file within the directory and edit it with their own tools. When you open `README.md`, you should see something like this:
+
+```
+# hello-world
+this is the repo description
+
+<<<<<<< HEAD
+this line was added to README.md by the second user but pushed after the last line was pushed, causing a merge conflict
+=======
+this line wase commited by the first user and pushed successfully.
+>>>>>>> a60bbc9b01a8d7cd9cea9c20986db983f4279982
+```
+
+See the `>>>>>>>` and the `<<<<<<<`? Those two markers section off a part of the file to denote where the merge conflict exists: right in the middle of it. There is a separating `=======` in the middle. Above the `=======`, you have the changes to the file that second user was trying to add. Under the `=======` are the changes that the first user made to the file before the second user committed.
+
+Git was kind enough to mark the merge conflict for us. Now, all that's left is to, as git told us, `fix conflicts and then commit the result`. Do just that:
+
+<p align="center"><img src="resources/github-conflict-fix.gif" /></p>
+
+The merge conflict should resolve, and your changes will push successfully!
 
 ## Section 5: That's it!
 
 That's all I have to teach you. Both git and GitHub are crucial tools in the industry, and, if you're going to Software Engineering as a career, these two tools will probably be taught within the first few weeks. There's a lot more depth to both git and GitHub that I have completely ignored in this tutorial in order to teach you all that you need to know for this hackathon within an hour.
 
-### What did I learn?
+You're off on your own for now! Feel free to come back to this tutorial if you're confused on a topic or there's something that you've forgot. Here are some commonly asked questions:
 
-Git and GitHub are two programs that are used for collaboration on a code project within a team. First, you must [create a repository to house your project in](README.md#section-1-making-a-repository). Then, to flesh out your code project and repository, you must [add, commit, and push any changes to them](README.md#section-2-add-commit-push). Committing is especially important, as it keeps track of a history of the changes that you've made to the repository, such that [you can revert back to any commit at any time](README.md#section-3-rolling-back-the-repository-to-a-previous-commit). Finally, [you can add other people to your repo as collaborators](README.md#section-4-collaboration) in order to work on a single code project as a team, as long as you're careful with merging.
-
-### How do I figure things out?
+### Hey, I came back to this tutorial but it's not telling me what I need to know.
 
 Google and StackOverflow! Seriously, pretty much all of the programmers that organised MasseyHacks are self-taught and learned through continuously searching Google and reading free guids on the Internet. Let's say I wanted to figure out how to make a copy of a repository:
 
