@@ -248,9 +248,11 @@ Now we're going to add the following fields and constructor to our `WeatherAdapt
 
 <p align="center"><img src="images/weather-adapter-fields-and-constructor.png"/></p>
 
-At this point you may be asking yourself, "what's a `Context`? Are we ever gonna stop using classes I haven't learned about?" The answer to the second question is no; Android is a *gigantic* framework, and no matter how long you work with Android you'll almost certainly come across a new class you've never seen before in your work. The best way to learn about these is to use the official Android documentation, which you can access in Android Studio by clicking on the name of the class and pressing `Ctrl + Q`, or going online.
+At this point you may be asking yourself, "what's a `Context`?" 
 
-In response to the first question, `Context` is like the base class for almost everything in Android. It provides access to some of the global application information. As the name suggests, it represents the context of current state of the application/object. It lets newly created objects understand what has been going on. If you want to do anything with UI, you need a context. If you want to interact with the device, you need context. The Context base class is **essential** to any Android application.
+## What is a `Context`?
+
+`Context` is like the base class for almost everything in Android. It provides access to some of the global application information. As the name suggests, it represents the context of current state of the application/object. It lets newly created objects understand what has been going on. If you want to do anything with UI, you need a context. If you want to interact with the device, you need context. The Context base class is **essential** to any Android application.
 
 What *specifically* makes it so useful is a little more advanced than the content in this workshop. Just know it is incredibly important.
 
