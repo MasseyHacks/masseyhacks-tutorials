@@ -2,6 +2,10 @@
 
 From a simpler time -- one where I believed that you could fork your own repo.
 
+### What did I learn?
+
+Git and GitHub are two programs that are used for collaboration on a code project within a team. First, you must [create a repository to house your project in](README.md#section-1-making-a-repository). Then, to flesh out your code project and repository, you must [add, commit, and push any changes to them](README.md#section-2-add-commit-push). Committing is especially important, as it keeps track of a history of the changes that you've made to the repository, such that [you can revert back to any commit at any time](README.md#section-3-rolling-back-the-repository-to-a-previous-commit). Finally, [you can add other people to your repo as collaborators](README.md#section-4-collaboration) in order to work on a single code project as a team, as long as you're careful with merging.
+
 You can add people as collaborators and work on the same repo from there, but that's horribly inefficient. What if someone's work overwrites someone else's changes? What if someone pushes a change that breaks the entire project, but there's so many things between their commit and the last commit that, if you were to revert, it would take a lot of work to bring back?
 
 You can all collaborate on one repo, but it's definitely not a good idea. If everyone was just going to work on one repo, a program like git wouldn't be needed. There is another way.
