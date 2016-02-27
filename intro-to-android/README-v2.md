@@ -41,7 +41,7 @@ This workshop will cover the creation of a weather app. For the first hour we wi
 
 ### What's an Activity?
 
-An `Activity` is a component of your application that your user can interact with. Activities usually take care of creating a window in which you can add your UI. For example, you should be able to see that there's a `Empty Activity`, which is just an empty window, a `Google Maps Activity` which is the base activity for Google Maps based applications, and there's a whole bunch of other things.
+An `Activity` is a component of your application that your user can interact with. Activities usually take care of creating a window in which you can add your UI. For example, you should be able to see that there's an `Empty Activity`, which is just an empty window, a `Google Maps Activity` which is the base activity for Google Maps based applications, and there's a whole bunch of other things.
 
 *Note*: Some activities require higher versions of the SDK than 8.
 
@@ -73,7 +73,7 @@ If you go over to the side panel on the right of the designer window, you can se
 
 ### What's a `RelativeLayout`?
 
-In Android, a `RelativeLayout` is a layout in which the positions of the things inside it can be specified as relative to _other_ things. For example, this allows you to say things like "button 2 to the right of button 1" and Android will figure out the rest.
+In Android, a `RelativeLayout` is a layout in which the positions of the things inside it can be specified as being relative to *other* things. For example, this allows you to say things like "button 2 to the right of button 1" and Android will figure out the rest.
 
 ### Adding an Icon
 
@@ -121,7 +121,7 @@ First thing we're going to do is actually make a new layout file. Right click `l
 
 We should start by adding some text for the day name. Click and drag a `Large TextView` from the `Palette` and drop it into the designer window. You'll see a bunch of lines pop up; these are *guides* showing you where you can snap the placement of your text to. Snap it to the top left corner.
 
-We can double click on the text *widget* to change the text it displays. Change it to `Monday` for now, and change the `id` to `tvDay`. The *id* of a widget is kind of like the variable name we're gonna use to refer to the widget later in the code. Just think of it like a variable name.
+We can double click on the text *widget* to change the text it displays. Change it to `Monday` for now, and change the `id` to `tvDay`. The *id* of a widget is kind of like the variable name we're going to use to refer to the widget later in the code. Just think of it like a variable name.
 
 If you go to the panel in the bottom right corner of Android Studio called `Properties`, you can edit a bunch of the properties of the widget. If you scroll through you can find all sorts of things, but there's three specific ones we want to change:
 
@@ -129,7 +129,7 @@ i. `textSize` - we want this to be `28sp`. This controls the size of the font.
 ii. `layout_marginTop` - change this to `20dp`. This controls how far from the top of the screen the text will be placed.
 iii. `layout_marginLeft` - change this to `20dp`. This controls how far from the left of the screen the text will be placed.
 
-Now we're going to do the same thing for the *weather type* of that day. Click and drag another `Large TextView` widget and place it directly underneath the first textview, and change it's text to `Light snow` and it's id to `tvWeather`. Change it's `textSize` to `36sp`, it's `layout_marginBottom` to `20dp`, and its `layout_marginLeft` to `20dp`. Since we're going to be using this layout as a single element in a list, the `layout_marginBottom` will determine the *next element* in the list.
+Now we're going to do the same thing for the *weather type* of that day. Click and drag another `Large TextView` widget and place it directly underneath the first `TextView`, and change its text to `Light snow` and it's id to `tvWeather`. Change its `textSize` to `36sp`, it's `layout_marginBottom` to `20dp`, and its `layout_marginLeft` to `20dp`. Since we're going to be using this layout as a single element in a list, the `layout_marginBottom` will determine the *next element* in the list.
 
 Really what these `layout_margin` properties are specifying is the distance from the surrounding objects.
 
@@ -148,7 +148,7 @@ These are different *units* that the Android SDK recognizes. They represent the 
 
 ### Making the list
 
-Now that we have the basic format for a single day setup, lets return to the main file and setup the UI for an entire list of items. Go back to `activity_main.xml`. If you haven't already removed the `TextView` already there, you can go ahead and do so. We're going to add a `ListView` to our main activity. Go ahead and click and drag `ListView` from the palette into the designer until it aligns with the top-left corner of the window. Double click it in the designer window to change it's `id` to `lvWeather`.
+Now that we have the basic format for a single day setup, lets return to the main file and setup the UI for an entire list of items. Go back to `activity_main.xml`. If you haven't already removed the `TextView` already there, you can go ahead and do so. We're going to add a `ListView` to our main activity. Go ahead and click and drag `ListView` from the palette into the designer until it aligns with the top-left corner of the window. Double click it in the designer window to change its `id` to `lvWeather`.
 
 #### What is a `ListView`
 
@@ -168,7 +168,7 @@ Upon initially creating an app in Android Studio, you should have a single java 
 
 <p align="center"><img src="images/initial-main-activity-code.png"/></p>
 
-As the name suggests, the `onCreate` method gets called a single time, *the moment the activity gets created*. In our case, since our `MainActivity` is our app's initial activity, when the app first starts out the `onCreate` method will get called. Activity classes have a whole gamut of methods you can use that get called at different points in it's lifetime. For a quick reference, take a look at the following picture:
+As the name suggests, the `onCreate` method gets called a single time, *the moment the activity gets created*. In our case, since our `MainActivity` is our app's initial activity, when the app first starts out the `onCreate` method will get called. Activity classes have a whole gamut of methods you can use that get called at different points in its lifetime. For a quick reference, take a look at the following picture:
 
 <p align="center"><img src="images/activity_lifecycle.png"/></p>
 
@@ -220,9 +220,9 @@ public class Forecast {
 }
 ```
 
-This simply stores a string representing the day name, a string representing the weather, and an integer represnting the degrees (Celcius). It also includes "getters" for each field.
+This simply stores a string representing the day name, a string representing the weather, and an integer representing the degrees (Celsius). It also includes "getters" for each field.
 
-Now in our `MainActivity` class we're going to generate a list of example `Forecast` objects that will later be used to fill our `ListView`. First, in `onCreate` we simply create a `List<Forecast>` to contain the forcasts:
+Now in our `MainActivity` class we're going to generate a list of example `Forecast` objects that will later be used to fill our `ListView`. First, in `onCreate` we simply create a `List<Forecast>` to contain the forecasts:
 
 <p align="center"><img src="images/forecasts-assignment.png"/></p>
 
@@ -238,7 +238,7 @@ We're going to leave the `MainActivity` and `Forecast` classes alone for a littl
 
 ## What is an Adapter?
 
-An `Adapter` in Android is essentially a bridge connecting UI components and data that fills it. For example, a `ListAdapter` is an Adapter that acts as a bridge between a `ListView` and the underyling data that will be used to propagate it. This can be tricky to understand just off of a description, so we'll create an example class to get the juices flowing.
+An `Adapter` in Android is essentially a bridge connecting UI components and data that fills it. For example, a `ListAdapter` is an Adapter that acts as a bridge between a `ListView` and the underlying data that will be used to propagate it. This can be tricky to understand just off of a description, so we'll create an example class to get the juices flowing.
 
 Add a new java class called `WeatherAdapter`. We want it to inherit from `BaseAdapter`:
 
@@ -303,9 +303,9 @@ If you really think about it, we never actually *used* that `WeatherAdapter` cla
 
 ### Populating the `ListView`
 
-The act of *populating our `ListView`* involes somehow getting our list of `Forecast` objects to the `WeatherAdapter` so that they can be converted into `View`s and added to our `ListView`. Sounds complicated? It actually isn't!
+The act of *populating our `ListView`* involves somehow getting our list of `Forecast` objects to the `WeatherAdapter` so that they can be converted into `View`s and added to our `ListView`. Sounds complicated? It actually isn't!
 
-First go back to our `MainActivity` class. At the end of it's `onCreate` method, add the following line:
+First go back to our `MainActivity` class. At the end of its `onCreate` method, add the following line:
 
 <p align="center"><img src="images/populating-our-list-part1.png"/></p>
 
