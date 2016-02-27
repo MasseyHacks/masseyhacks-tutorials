@@ -1,8 +1,62 @@
+# Table of Contents
+
+- [Intro to Android](#intro-to-android)
+
+    - [What the heck is Android?](#what-the-heck-is-android)
+    
+    - [Creating a Project](#creating-a-project)
+    
+        - [What's an Activity?](#whats-an-activity)
+        
+    - [Inside Android Studio](#inside-android-studio)
+        
+        - [What's a `RelativeLayout`?](#whats-a-relativelayout)
+        
+        - [Adding an Icon](#adding-an-icon)
+        
+        - [Building and Launching](#building-and-launching)
+        
+    - [The Anatomy of an Android App](#the-anatomy-of-an-android-app)
+        
+        - [Making the UI for our app](#making-the-ui-for-our-app)
+        
+        - [Adding some text](#adding-some-text)
+        
+        - [What are all those dp, sp, px, etc?](#what-are-all-those-dp-sp-px-etc)
+        
+        - [Making the list](#making-the-list)
+            i. [What is a `ListView`?](#what-is-a-listview)
+            
+        - [What's this talk of `View`s?](#whats-this-talk-of-views)
+        
+- [Diving into the Java side of things](#diving-into-the-java-side-of-things)
+
+    - [The `Forecast` Class](#the-forecast-class)
+    
+    - [What is an Adapter?](#what-is-an-adapter)
+    
+    - [What is a `Context`?](#what-is-a-context)
+    
+    - [What is `LayoutInflater`?](#what-is-layoutinflater)
+    
+    - [We're done! Right?](#were-done-right)
+        
+        - [Populating the `ListView`](#populating-the-listview)
+        
+- [Extra Help](#extra-help)
+
+    - [Enabling ADB on Android 5.0 Based Devices](#enabling-adb-on-android-50-based-devices)
+        
+        - [Windows ADB Configuration](#windows-adb-configuration)
+        
+        - [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
+        
+        - [Linux ADB Configuration](#linux-adb-configuration)
+        
+        - [Testing the ADB Connection](#testing-the-adb-connection)
+        
+        
 # Intro to Android
-
-## Preliminaries
-
-For information on the preliminary requirements for your specific system, see the files in the subfolder labelled `preliminaries`.
 
 ## What the heck is Android?
 
@@ -16,29 +70,36 @@ Android Studio is the IDE (Integrated Development Environment) that allows you t
 
 ## Creating a Project
 
-1. Open Android Studio
-2. In the Setup Wizard, click `Start a new Android Studio Project` to open the New Project Wizard.
-    - Set the `Application Name` field to something like `AndroidSample`. This is not just the name that will be used to refer to the app in Android Studio, but will also be the name of the app once we get it onto your phones.
-    - The `Package Name` is just a unique identifier for your app in the Google Play Store. The general naming convention is the reverse of your company's domain name, followed by the name of the application. For example, if your company domain is `www.mycompany.com` and the application has been named `AndroidSample`, then the package name might be `com.mycompany.androidsample`.
-    - If you don't own a domain name, don't worry about it. As said prior, this is just some unique identifier name specific to your app. The important thing is not that it refers to an actual domain, simply that it is _unique_. The easiest thing to do is to just use the default `Company Domain` given, which will be something like `<name>.example.com`.
-    - The `Project Location` is simply where the project will be stored.
-3. Click `Next` when you've filled out the necessary info. This will bring you to the _Form Factors_ screen.
-    - Make sure `Phone and Tablet` is checked. This will indicate that your app is intended for phones and tablets. The other options, `Wear`, `TV`, and `Android Auto`, refer to wearable devices (such as Google Glass), Google TV, and automobile dashboards respectively. Leave these unchecked.
-    - Select `API 16: Android 4.1 (Jelly Bean)` as the `Minimum SDK` setting. This ensures that your app will run on most devices. The older the version selected, the wider the range of devices your app will run on. If we selected `API 23: Android 6.0 (Marshmallow)`, your app would only run on a small percentage of all devices (< 1% as indicated).
-4. Click `Next`. This will bring you to the _Add an activity to Mobile_ screen. For the purposes of this tutorial, simply select `Blank Activity`.
-5. In the new dialog, set the following fields:
-    - `Activity Name` - AndroidSampleActivity
-    - `Layout Name` - activity_android_sample
-    - `Title` - AndroidSampleActivity
-    - `Menu Resource Name` - menu_android_sample
+This workshop will cover the creation of a weather app. For the first hour we will be using fake data, and during the extra time we'll add support for real data retrieved from the internet.
 
-*Note*: *Do not* select `Use a Fragment` for now.
+1. Open Android Studio
+
+2. In the Setup Wizard, click `Start a new Android Studio Project` to open the New Project Wizard.
+
+    i. Set the `Application Name` field to something like `My Weather App` or `Snowstorm`. This is not just the name that will be used to refer to the app in Android Studio, but will also be the name of the app once we get it onto your phones.
+    
+    ii. The `Package Name` is just a unique identifier for your app in the Google Play Store. The general naming convention is the reverse of your company's domain name, followed by the name of the application. For example, if your company domain is `www.mycompany.com` and the application has been named `AndroidSample`, then the package name might be `com.mycompany.androidsample`. In this case a good name might be `com.(yourname).snowstorm`
+    
+    If you don't own a domain name, don't worry about it. As said prior, this is just some unique identifier name specific to your app. The important thing is not that it refers to an actual domain, simply that it is _unique_. The easiest thing to do is to just use the default
+    `Company Domain` given, which will be something like `<name>.example.com`.
+    
+    iii. The `Project Location` is simply where the project will be stored.
+    
+3. Click `Next` when you've filled out the necessary info. This will bring you to the _Form Factors_ screen.
+
+    i. Make sure `Phone and Tablet` is checked. This will indicate that your app is intended for phones and tablets. The other options, `Wear`, `TV`, and `Android Auto`, refer to wearable devices (such as Google Glass), Google TV, and automobile dashboards respectively. Leave these unchecked.
+    
+    ii. Select `API 16: Android 4.1 (Jelly Bean)` as the `Minimum SDK` setting. This ensures that your app will run on most devices. The older the version selected, the wider the range of devices your app will run on. If we selected `API 23: Android 6.0 (Marshmallow)`, your app would only run on a small percentage of all devices (< 1% as indicated).
+    
+4. Click `Next`. This will bring you to the *Add an activity to Mobile* screen. For the purposes of this tutorial, simply select `Empty Activity`.
+
+5. In the following dialog you can leave all the fields the way they are. These fields represent the name of the initial activity you'll be working in.
 
 6. Click `Finish`. It may take a few minutes for the project to build, and once the Android Studio window is loaded, give it a few minutes to load everything (as there is a LOT it has to load).
 
 ### What's an Activity?
 
-An `Activity` is a component of your application that your user can interact with. Activities usually take care of creating a window in which you can add your UI. For example, you should be able to see that there's a `Blank Activity`, which is just an empty window, a `Google Maps Activity` which is the base activity for Google Maps based applications, and there's a whole bunch of other things.
+An `Activity` is a component of your application that your user can interact with. Activities usually take care of creating a window in which you can add your UI. For example, you should be able to see that there's an `Empty Activity`, which is just an empty window, a `Google Maps Activity` which is the base activity for Google Maps based applications, and there's a whole bunch of other things.
 
 *Note*: Some activities require higher versions of the SDK than 8.
 
@@ -50,436 +111,282 @@ It's easy to get overwhelmed by the amount of content available at first glance,
 
 Upon initially loading, your Android Studio Window will look something like this:
 
-<p align="center"><img src="images/image1.png" /></p>
+<p align="center"><img src="images/first-look.png"/></p>
 
 The leftmost rectangle is the *Project* tool window (highlighted in red below), which displays the files and folders associated with your project. The _window mode_ (highlighted in blue) determines the mode in which the information is displayed. By default it's set to _Android_, which displays only the essential files and folders. Another common mode is _Project_ which lists _all_ files and folders associated with your project. Check out the other modes too!
 
-<p align="center"><img src="images/image2.png" /></p>
+<p align="center"><img src="images/first-look-colour-coded.png"/></p>
 
-The central *Designer window* (green) shows us whatever we're currently working on. This could be a java file or an xml file or a graphical display. Right now it's giving us a preview of what our app will look like. Specifically, it's showing us our _blank activity_. As you can see, right now our app will simply be a blank window with the text "Hello World!" displayed in the top left corner. Currently in your editor, you should have the file `content_android_sample.xml` open. If not, you can locate it in the Project window under `app/res/layout`. 
+The central *Designer window* (green) shows us whatever we're currently working on. This could be a java file or an xml file or a graphical display. Right now it's giving us a preview of what our app will look like. Specifically, it's showing us our *empty activity*. As you can see, right now our app will simply be a blank window with the text "Hello World!" displayed in the top left corner. Currently in your editor, you should have the file `content_android_sample.xml` open. If not, you can locate it in the Project window under `app/res/layout`. 
 
 In the left of the designer window is a panel called the *palette* (pictured below), which contains a bunch of user interface _components_ that we can add to our activity to make our app look the way we want it to. You should recognize some of these components, such as `Large Text` and `Button` as these are pretty common things to include in a user interface.
 
-<p align="center"><img src="images/image5.png" /></p>
+<p align="center"><img src="images/palette.png"/></p>
 
 Not all components are things that the user can clearly see like text and buttons, that's why the palette is divided up into _widgets_ and _layouts_. Layouts define the visual structure for your activity, whereas widgets are things with _function_ that can be placed in your activity.
 
 If you go over to the side panel on the right of the designer window, you can see the _Component Tree_ for your activity (pictured below). This represents the hierarchy of components in your activity. As we can see, our activity consists of a `RelativeLayout`, which contains a single `TextView` object whose text is set to "Hello World!".
 
-<p align="center"><img src="images/image5.png" /></p>
+<p align="center"><img src="images/component-tree.png"/></p>
 
-#### Interlude: What's a RelativeLayout?
+### What's a `RelativeLayout`?
 
-In Android, a `RelativeLayout` is a layout in which the positions of the things inside it can be specified as relative to _other_ things. For example, this allows you to say things like "button 2 to the right of button 1" and Android will figure out the rest.
+In Android, a `RelativeLayout` is a layout in which the positions of the things inside it can be specified as being relative to *other* things. For example, this allows you to say things like "button 2 to the right of button 1" and Android will figure out the rest.
 
-Let's remove the default "Hello World!" text from our activity and add in our own. To remove the widget, click on the `TextView` object in the component tree and press the "delete" key. Alternatively, you can click on the widget in the preview and then press "delete". Now we have an empty slate.
+### Adding an Icon
 
-**Note**: Did you accidentally mess something up? Android Studio has a pretty intelligent "undo" button activated by pressing "Ctrl+Z" as usual, so don't be afraid to make mistakes!
+Let's give our app an icon, so that when we load it onto our phone we can easily recognize it. The easiest way to do this is as follows:
 
-To add some text of our own, click and drag the "Large Text" widget from the palette and drop it into the designer window. When you go to place it, you should see a bunch of dotted lines appear on the designer. These are guides so that you know where you're placing your widget relative to everything else. These also allow you to "snap" the location of your widget to common points such as the center of the device screen.
+i. Right click on the `app` folder in the project panel and select `New -> Image Asset`.
 
-It really doesn't matter where you put the text, but for the purposes of this tutorial you should place it in the center of the device screen.
+ii. In the resulting dialog box, on the line highlighted below locate the directory of the snowman icon you downloaded. You don't have to change anything else.
 
-To change the text the widget displays, double click on it in the designer and change the `Text` field to whatever you want ("Hey MasseyHackers!" for this tutorial). Another way you can do this is by selecting the widget in the component tree and going to the panel beneath the component tree labelled _Properties_ (pictured below). This panel displays all the properties of the selected object, and allows you to change them to whatever you want. There's a TON there, but we only want to change the `text` property, so scroll down until you find it, then click on it to edit the text.
+<p align="center"><img src="images/adding-icon.png"/></p>
 
-<p align="center"><img src="images/image7.png" /></p>
+iii. Click "Next" and then "Finish". Your icon should now be set to the snowman.
 
-You may notice that the Large Text widget we just placed has a little light bulb icon over it in the component tree. If you hover your mouse over it and click (or press "Alt" + "Enter") it will display the following message:
+### Building and Launching
+
+Building your app really easy, just go to `Build -> Make Project`. This will compile all your code and assets so that it can then be loaded onto your phone.
+
+Assuming your phone is plugged in via USB cable, you can run your app just as easily by pressing the green arrow icon (![](images/run-icon.png)) at the top. You'll be brought to a dialog box listing what devices you can run your app on, your device being the one at the top:
+
+<p align="center"><img src="images/choose-a-running-device.png"/></p>
+
+Select it and press "OK". After a short period the app should show up on your phone.
+
+Impressed yet? Let's start building...
+
+## The Anatomy of an Android App
+
+Every android app can be pretty easily divided up into two distinct parts; the Xml part, and the Java part. The Xml part defines things like the user interface and the layout of the app, whereas the Java part defines the *functionality* of the app. Both parts have to work in tandem for an app to be successful. 
+
+For the purposes of this workshop, we'll write the two parts separately, then near the end we'll combine them to form functioning app.
+
+### Making the UI for our app
+
+Eventually we want our app to look something like this:
+
+<p align="center"><img src="images/end-result.jpg"/></p>
+
+To get started, we have to take a look at our *layout file*.
+
+The layout file is an Xml file named something like `activity_main.xml` (it should be the default file opened). When you open it you'll get a preview of what your app will look like. You may notice in the bottom left corner of the designer window there are two tabs, one labelled `Text` and the other labelled `Design`. If you switch to `Design` you'll be brought to the underlying Xml file in text format. This is actually how the layout information is stored in memory. We don't need to touch this for now, it's just nice to know it exists.
+
+First thing we're going to do is actually make a new layout file. Right click `layout` in the Project View and select `New -> Layout resource file`. For the name use `view_day_forecast`. Change the root element to `RelativeLayout` and press "OK". This will bring you to another designer window. In this window, we'll design what the UI for a *single day* will look like (a single row in the above image).
+
+### Adding some text
+
+We should start by adding some text for the day name. Click and drag a `Large TextView` from the `Palette` and drop it into the designer window. You'll see a bunch of lines pop up; these are *guides* showing you where you can snap the placement of your text to. Snap it to the top left corner.
+
+We can double click on the text *widget* to change the text it displays. Change it to `Monday` for now, and change the `id` to `tvDay`. The *id* of a widget is kind of like the variable name we're going to use to refer to the widget later in the code. Just think of it like a variable name.
+
+If you go to the panel in the bottom right corner of Android Studio called `Properties`, you can edit a bunch of the properties of the widget. If you scroll through you can find all sorts of things, but there's three specific ones we want to change:
+
+i. `textSize` - we want this to be `28sp`. This controls the size of the font.
+ii. `layout_marginTop` - change this to `20dp`. This controls how far from the top of the screen the text will be placed.
+iii. `layout_marginLeft` - change this to `20dp`. This controls how far from the left of the screen the text will be placed.
+
+Now we're going to do the same thing for the *weather type* of that day. Click and drag another `Large TextView` widget and place it directly underneath the first `TextView`, and change its text to `Light snow` and it's id to `tvWeather`. Change its `textSize` to `36sp`, it's `layout_marginBottom` to `20dp`, and its `layout_marginLeft` to `20dp`. Since we're going to be using this layout as a single element in a list, the `layout_marginBottom` will determine the *next element* in the list.
+
+Really what these `layout_margin` properties are specifying is the distance from the surrounding objects.
+
+We're going to do this one more time for the temperature: place a `Large TextView` this time so that it snaps to the right of the screen. Change the text to `-1`, the id to `tvDegrees`, and the `textSize` to `56sp`. Now set `layout_centerVertical` to `true` and `layout_margin` to `20dp`. `layout_centerVertical` ensures that the widget is centered vertically on the display, and `layout_margin` acts as a margin in all directions.
+
+### What are all those dp, sp, px, etc?
+
+These are different *units* that the Android SDK recognizes. They represent the following amounts respectively:
+
+1. `px`: Pixels - corresponds to actual pixels on the screen.
+2. `in`: Inches - based on the physical size of the screen. 1 Inch = 2.54 centimeters
+3. `mm`: Millimeters - based on the physical size of the screen.
+4. `pt`: Points - 1/72 of an inch based on the physical size of the screen.
+5. `dp` or `dip`: Density-independent Pixels - an abstract unit that is based on the physical density of the screen. These units are relative to a 160 dpi screen, so one dp is one pixel on a 160 dpi screen. The ratio of dp-to-pixel will change with the screen density, but not necessarily in direct proportion. Note: The compiler accepts both "dip" and "dp", though "dp" is more consistent with "sp".
+6. `sp`: Scale-independent Pixels - this is like the dp unit, but it is also scaled by the user's font size preference. It is recommend you use this unit when specifying font sizes, so they will be adjusted for both the screen density and user's preference.
+
+### Making the list
+
+Now that we have the basic format for a single day setup, lets return to the main file and setup the UI for an entire list of items. Go back to `activity_main.xml`. If you haven't already removed the `TextView` already there, you can go ahead and do so. We're going to add a `ListView` to our main activity. Go ahead and click and drag `ListView` from the palette into the designer until it aligns with the top-left corner of the window. Double click it in the designer window to change its `id` to `lvWeather`.
+
+#### What is a `ListView`?
+
+A `ListView` is a `ViewGroup` that allows you to display a list of other `View`s that the user can scroll through.
+
+### What's this talk of `View`s?
+
+`View`s are simply objects that can be displayed by Android. Any UI you make is going to be made up of `View`s in some form; a `TextView` is a `View`, a `Button` is a `View`, even layouts are a form of `View` called a `ViewGroup` which is comprised of multiple other `View` objects. In this sense, layouts are also all `ViewGroup`s.
+
+---
+
+This is all we can do for now regarding the UI. Let's start fleshing out the Java code now, and by the end we'll be able to combine these two pieces to form a fully functioning app.
+
+# Diving into the Java side of things
+
+Upon initially creating an app in Android Studio, you should have a single java file by default: `MainActivity`. This class represents, as the name suggests, the main activity your app starts up on. Open up the code in the editor and take a look.
+
+<p align="center"><img src="images/initial-main-activity-code.png"/></p>
+
+As the name suggests, the `onCreate` method gets called a single time, *the moment the activity gets created*. In our case, since our `MainActivity` is our app's initial activity, when the app first starts out the `onCreate` method will get called. Activity classes have a whole gamut of methods you can use that get called at different points in its lifetime. For a quick reference, take a look at the following picture:
+
+<p align="center"><img src="images/activity_lifecycle.png"/></p>
+
+The first thing we're going to do is store a reference to our `ListView`. Remember how we said the `id` of a widget is sort of like it's variable name? Well this is where it comes into play. To retrieve our `ListView`, we have to use the method `findViewById`:
 
 ```
-[I18N] Hardcoded string "Hey MasseyHackers!", should use @string resource
+ListView lvWeather = (ListView) findViewById(R.id.lvWeather);
 ```
 
-THe lightbulb indicates a potential problem with a widget. In this case, the issue is that we've _hardcoded_ the string "Hey MasseyHackers!". When you _hardcode_ something, you're basically making it so that you can't change its value unless you change the source code of the program. This is a bad idea if we want to change the value of the string while the app is running, such as if we wanted the text in our app to be translatable into other languages.
+That `R` object stands for "Resources" and contains references to all the resources you created. `R.id` contains references to all the `id`s you specified. Notice how `lvWeather` is the id of the `ListView` we made.
 
-_Note_: the `I18N` stands for "Internationalization", which comes from the fact that the first letter is "i", the last letter is "n", and there are 18 letters in between.
+The function `findViewById` returns a `View` object, so we have to *cast* it to the proper type (`ListView`).
 
-The awesome thing about the lightbulb is that it gives you solutions for the problems it identifies. If we click the message, we'll be brought to a dialog that looks like the following:
+Now we're going to create a class called `Forecast` that will be used to represent a single piece of data in our list.
 
-<p align="center"><img src="images/image8.png" /></p>
+## The `Forecast` Class
 
-The dialog asks you to create a "resource" for the string. A resource is basically just a variable stored in an Xml file. You can se the `Resource Name` to be whatever you want, but, as with variable names, it should describe the purpose of the string. You can ignore `Source set`. The `File name` field is just the name of the file you want to store your resource in. You can just leave it alone for now. Press `OK`, and now the lightbulb icon should be gone from your text widget.
+To create a new class, right click the package in the project panel and select `New -> Java Class`. Enter `Forecast` as the name and you'll be brought to a page like the following:
 
-**Note**: If you're getting a "Rendering Problem" saying "Couldn't resolve resource (resourcename)" try building your project by going to `Build` -> `Make Project`. If you're still having problems, save your project, then go to `File` -> `Invalid Caches/Restart` and choose `Just Restart`.
+<p align="center"><img src="images/forecast-intro.png"/></p>
 
-### What are those Xml files?
+Since this class is relatively simple, you can just copy the code below into your editor, replacing the old `public class Forecast`:
 
-Throughout the tutorial, we've made reference to Xml files, like `content_android_sample.xml`. Upon opening this file in the editor, we are given a visual preview of our app. But what exactly *is* this Xml file? Well, beneath all the fancy graphics, it's actually just an ordinary text file like anything else you've ever created. Android Studio just reads this text file, and then *creates* the graphical display based on what it says.
+```
+public class Forecast {
 
-If you notice in the bottom left corner of the designer window there are two tabs labelled "Design" and "Text" respectively (![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image9.png)). If you click on the "Text" tab (while the `content_android_sample.xml` file is open), a text file will open up that should look something like the following:
+    private String day;
+    private String weather;
+    private int degrees;
 
-<p align="center"><img src="images/image10.png" /></p>
+    public Forecast(String day, String weather, int degrees) {
+        this.day = day;
+        this.weather = weather;
+        this.degrees = degrees;
+    }
 
-You should recognize some things in this file. Namely, we have a `RelativeLayout` element, and a `TextView` element inside it. This corresponds to the component tree back when were we using the "Design" tab, which showed us that our app consisted of a `RelativeLayout` component with a `TextView` subcomponent. This is how Android Studio knows what to do; it reads the elements in the file and turns them into the app's component tree. Almost every Android app you make will have this general Xml format.
+    public String getDay() {
+        return day;
+    }
 
-Another important thing to recognize is that the attributes on each of the elements correspond to the component properties. For example, on the `TextView` element, we see it has an attribute labelled `text`, which will be set to `@string/mainstring` (or whatever we decided to call our string resource).
+    public String getWeather() {
+        return weather;
+    }
 
-Not everything we do has to be done in the graphical design window. We can actually make changes directly to the Xml file and see the effects it has on the appearance of our app in real time in the preview on the right. Let's test this out! We're going to change the background colour of our app to a light blue. To do this, we have to add the attribute `android:background` to the `RelativeLayout` object and set it equal to `"#96E5FF"` (which just happens to be the colour we want to use in hexadecimal form). Now you're `RelativeLayout` element should look something like the following:
+    public int getDegrees() {
+        return degrees;
+    }
 
-<p align="center"><img src="images/image11.png" /></p>
-
-After you make this change, you should see the effect immediately in the preview to the right. The background has turned light blue, just as we wanted!
-
-There are all sorts of attributes we can add to our elements, so lets do a few more just to get the hang of it. Let's change the colour of our text now to a contrasting dark orange (rgb = `"#FF8800"`). The name of the attribute we have to add now is called `android:textColor`. Thus our `TextView` element should look like this:
-
-<p align="center"><img src="images/image12.png" /></p>
-
-#### Interlude: Android Studio Autocomplete
-
-As you might've noticed, when you were typing the name of the attributes, a little list popped up next to your cursor. This list was a list generated by Android Studio that showed you *every possible attribute you could add*. This is an incredibly useful feature because it means if you forget the exact name of an attribute, you can just look for it *while you type*. It also features an autocomplete feature, where you can scroll through the list using the arrow keys and then select what you want by pressing enter. If that wasn't enough, for certain attributes, after pressing enter and going to type the value of the attribute Android studio will also suggest *possible values for the attribute*. How handy is that?
-
-We'll add one last attribute, which will change the font of our text. The name of the attribute is `fontFamily`, and the value we want to change it to is `"sans-serif-medium"`. 
-
-*Give them a minute to do that and then jump back in.*
-
-So our final `TextView` element should be:
-
-<p align="center"><img src="images/image13.png" /></p>
-
-#### Interlude: Fonts in Android
-
-In Android, it is unfortunately kind of difficult to use any font you want in your apps. There are only a few built in fonts that you can use everywhere. For example, you *won't* be able to use `"Verdana"` as the value of a `fontFamily` attribute because Verdana isn't one of the builtin fonts.
-
-In fact, there just plain *isn't* a way of representing external fonts in pure Xml. You *can* use other fonts, but you have to have the `.ttf` file for the font placed in a folder somewhere in your resources folder, then you have to load that font in Java. It exists, but is too complicated for the purposes of this lecture.
-
-## How do I test my app?
-
-So we've spent some time developing this relatively simple app, but we haven't really gone into how we're supposed to *test* and *use* it? These are two incredibly important practices in development that require addressing.
-
-There are two main ways of testing your app: either use an Android Virtual Device (AVD) or load your app onto a physical device.
-
-### Using a Physical Device
-
-Though sometimes it may be more practical to use an AVD, there is nothing quite like the feel of a physical device. Android Studio allows you to test our app on your device very easily. If you simply hook up your device to your computer via USB connection, then hit run, you will be brought to a window that looks like this:
-
-<p align="center"><img src="images/image16.png" /></p>
-
-In this dialog, simply choose the device you have connected (in this case, the only one listed) and hit "OK". Make sure "Launch emulator" is not enabled, and neither is "Use same device for future launches" (unless you are absolutely positive you will be using the same device to test your app in the future). Upon hitting OK, you should see your app appear on your device's screen momentarily!
-
-**Note**: There are a number of circumstances in which your device **will not** be listed in the device chooser. This mainly stems either from the Developer options on your device not being enabled, or your device is listed as a `Portable Device` when it should really be configured as an `Android ADB Composite Device`. `ADB` stands for "Android Debug Bridge"; it's the program that is responsible for the communciation between Android Studio and the emulator (for AVD's) and physical devices.
-
-Instructions for configuring your device can be found [here](#Enabling ADB on Android 5.0 Based Devices).
-
-# A More Useful App
-
-Now that we've covered the basics of the Android API and Android Studio, let's put our skills to the test by designing something a little more useful. As we further our knowledge of Android, we're gonna inevitably come up with things we want to make with it but don't have the skills necessary to accomplish them. Thus, for our second app, we're going to create an "App Idea Storage", that'll allow us to quickly store any ideas we come up with to our phones and recall them later.
-
-## Getting Started
-
-To get started, we're gonna have to create another project. Using the same procedure as before, create a new project called something like `AppIdeaStorage`. Make sure to remove the "hello world" text view that's there by default, so we have a completely blank canvas to work from.
-
-When we first start our app, we want to begin on a page that'll let us quickly add an app idea by filling in a few forms and clicking a button. This'll give us an opportunity to experiment with a whole lot more widgets and features of the Android API.
-
-### `LinearLayout`
-
-For this app's main activity, we're going to use a `LinearLayout`. In a `LinearLayout`, objects are placed adjacent to each other either horizontally or vertically depending on the layout's `orientation property`. To change the layout to a `LinearLayout`, go to the "Text" tab and change `RelativeLayout` to `LinearLayout`, then add the attribute `android:orientation="vertical"` (this can also be done by going to the properties panel in the design window and editing the `orientation` property there). Your initial content Xml file should look like this:
-
-<p align="center"><img src="images/image17.png" /></p>
-
-### Getting Images into Android Studio
-
-For your convenience, we've designed two basic logos that can be used for the app:
-
-<p align="center"><img src="images/app_logo.png" /></p>
-
-<p align="center"><img src="images/app_logo_alt.png" /></p>
-
-The easiest way to add images to an Android Studio project is to locate the project's resources folder (`app/src/main/res` usually), and from there drag and drop your image into one of either `drawable-hdpi`, `drawable-mdpi`, `drawable-xhdpi`, and `drawable-xxhdpi`. These folders represent images with different `dpi`'s ("dosts per inch"), which directly corresponds to the quality of the image. In this case, since our app logo images are so large, we should add them to the `xxhdpi` folder.
-
-You should now see them pop up in the Project explorer panel on the left in Android Studio. You'll notice that, if your view mode is set to `Android`, the images don't actually appear in their correct folder (`drawable-xxhdpi`) but rather just show up in the `drawable` folder with `(xxhdpi)` next to it's name.
-
-Now are images are ready for use in an `ImageView`.
-
-### `ImageView` Widget
-
-Just like how a `TextView` object represents text, an `ImageView` represents an *image*. As usual, to use it drag it from the widgets panel into the designer window and place it centered at the top of the layout. No image will show up yet though, it will simply appear as a blue square (while it's selected). To set an image, double click the square and click the ellipses next to the `src` field. This will bring up a dialog that looks as follows:
-
-<p align="center"><img src="images/image18.png" /></p>
-
-In this window, scroll through the files in the `Project` tab until you locate the app logo (in our case we named the file `app_logo_alt`). (*Tip*: The image will show up in the `Drawable` folder, so you can close the `Color` folder to make it easier to find what you need.) Click "OK" and now the logo is in your app.
-
-### Text Fields
-
-We want the user to be able to input information about their app idea, so how are they going to do this? They'll use *text fields*. Text fields are special widgets that allow the user to input text. Then later, in Java, you can retrieve the text they added and use it to do other things.
-
-We're going to add three different text fields to our main activity. The different available text field widgets can be found by scrolling down in the Palette (below the general "Widgets" section). The first text field we'll add is one for the app's name. Click and drag to place a `Plain Text` text field into the activity underneath the app logo. In the `Properties` panel, change the `id` of the newly added widget to something meaningful like `appIdeaName`.
-
-Now we want to give some indication of the purpose of the text field; we can't just have a bunch of fields and expect the user to know what they're for. To help specify purpose, we set the `hint` property of the text field. Scroll until you find the hint property in the Properties panel, and then change it to something like `App Name`. Now your app should look something like this (depending on which logo you chose):
-
-<p align="center"><img src="images/image19.png" /></p>
-
-We're also going to make some small adjustments to this widget. First, we're going to set it's `singleLine` property to `true` (by checking the checkbox next to it in the Properties panel). This will ensure that the name of an app never takes up more than one line (though it can stretch beyond the length of the text field). We're also going to go to the `inputType` property and mark `textCapWords`:
-
-<p align="center"><img src="images/image22.png" /></p>
-
-This ensures that every input word of text will automatically be capitalized.
-
-The second text field we'll add under that is one for the project's "Due Date". This will be a `Date` text field. Using the same procedure as for the App Name text field, add a Due Date text field underneath it. What differentiates the `Date` text field from an ordinary text field is that when you go to type something into the `Date` text field, only the number keys and the "/" character will be available to place, whereas the entire keyboard can be used for an ordinary `Plain Text` text field.
-
-Finally, we'll add a "Description" section. We want to give lots of room for description, so we'll use a `Multiline Text` text field this time. We're also going to go into it's `inputType` property and check `textCapSentences` to indicate that the first word of sentences are to be automatically capitalized.
-
-If you did everything correctly, you should end up with something like the following:
-
-<p align="center"><img src="images/image20.png" /></p>
-
-### `SeekBar`
-
-We want to allow one more piece of information to be input; the "Priority" of the app (i.e. how important you think it is). We'll represent the priority of the app idea using a `SeekBar`, which allows the user to drag a "thumb" across a line to define an amount of something. Drag and drop the `SeekBar` widget into the designer window under our "Description" field. Here, the thumb is the circle. As with every other widget, give it a useful `id` like `priorityBar`.
-
-There's two properties we want to change; `max` and `progress`. `Max` determines the value the bar represents when the thumb is all the way to the right, and `progress` represents the initial/default value of the bar. We'll set it to 5 for now.
-
-*Note:* If you're wondering why these names are kind of weird, it's because `SeekBar` is a subclass of `ProgressBar`.
-
-### `Button`
-
-Arguably one of the most important widgets you'll encounter is the `Button` widget, which represents any clickable button. In our app, pressing the button will cause our data to get added to the list of app ideas. We'll worry about actually making it work in a bit, for now let's just get the widgets *there*.
-
-Drag and drop the `Button` widget into activity underneath the `SeekBar`. By default it's text says `"New Button"`, but we want it to say something like `"Add App Idea!"`. Double click it to change this field (you can also create a resource for the string).
-
-We want to prevent the user from being able to submit an "empty" app. In other words, by default we want the button to be *disabled*, and when the user fills in information about their app the button will *enable*. To set the default state of the button to be disabled, make sure it's `enabled` property is `false` (i.e. the checkbox is unmarked). Again, we'll worry about actually making these things *work* later on.
-
-### Extra Details and Design
-
-Experiment with some of the properties of the widgets you just placed! There's lots of things you can do to make it pretty and unique, it's just a matter of messing around and learning what the different properties do. Here's an example of something we were able to create:
-
-<p align="center"><img src="images/image23.png" /></p>
-
-## How do I make it functional?
-
-Up to this point we've only been focusing on how our UI *looks*, and not actually how it works. If you were to test the app in it's current state, all the widgets would work *independently*, but not *together*. For example, we want the button to become enabled once sufficient information has been entered. In order to accomplish this, we have to edit the `.java` file for our main activity.
-
-In the project panel on the left, go to `app/java` and locate the java file representing your main activity. In this case, it should look something like the following:
-
-<p align="center"><img src="images/image24.png" /></p>
-
-Double click to open it up. Welcome to the java part of Android, where things *really* start to ramp up!
-
-The class you're looking at is the class that represents our main activity, hence is why it inherits from `AppCompatActivity` (which inherits from `Activity`). Every activity has an `onCreate` method which gets called when the activity first gets created. Let's take a look at the one that's been automatically generated for us:
-
-```java
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        }
-    });
 }
 ```
 
-For purposes of experimentation, try replacing it with the following method:
+This simply stores a string representing the day name, a string representing the weather, and an integer representing the degrees (Celsius). It also includes "getters" for each field.
 
-```java
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-}
-```
+Now in our `MainActivity` class we're going to generate a list of example `Forecast` objects that will later be used to fill our `ListView`. First, in `onCreate` we simply create a `List<Forecast>` to contain the forecasts:
 
-This is identical to the original method, but with the stuff about the toolbar and floating action button missing. Now run your app. Can you spot the differences?
+<p align="center"><img src="images/forecasts-assignment.png"/></p>
 
-There's a few things that need some explaining:
+Now we simply have to fill the list with arbitrary "test data":
 
-### What is `R`?
+<p align="center"><img src="images/forecasts-adding-data.png"/></p>
 
-That `R` thing is a static class generated by Android. It represents **every resource in your application** (hence is why it's called `R`). For example, `R.id` is a nested static class which contains the `id`'s of everything we've added, and we can use said `id` to locate the actual object with that id (which is what the line `Toolbar toolbar = (ToolBar) findViewById(R.id.toolbar)` is doing).
+For reference, here is what the two classes side-by-side should look like at this point:
 
-*Note*: If you build your project, you can actually check out what the generated `R.java` class looks like! It'll be in `app/build/generated/source/r`.
+<p align="center"><img src="images/main-activity-half-done.png"/><img src="images/forecast-class.png"/></p>
 
-### What is a `Bundle`?
+We're going to leave the `MainActivity` and `Forecast` classes alone for a little bit and talk about another important base class in Android: `Adapter`s.
 
-A `Bundle` is an object that, simply put, passes data between activities. When you create a new activity, you can pass in information as a `Bundle` object. This is useful because it allows you to easily communicate pertinent information throughout the lifecycle of your app.
+## What is an Adapter?
 
-For more information, see the documentation for `Bundle`, which can be found [here](http://developer.android.com/reference/android/os/Bundle.html). There's an extensive list of `get` and `put` methods for different types of values.
+An `Adapter` in Android is essentially a bridge connecting UI components and data that fills it. For example, a `ListAdapter` is an Adapter that acts as a bridge between a `ListView` and the underlying data that will be used to propagate it. This can be tricky to understand just off of a description, so we'll create an example class to get the juices flowing.
 
-### What does `setContentView` do?
+Add a new java class called `WeatherAdapter`. We want it to inherit from `BaseAdapter`:
 
-In Android, all of the UI is written in Xml right? Well when an activity starts it needs to know what UI content to display to the user. `setContentView(R.layout.activity_main)` sets the activity's content to the given layout; `layout.activity_main`. Though we haven't used or talked about it, `activity_main.xml` acts as a wrapper around `content_main.xml`. If you navigate to the file, you'll see that it looks a lot like content file, but with "more" things; a `CoordinatorLayout`, an `AppBarLayout` with a `Toolbar` and a `FloatingActionButton`, and right in the middle it includes `content_main`:
+<p align="center"><img src="images/weather-adapter-signature.png"/></p>
 
-<p align="center"><img src="images/image25.png" /></p>
+Now we're going to add the following fields and constructor to our `WeatherAdapter`:
 
-So when we set the activity's content to `layout.activity_main`, it adds all this content *including* our layout in `content_main.xml` to the activity.
+<p align="center"><img src="images/weather-adapter-fields-and-constructor.png"/></p>
 
-You will *almost always* call `setContentView` in the `onCreate` method of an activity.
+At this point you may be asking yourself, "what's a `Context`?" 
 
-### Making our app work
+## What is a `Context`?
 
-Let's spend some time making our app actually *function*. First, lets add fields to our activity representing the different widgets:
+`Context` is like the base class for almost everything in Android. It provides access to some of the global application information. As the name suggests, it represents the context of current state of the application/object. It lets newly created objects understand what has been going on. If you want to do anything with UI, you need a context. If you want to interact with the device, you need context. The Context base class is **essential** to any Android application.
 
-<p align="center"><img src="images/image26.png" /></p>
+What *specifically* makes it so useful is a little more advanced than the content in this workshop. Just know it is incredibly important.
 
-*Note*: When you type the names `EditText` and `SeekBar` and `Button`, by default they will be underlined in red. We have to import them before we can actually use them. Fortunately, Android Studio provides us with an easy way of adding an import statement for unimported classes. Right after typing a name, like `EditText`, hit `Alt + Enter`, and an import statement will be automatically added.
+Now you may notice that the class signature will be underlined indicating a compiler error. The problem is that `BaseAdapter` is an *abstract class*, and thus there are methods we *must* add to it. The first three are relatively straightforward:
 
-Now, in the `onCreate` method, we need to add the code to retrieve the widgets and assign them to these fields. To retrieve a widget, use the `findViewById` method. This method returns a `View` object, so we have to cast it to the proper type before we assign it. The code should look like this:
+<p align="center"><img src="images/weather-adapter-simple-required-methods.png"/></p>
 
-<p align="center"><img src="images/image27.png" /></p>
+- `getCount` simply returns the number of items being held by the adapter.
 
-#### Enabling the button when sufficient input is provided
+- `getItem` returns the item at the given position.
 
-We want the button to become enabled when the user has input the minimum required information. The only piece of required information is the name of the app idea. Thus we need some code that checks when text has been added to the `appIdeaName` widget, and then enables our button. How do we go about doing this? We need to add a `Listener` to our `appIdeaName` widget:
+- we can ignore `getItemID` for now.
 
-<p align="center"><img src="images/image28.png" /></p>
+The last required method is not so simple (don't copy it all yet, it deserves thorough explanation):
 
-A *listener* is an object that waits for something to happen, and then calls a certain method. In this case, the listener is our `TextWatcher` object and the method that gets called is `onTextChanged`. In this method, we call `addAppButton.setEnabled`. This method allows us to set whether or not the button is enabled (by supplying a boolean argument). For our case, we want the button to become enabled when there is any text at all in the `appIdeaName` text field. To check this, we simply check if `s.length() > 0`.
+<p align="center"><img src="images/weather-adapter-get-view.png"/></p>
 
-*Note*: Another way of checking if there is text is by saying
-```
-addAppButton.setEnabled(!appIdeaName.getText().toString().trim().isEmpty());
-```
-though this is more wordy.
+This method sort of explains the importance of an `Adapter` as a whole. Remember how we have a `ListView` in our main activity, and we also had a "template" layout for a single day (`view_day_forecast.xml`). What our `WeatherAdapter` is it's filling in that `ListView` with copies of our template `view_day_forecast`. The method `getView` **returns the view that will occupy a given position in the `ListView`**. For example, if `getView` were called with `position = 0`, then it would retrieve the first `Forecast` object we have and use its information to fill in a copy of the `view_day_forecast`, then return it. This is how our `ListView` will get filled with our forecasts, and **this** is why `Adapter`s are so important.
 
-There are a variety of different listeners you can add to different objects that respond to different events, such as when a button is pressed or when a slider is moved.
+The following image shows the same code as above but with the different sections colour-coded by "task":
 
-#### Adding functionality when the button is pressed
+<p align="center"><img src="images/weather-adapter-get-view-colour-coded.png"/></p>
 
-We're also going to add a listener to our button widget so that we can do things when it's clicked. The listener we want to add should respond to when the button is clicked, thus we need to use `addAppButton.setOnClickListener`. We're going to set it to a `new View.OnClickListener()` object:
 
-<p align="center"><img src="images/image29.png" /></p>
+![](images/red-icon.png) - This line retrieves our `view_day_forecast` as a `View` object so we can modify it.
 
-The line in our `onClick` method makes a message display at the bottom of the screen saying "Your app has been added!".
+![](images/green-icon.png) - This line retrieves the `Forecast` at the given position (i.e. the `Forecast` who's `view` we're going to create).
 
-Another important thing we need to do when the button is pressed is **save** the app idea that was just created. To do this, first we're going to create a new class called `AppIdea` to represent an app idea. Right click on the app's main package in the Project panel and select `New -> Java Class`. Name it `AppIdea`, then replace the class with the following code:
+![](images/blue-icon.png) - These lines retrieve the `TextView` widgets we added to our `view_day_forecast` `View`, representing the day name, the weather, and the temperature respectively.
 
-```java
-import android.os.Parcel;
-import android.os.Parcelable;
+![](images/purple-icon.png) - These lines take the values from the current `Forecast` object and set them as the text to the corresponding `TextView` widget using the widget's `setText` method. For example, `forecast.getDay()` gets assigned as the text to the `tvDay` widget, and so on. In the last one, all we're doing is adding the character `°` (the degree symbol) to the end of the string.
 
-public class AppIdea implements Parcelable {
+Finally, we return the newly created view.
 
-    private String name;
-    private String dueDate;
-    private String description;
-    private int priority;
+#### What is `LayoutInflater`?
 
-    public AppIdea(final String name, final String dueDate, final String description, final int priority) {
-        this.name = name;
-        this.dueDate = dueDate;
-        this.description = description;
-        this.priority = priority;
-    }
+The `LayoutInflater` is a class that instantiates a `layout` and returns it as a `View` object. In this case, we pass it in our `view_day_forecast` layout and it returns it as a `View` object that we can modify.
 
-    public AppIdea(Parcel in) {
-        String[] data = new String[4];
-        in.readStringArray(data);
+When we first call `LayoutInflater.from(context)`, what we're doing is returning a `LayoutInflater` object that corresponds to the given application `Context` (another reason why `Context` is important). Only *then* can we use it to actually instantiate our layout.
 
-        name = data[0];
-        dueDate = data[1];
-        description = data[2];
-        priority = Integer.getInteger(data[3]);
-    }
+## We're done! Right?
 
-    public String getName() {
-        return name;
-    }
+Let's run our app and give it a shot!
 
-    public void setName(String name) {
-        this.name = name;
-    }
+*Take some time to run and observe the result*
 
-    public String getDueDate() {
-        return dueDate;
-    }
+Well, the result is  pretty underwhelming weather app (though it's still probably as accurate as the weather network ooooooooooooooooooooh sick burn). There's nothing in our list! What gives?
 
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
+If you really think about it, we never actually *used* that `WeatherAdapter` class we worked so hard on. What a waste of effort! We can easily change that by **populating the list**.
 
-    public String getDescription() {
-        return description;
-    }
+### Populating the `ListView`
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+The act of *populating our `ListView`* involves somehow getting our list of `Forecast` objects to the `WeatherAdapter` so that they can be converted into `View`s and added to our `ListView`. Sounds complicated? It actually isn't!
 
-    public int getPriority() {
-        return priority;
-    }
+First go back to our `MainActivity` class. At the end of its `onCreate` method, add the following line:
 
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
+<p align="center"><img src="images/populating-our-list-part1.png"/></p>
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
+This actually creates an instance of our `WeatherAdapter` object and supplies it with both the `Context` (being the `MainActivity` object itself, which inherits from `Context`), and the list of `Forecast` objects that will eventually fill our `ListView`. Now there's only one more line to add:
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeStringArray(new String[] { name, dueDate, description, Integer.toString(priority) });
-    }
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public AppIdea createFromParcel(Parcel in) {
-            return new AppIdea(in);
-        }
+<p align="center"><img src="images/populating-our-list-part2.png"/></p>
 
-        public AppIdea[] newArray(int size) {
-            return new AppIdea[size];
-        }
-    };
-}
+This applies our `WeatherAdapter` to our `ListView`, so that now the `ListView` can be populated by the `View` objects created by our `WeatherAdapter`.
 
-```
+If you save and run now, you should have a much more satisfying result :)
 
-This is just a basic class that has the four pieces of information that uniquely identify an app idea, along with getters and setters for each. It also implements `Parcelable`, which will allow us to pass it to other activites, but you don't have to worry about that for now.
+For reference, your final `MainActivity` class should look like this:
 
-*Note*: You can automatically generate getters and setters for a field by right clicking on it's name and selecting "Generate". In the resulting context menu, choose "Getter and Setter", and select "OK" in the resulting dialog box.
+<p align="center"><img src="images/final-main-activity.png"/></p>
 
-In our `MainActivity` we want to add the following field:
 
-`private ArrayList<AppIdea> appIdeas = new ArrayList<AppIdea>();`
+# Extra Help
 
-This list will store the `AppIdea` instances we create.
+### WARNING: THIS SECTION IS NOT PART OF THE WORKSHOP
 
-Now every time we press the `addAppIdeaButton`, we want to create an `AppIdea` instance and add it to the `appIdeas` list. The button's `onClick` listener should look as follows:
-
-<p align="center"><img src="images/image30.png" /></p>
-
-## Adding another Activity
-
-Now, we have *almost* everything. We can fill in our text fields describing our app, we can create said app by pressing a button, and we can store a list of the apps we've created. There's just one problem; there's no way of viewing the apps we've created! To fix this, we're going to **add another activity** to our app.
-
-To add a new activity, right click on the main package in the Project panel and click `New -> Activity -> Empty Activity`. We'll call this activity `AppListActivity`. Now we're going to leave the activity blank for now, and go back to our main activity. We're going to add a button that will take us to the `AppListActivity`.
-
-Drag and drop a Button widget into the design window and place it underneath the "Add App Idea" button. Give this button an id like `"goToAppListButton"`. Now in `MainActivity.java`, we're going to add another `Button` field to reference it:
-
-<p align="center"><img src="images/image31.png" /></p>
-
-and in the `onCreate` method we're going to assign it:
-
-<p align="center"><img src="images/image32.png" /></p>
-
-Now, as with our "Add App Idea" button, we're going to set it's onClickListener:
-
-<p align="center"><img src="images/image33.png" /></p>
-
-We want clicking the button to result in our `AppListActivity` being constructed and the `MainActivity` being closed.
-
-## Other Important Things
-
-In the top menu of the central Designer window there's a dropdown menu with the "Nexus 4" on it. If you click it, a dropdown will open up listing a bunch of different devices. You can choose different devices to preview how your app will look on a specific device. The dropdown is highlighted in red below:
-
-<p align="center"><img src="images/image3.png" /></p>
-
-To the right of that menu you should see a button that looks like ![](https://github.com/Michaelfonzolo/tutorials/blob/master/intro-to-android/images/image4.png). This determines the orientation of the display. You can click the middle of the button to automatically toggle between portrait and landscape, or you can click the arrow to bring up a dropdown menu with even more options.
-
-### Documentation
-
-Inevitably, no tutorial will ever include everything you need to know about *everything* in Android. Fortunately, the developers also supplied an extensive set of documentation that *does* have information on absolutely everything. Android Studio is also kind enough to give you a quick way of accessing the documentation for something in your code. If you place your cursor inside an object's name and press Ctrl + Q (Ctrl + J on Mac OS X), the quick-documentation window will pop-up next to the name, giving you a snapshot of everything you need to know about the object.
-
-For example, in `content_android_sample.xml`, if you place your cursor inside the word `TextView` and hit Ctrl + Q/J, it will bring up the documentation for the `TextView` class. From this we can see that `TextView` is a subclass of `View` and implements the `ViewTreeObserver.OnPreDrawListener` interface. We can even click on those names to bring up *their* documentation and find out what they're for.
-
-*Note*: This feature also works for Java code.
+**Only refer to this section if you are experiencing issues.**
 
 ## Enabling ADB on Android 5.0 Based Devices
 
@@ -590,7 +497,7 @@ List of devices attached
 
 In the event that the device is not listed, try logging out and then back in to the Mac OS X desktop and, if the problem persists, rebooting the system.
 
-### Linux adb Configuration
+### Linux ADB Configuration
 
 For the purposes of this tutorial, we will once again use Ubuntu Linux as a refence example in terms of configuring adb on Linux to connect to a physical Android device for application testing.
 
@@ -666,3 +573,9 @@ Assuming that the adb configuration has been successful on your chosen devleopme
 Assuming that the project has not previously been configured to run automatically in an emulator environment, the *Choose Device* dialog will appear with the connected Android device listed as a currently running device.
 
 To make this the default device for testing, enable the *Use same device for future launches* option. With the device selected, click on the *OK* button to install and run the application on the device. As with the emulator environment, diagnostic output relating to the installation and launch of the application on the device will be logged in the Run tool window.
+
+
+
+
+
+
