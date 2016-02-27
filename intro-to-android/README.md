@@ -1,59 +1,59 @@
 # Table of Contents
 
-1. [Intro to Android](#intro-to-android)
+- [Intro to Android](#intro-to-android)
 
-    i. [What the heck is Android?](#what-the-heck-is-android)
+    - [What the heck is Android?](#what-the-heck-is-android)
     
-    ii. [Creating a Project](#creating-a-project)
+    - [Creating a Project](#creating-a-project)
     
-        1. [What's an Activity?](#whats-an-activity)
+        - [What's an Activity?](#whats-an-activity)
         
-    iii. [Inside Android Studio](#inside-android-studio)
+    - [Inside Android Studio](#inside-android-studio)
         
-        1. [What's a `RelativeLayout`?](#whats-a-relativelayout)
+        - [What's a `RelativeLayout`?](#whats-a-relativelayout)
         
-        2. [Adding an Icon](#adding-an-icon)
+        - [Adding an Icon](#adding-an-icon)
         
-        3. [Building and Launching](#building-and-launching)
+        - [Building and Launching](#building-and-launching)
         
-    iv. [The Anatomy of an Android App](#the-anatomy-of-an-android-app)
+    - [The Anatomy of an Android App](#the-anatomy-of-an-android-app)
         
-        1. [Making the UI for our app](#making-the-ui-for-our-app)
+        - [Making the UI for our app](#making-the-ui-for-our-app)
         
-        2. [Adding some text](#adding-some-text)
+        - [Adding some text](#adding-some-text)
         
-        3. [What are all those dp, sp, px, etc?](#what-are-all-those-dp-sp-px-etc)
+        - [What are all those dp, sp, px, etc?](#what-are-all-those-dp-sp-px-etc)
         
-        4. [Making the list](#making-the-list)
+        - [Making the list](#making-the-list)
             i. [What is a `ListView`?](#what-is-a-listview)
             
-        5. [What's this talk of `View`s?](#whats-this-talk-of-views)
+        - [What's this talk of `View`s?](#whats-this-talk-of-views)
         
-2. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
+- [Diving into the Java side of things](#diving-into-the-java-side-of-things)
 
-    i. [The `Forecast` Class](#the-forecast-class)
+    - [The `Forecast` Class](#the-forecast-class)
     
-    ii. [What is an Adapter?](#what-is-an-adapter)
+    - [What is an Adapter?](#what-is-an-adapter)
     
-    iii. [What is a `Context`?](#what-is-a-context)
+    - [What is a `Context`?](#what-is-a-context)
     
-    iv. [What is `LayoutInflater`?](#what-is-layoutinflater)
+    - [What is `LayoutInflater`?](#what-is-layoutinflater)
     
-    v. [We're done! Right?](#were-done-right)
+    - [We're done! Right?](#were-done-right)
         
-        1. [Populating the `ListView`](#populating-the-listview)
+        - [Populating the `ListView`](#populating-the-listview)
         
-3. [Extra Help](#extra-help)
+- [Extra Help](#extra-help)
 
-    i. [Enabling ADB on Android 5.0 Based Devices](#enabling-adb-on-android-50-based-devices)
+    - [Enabling ADB on Android 5.0 Based Devices](#enabling-adb-on-android-50-based-devices)
         
-        1. [Windows ADB Configuration](#windows-adb-configuration)
+        - [Windows ADB Configuration](#windows-adb-configuration)
         
-        2. [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
+        - [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
         
-        3. [Linux ADB Configuration](#linux-adb-configuration)
+        - [Linux ADB Configuration](#linux-adb-configuration)
         
-        4. [Testing the ADB Connection](#testing-the-adb-connection)
+        - [Testing the ADB Connection](#testing-the-adb-connection)
         
         
 # Intro to Android
