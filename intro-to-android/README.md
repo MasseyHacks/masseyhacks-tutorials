@@ -1,15 +1,12 @@
 # Table of Contents
 
 i. [Intro to Android](#intro-to-android)
-
     i. [What the heck is Android?](#what-the-heck-is-android)
     
     ii. [Creating a Project](#creating-a-project)
-    
         i. [What's an Activity?](#whats-an-activity)
         
     iii. [Inside Android Studio](#inside-android-studio)
-    
         i. [What's a `RelativeLayout`?](#whats-a-relativelayout)
         
         ii. [Adding an Icon](#adding-an-icon)
@@ -17,7 +14,6 @@ i. [Intro to Android](#intro-to-android)
         iii. [Building and Launching](#building-and-launching)
         
     iv. [The Anatomy of an Android App](#the-anatomy-of-an-android-app)
-    
         i. [Making the UI for our app](#making-the-ui-for-our-app)
         
         ii. [Adding some text](#adding-some-text)
@@ -25,13 +21,11 @@ i. [Intro to Android](#intro-to-android)
         iii. [What are all those dp, sp, px, etc?](#what-are-all-those-dp-sp-px-etc)
         
         iv. [Making the list](#making-the-list)
-        
             i. [What is a `ListView`?](#what-is-a-listview)
             
         v. [What's this talk of `View`s?](#whats-this-talk-of-views)
         
 ii. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
-
     i. [The `Forecast` Class](#the-forecast-class)
     
     ii. [What is an Adapter?](#what-is-an-adapter)
@@ -41,13 +35,10 @@ ii. [Diving into the Java side of things](#diving-into-the-java-side-of-things)
     iv. [What is `LayoutInflater`?](#what-is-layoutinflater)
     
     v. [We're done! Right?](#were-done-right)
-    
         i. [Populating the `ListView`](#populating-the-listview)
         
 iii. [Extra Help](#extra-help)
-
     i. [Enabling ADB on Android 5.0 Based Devices](#enabling-adb-on-android-50-based-devices)
-    
         i. [Windows ADB Configuration](#windows-adb-configuration)
         
         ii. [Mac OS X ADB Configuration](#mac-os-x-adb-configuration)
