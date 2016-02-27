@@ -53,23 +53,23 @@ It's easy to get overwhelmed by the amount of content available at first glance,
 
 Upon initially loading, your Android Studio Window will look something like this:
 
-<p align="center"><img src="images/image1.png"/></p>
+<p align="center"><img src="images/first-look.png"/></p>
 
 The leftmost rectangle is the *Project* tool window (highlighted in red below), which displays the files and folders associated with your project. The _window mode_ (highlighted in blue) determines the mode in which the information is displayed. By default it's set to _Android_, which displays only the essential files and folders. Another common mode is _Project_ which lists _all_ files and folders associated with your project. Check out the other modes too!
 
-<p align="center"><img src="images/image2.png"/></p>
+<p align="center"><img src="images/first-look-colour-coded.png"/></p>
 
 The central *Designer window* (green) shows us whatever we're currently working on. This could be a java file or an xml file or a graphical display. Right now it's giving us a preview of what our app will look like. Specifically, it's showing us our *empty activity*. As you can see, right now our app will simply be a blank window with the text "Hello World!" displayed in the top left corner. Currently in your editor, you should have the file `content_android_sample.xml` open. If not, you can locate it in the Project window under `app/res/layout`. 
 
 In the left of the designer window is a panel called the *palette* (pictured below), which contains a bunch of user interface _components_ that we can add to our activity to make our app look the way we want it to. You should recognize some of these components, such as `Large Text` and `Button` as these are pretty common things to include in a user interface.
 
-<p align="center"><img src="images/image5.png"/></p>
+<p align="center"><img src="images/palette.png"/></p>
 
 Not all components are things that the user can clearly see like text and buttons, that's why the palette is divided up into _widgets_ and _layouts_. Layouts define the visual structure for your activity, whereas widgets are things with _function_ that can be placed in your activity.
 
 If you go over to the side panel on the right of the designer window, you can see the _Component Tree_ for your activity (pictured below). This represents the hierarchy of components in your activity. As we can see, our activity consists of a `RelativeLayout`, which contains a single `TextView` object whose text is set to "Hello World!".
 
-<p align="center"><img src="images/image6.png"/></p>
+<p align="center"><img src="images/component-tree.png"/></p>
 
 ### What's a `RelativeLayout`?
 
